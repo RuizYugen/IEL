@@ -1,0 +1,118 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Datos.Modelo;
+using MySql.Data.MySqlClient;
+using Datos.Util;
+using System.Data;
+
+namespace Datos.Daos
+{
+    public class EstadisticaDAO
+    {
+        public List<Estadistica> getAll()
+        {
+            List<Estadistica> lista = new List<Estadistica>();
+            Conexion con = new Conexion();
+
+            DataSet datos = con.LLenaComboGrid("SELECT * FROM Estadistica"+";");
+            DataTable dt = datos.Tables[0];
+            Estadistica e;
+            foreach (DataRow r in dt.Rows)
+            {
+
+                e = new Estadistica();
+                e.IdEstadistica = (int)r.ItemArray[0];
+                e.User = (string)r.ItemArray[1];
+                e.FechaInicio = (DateTime)r.ItemArray[2];
+                e.Nivel = (int)r.ItemArray[3];
+                lista.Add(e);
+            }
+            return lista;
+        }
+
+        public Estadistica getEstadisticaByUser(string User)
+        {
+            Estadistica res;
+            Conexion conexion = new Conexion();
+            DataSet datos = conexion.LLenaComboGrid("SELECT * FROM Estadistica WHERE User like '" + User + "';");
+            DataTable dt = datos.Tables[0];
+            res = new Estadistica();
+            DataRow row = dt.Rows[0];
+            res.IdEstadistica = (int)row.ItemArray[0];
+            res.User = (string)row.ItemArray[1];
+            res.FechaInicio = (DateTime)row.ItemArray[2];
+            res.Nivel = (int)row.ItemArray[3];
+            return res;
+        }
+
+        public bool update(Estadistica e)
+        {
+            Conexion conexion = new Conexion();
+
+            
+            try
+            {
+                String SQL = "UPDATE Estadistica SET"+
+                    " IdEstadistica=" + e.IdEstadistica + ",User=" + e.User + ",FechaInicio=" + e.FechaInicio + ",Nivel=" + e.Nivel + 
+                    " WHERE IdEstadistica=" + e.IdEstadistica + ";";
+                MySqlCommand sqlcom = new MySqlCommand();
+                sqlcom.CommandText = SQL;
+                conexion.EjecutaSQLComando(sqlcom);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+        }
+
+        public bool delete(Estadistica t)
+        {
+            Conexion conexion = new Conexion();
+
+
+            try
+            {
+                String SQL = "DELETE FROM Estadistica WHERE" + " IdEstadistica=" + t.IdEstadistica+";";
+                MySqlCommand sqlcom = new MySqlCommand();
+                sqlcom.CommandText = SQL;
+                conexion.EjecutaSQLComando(sqlcom);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+        }
+
+        public bool insert(Estadistica i)
+        {
+            try
+            {
+                Conexion conexion = new Conexion();
+                String SQL = "INSERT INTO Estadistica (IdEstadistica,User,FechaInicio,Nivel) VALUES (@IdEstadistica,@User,@FechaInicio,@Nivel);";
+                MySqlCommand sqlcom = new MySqlCommand();
+                sqlcom.CommandText = SQL;
+                sqlcom.Parameters.AddWithValue("@IdEstadistica", i.IdEstadistica);
+                sqlcom.Parameters.AddWithValue("@User", i.User);
+                sqlcom.Parameters.AddWithValue("@FechaInicio", i.FechaInicio);
+                sqlcom.Parameters.AddWithValue("@Nivel", i.Nivel);
+                conexion.EjecutaSQLComando(sqlcom);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+    }
+}
+
