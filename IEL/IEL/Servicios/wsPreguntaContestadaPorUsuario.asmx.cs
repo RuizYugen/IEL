@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
-
+using Datos.Daos;
 namespace IEL.Servicios
 {
     /// <summary>
