@@ -34,14 +34,14 @@ namespace Datos.Daos
             return lista;
         }
 
-        public bool delete(Verbo t)
+        public bool delete(int IdVerbo)
         {
             Conexion conexion = new Conexion();
 
 
             try
             {
-                String SQL = "DELETE FROM Verbo WHERE" + " IdVerbo= " + t.IdVerbo + ";";
+                String SQL = "DELETE FROM Verbo WHERE" + " IdVerbo= " + IdVerbo + ";";
                 MySqlCommand sqlcom = new MySqlCommand();
                 sqlcom.CommandText = SQL;
                 conexion.EjecutaSQLComando(sqlcom);
@@ -78,8 +78,8 @@ namespace Datos.Daos
 
             try
             {
-                String SQL = "UPDATE Verbo SET" +
-                    " IdVerbo=" + e.IdVerbo + ",VerboTraduccion=" + e.VerboTraduccion + ",VerboPresenteSimple=" + e.VerboPresenteSimple + ",VerboPasadoSimple=" + e.VerboPasadoSimple + ",VerboPasadoParticipio=" + e.VerboPasadoParticipio +
+                String SQL = "UPDATE Verbo SET " +
+                    "VerboTraduccion='" + e.VerboTraduccion + "',VerboPresenteSimple='" + e.VerboPresenteSimple + "',VerboPasadoSimple='" + e.VerboPasadoSimple + "',VerboPasadoParticipio='" + e.VerboPasadoParticipio +"'"+
                     " WHERE IdVerbo = " + e.IdVerbo + ";";
                 MySqlCommand sqlcom = new MySqlCommand();
                 sqlcom.CommandText = SQL;

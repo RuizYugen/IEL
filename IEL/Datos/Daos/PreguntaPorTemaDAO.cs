@@ -44,14 +44,14 @@ namespace Datos.Daos
             return res;
         }
 
-        public bool delete(PreguntaPorTema t)
+        public bool delete(int IdPregunta)
         {
             Conexion conexion = new Conexion();
 
 
             try
             {
-                String SQL = "DELETE FROM PreguntaPorTema WHERE" + " IdPregunta=" + t.IdPregunta + ";";
+                String SQL = "DELETE FROM PreguntaPorTema WHERE" + " IdPregunta=" + IdPregunta + ";";
                 MySqlCommand sqlcom = new MySqlCommand();
                 sqlcom.CommandText = SQL;
                 conexion.EjecutaSQLComando(sqlcom);

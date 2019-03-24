@@ -51,14 +51,14 @@ namespace Datos.Daos
             return res;
         }
 
-        public bool delete(Sujeto t)
+        public bool delete(int IdSujeto)
         {
             Conexion conexion = new Conexion();
 
 
             try
             {
-                String SQL = "DELETE FROM Sujeto WHERE" + " IdSujeto=" + t.IdSujeto + ";";
+                String SQL = "DELETE FROM Sujeto WHERE" + " IdSujeto=" + IdSujeto + ";";
                 MySqlCommand sqlcom = new MySqlCommand();
                 sqlcom.CommandText = SQL;
                 conexion.EjecutaSQLComando(sqlcom);
@@ -79,10 +79,9 @@ namespace Datos.Daos
 
             try
             {
-                String SQL = "UPDATE Sujeto SET" +
-                    " IdSujeto=" + s.IdSujeto + ",SujetoTraducido=" + s.SujetoTraducido + ",sujeto=" + s.sujeto
-                    + ",objeto=" + s.Objeto + ",Posesivo=" + s.Posesivo + ",Sucesivo=" + s.Sucesivo
-                    + " WHERE IdSujeto=" + s.IdSujeto + ";";
+                String SQL = "UPDATE Sujeto SET "+ "SujetoTraducido='" + s.SujetoTraducido + "',sujeto='" + s.sujeto
+                    + "',objeto='" + s.Objeto + "',Posesivo='" + s.Posesivo + "',Sucesivo='" + s.Sucesivo
+                    + "' WHERE IdSujeto=" + s.IdSujeto + ";";
                 MySqlCommand sqlcom = new MySqlCommand();
                 sqlcom.CommandText = SQL;
                 conexion.EjecutaSQLComando(sqlcom);

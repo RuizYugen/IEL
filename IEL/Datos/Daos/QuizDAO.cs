@@ -43,14 +43,14 @@ namespace Datos.Daos
             return res;
         }
 
-        public bool delete(Quiz t)
+        public bool delete(int idQuiz)
         {
             Conexion conexion = new Conexion();
 
 
             try
             {
-                String SQL = "DELETE FROM Quiz WHERE" + " idQuiz=" + t.idQuiz + ";";
+                String SQL = "DELETE FROM Quiz WHERE" + " idQuiz=" + idQuiz + ";";
                 MySqlCommand sqlcom = new MySqlCommand();
                 sqlcom.CommandText = SQL;
                 conexion.EjecutaSQLComando(sqlcom);
@@ -71,8 +71,7 @@ namespace Datos.Daos
 
             try
             {
-                String SQL = "UPDATE Quiz SET" +
-                    " iQuiz=" + q.idQuiz + ", Nombre=" + q.Nombre + " WHERE idQuiz=" + q.idQuiz + ";";
+                String SQL = "UPDATE Quiz SET " + "Nombre='" + q.Nombre + "' WHERE idQuiz=" + q.idQuiz + ";";
                 MySqlCommand sqlcom = new MySqlCommand();
                 sqlcom.CommandText = SQL;
                 conexion.EjecutaSQLComando(sqlcom);
