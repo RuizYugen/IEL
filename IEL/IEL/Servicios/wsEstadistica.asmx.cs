@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using Datos.Daos;
+using Datos.Modelo;
 
 namespace IEL.Servicios
 {
@@ -18,9 +20,31 @@ namespace IEL.Servicios
     {
 
         [WebMethod]
-        public string HelloWorld()
+        public bool Insert(int id, string usuario,int dia, int mes, int anio,int nivel)
         {
-            return "Hello World";
+            EstadisticaDAO dao = new EstadisticaDAO();
+            Estadistica obj = new Estadistica()
+            {
+                IdEstadistica = id,
+                User = usuario,
+                Nivel = nivel,
+                FechaInicio = new DateTime(anio, mes, dia)
+            };
+            return dao.insert(obj);
+        }
+
+        [WebMethod]
+        public bool update(int id, string usuario, int dia, int mes, int anio, int nivel)
+        {
+            EstadisticaDAO dao = new EstadisticaDAO();
+            Estadistica obj = new Estadistica()
+            {
+                IdEstadistica = id,
+                User = usuario,
+                Nivel = nivel,
+                FechaInicio = new DateTime(anio, mes, dia)
+            };
+            return dao.update(obj);
         }
     }
 }

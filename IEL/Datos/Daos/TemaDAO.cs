@@ -34,11 +34,11 @@ namespace Datos.Daos
             return lista;
         }
 
-        public Tema getEstadisticaByID(string Id)
+        public Tema getTemaByID(int Id)
         {
             Tema t;
             Conexion conexion = new Conexion();
-            DataSet datos = conexion.LLenaComboGrid("SELECT * FROM Tema where IdTema = '" + Id + "';");
+            DataSet datos = conexion.LLenaComboGrid("SELECT * FROM Tema where IdTema = " + Id + ";");
             DataTable dt = datos.Tables[0];
             t = new Tema();
             DataRow row = dt.Rows[0];
@@ -52,14 +52,14 @@ namespace Datos.Daos
             return t;
         }
 
-        public bool delete(Tema t)
+        public bool delete(int  IdTema)
         {
             Conexion conexion = new Conexion();
 
 
             try
             {
-                String SQL = "DELETE FROM Tema WHERE" + " IdTema=" + t.IdTema + ";";
+                String SQL = "DELETE FROM Tema WHERE" + " IdTema=" + IdTema + ";";
                 MySqlCommand sqlcom = new MySqlCommand();
                 sqlcom.CommandText = SQL;
                 conexion.EjecutaSQLComando(sqlcom);
@@ -80,9 +80,8 @@ namespace Datos.Daos
 
             try
             {
-                String SQL = "UPDATE Tema SET" +
-                    " IdTema=" + t.IdTema + ",NombreTraduccion=" + t.NombreTraduccion + ",NombreIngles=" + t.NombreIngles +
-                    ",ContenidoTraduccion=" + t.ContenidoTraduccion + ", ContenidoIngles=" + t.ContenidoIngles + ", Dificultad=" + t.Dificultad +
+                String SQL = "UPDATE Tema SET "+ "NombreTraduccion='" + t.NombreTraduccion + "',NombreIngles='" + t.NombreIngles +
+                    "',ContenidoTraduccion='" + t.ContenidoTraduccion + "', ContenidoIngles='" + t.ContenidoIngles + "', Dificultad=" + t.Dificultad +
                     " WHERE IdTema=" + t.IdTema + ";";
                 MySqlCommand sqlcom = new MySqlCommand();
                 sqlcom.CommandText = SQL;

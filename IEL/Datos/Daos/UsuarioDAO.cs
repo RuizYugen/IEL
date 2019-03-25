@@ -56,14 +56,14 @@ namespace Datos.Daos
             return res;
         }
 
-        public bool delete(Usuario t)
+        public bool delete(string User)
         {
             Conexion conexion = new Conexion();
 
 
             try
             {
-                String SQL = "DELETE FROM Usuario WHERE" + " User like '" + t.User + "';";
+                String SQL = "DELETE FROM Usuario WHERE" + " User like '" + User + "';";
                 MySqlCommand sqlcom = new MySqlCommand();
                 sqlcom.CommandText = SQL;
                 conexion.EjecutaSQLComando(sqlcom);
@@ -85,7 +85,7 @@ namespace Datos.Daos
             try
             {
                 String SQL = "UPDATE Usuario SET" +
-                    " User=" + e.User + ",Password=" + e.Password + ",Nombre=" + e.Nombre + ",ApellidoPaterno=" + e.ApellidoPaterno + ",ApellidoMaterno=" + e.ApellidoMaterno + ",Correo=" + e.Correo + ",Foto=" + e.Foto + ",Privilegio=" + e.Privilegio+
+                    " User='" + e.User + "',Password='" + e.Password + "',Nombre='" + e.Nombre + "',ApellidoPaterno='" + e.ApellidoPaterno + "',ApellidoMaterno='" + e.ApellidoMaterno + "',Correo='" + e.Correo + "',Foto='" + e.Foto + "',Privilegio='" + e.Privilegio+"'"+
                     " WHERE User like '" + e.User + "';";
                 MySqlCommand sqlcom = new MySqlCommand();
                 sqlcom.CommandText = SQL;

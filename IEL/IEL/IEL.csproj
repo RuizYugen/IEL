@@ -335,7 +335,6 @@
     <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Account\PreguntaPorTemaDAO.cs" />
     <Compile Include="Account\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
