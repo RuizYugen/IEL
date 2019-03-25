@@ -12,6 +12,10 @@ namespace Datos.Daos
 {
     public class GramaticaPorTemaDAO
     {
+        /// <summary>
+        /// Obtiene todos los registros almacenados en la tabla GramaticaPorTema
+        /// </summary>
+        /// <returns>Una lista de tipo Gramatica por Tema</returns>
         public List<GramaticaPorTema> getAll()
         {
             List<GramaticaPorTema> lista = new List<GramaticaPorTema>();
@@ -30,7 +34,11 @@ namespace Datos.Daos
             }
             return lista;
         }
-
+        /// <summary>
+        /// Obtiene una Gramatica por tema por ID
+        /// </summary>
+        /// <param name="ID">ID del que se desea obtener su Gramatica por tema</param>
+        /// <returns>Una Gramatica por tema</returns>
         public GramaticaPorTema getGramaticaPorTemaByID(int ID)
         {
             GramaticaPorTema res;
@@ -43,7 +51,11 @@ namespace Datos.Daos
             res.IdGramatica = (int)row.ItemArray[1];           
             return res;
         }
-
+        /// <summary>
+        /// Actualiza el registro de la Gramatica por tema en base al Id de la Gramatica por tema introducida
+        /// </summary>
+        /// <param name="e">Recibe una Gramatica por tema con los nuevos datos a actualizar</param>
+        /// <returns>Retorna true en caso de actualizar de lo contrario retorna false</returns>
         public bool update(GramaticaPorTema e)
         {
             Conexion conexion = new Conexion();
@@ -66,7 +78,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Elimina el registro de la Gramatica por tema en base al Id de la Gramatica por tema introducida
+        /// </summary>
+        /// <param name="t">La Gramatica por tema a eliminar</param>
+        /// <returns>Retorna true si se pudo eliminar el registro de lo contrario retorna false</returns>
         public bool delete(GramaticaPorTema t)
         {
             Conexion conexion = new Conexion();
@@ -87,7 +103,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Inserta un registro de Gramatica por tema 
+        /// </summary>
+        /// <param name="i">La nueva gramatica por tema a insertar</param>
+        /// <returns>Retorna true si se pudo insertar el registro de lo contrario retorna false</returns>
         public bool insert(GramaticaPorTema i)
         {
             try

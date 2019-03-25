@@ -14,6 +14,10 @@ namespace Datos.Daos
     {
         public List<Usuario> getAll()
         {
+            /// <summary>
+            /// Obtiene todos los registros almacenados en la tabla Usuario
+            /// </summary>
+            /// <returns>Una lista de tipo Usuario</returns>
             List<Usuario> lista = new List<Usuario>();
             Conexion con = new Conexion();
 
@@ -36,7 +40,11 @@ namespace Datos.Daos
             }
             return lista;
         }
-
+        /// <summary>
+        /// Obtiene un Usuario por Usuario
+        /// </summary>
+        /// <param name="User">Usuario del que se desea obtener su Usuario</param>
+        /// <returns>Un Usuario del Usuario</returns>
         public Usuario getUsuarioByUser(string User)
         {
             Usuario res;
@@ -55,7 +63,11 @@ namespace Datos.Daos
             res.Privilegio = (string)row.ItemArray[7];
             return res;
         }
-
+        /// <summary>
+        /// Elimina el registro del Usuario en base al User del Usuario introducido
+        /// </summary>
+        /// <param name="t">El Usuario a eliminar</param>
+        /// <returns>Retorna true si se pudo eliminar el registro de lo contrario retorna false</returns>
         public bool delete(string User)
         {
             Conexion conexion = new Conexion();
@@ -76,7 +88,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Actualiza el registro del Usuario en base al User del Usuario introducido
+        /// </summary>
+        /// <param name="e">Recibe un Usuario con los nuevos datos a actualizar</param>
+        /// <returns>Retorna true en caso de actualizar de lo contrario retorna false</returns>
         public bool update(Usuario e)
         {
             Conexion conexion = new Conexion();
@@ -99,7 +115,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Inserta un Usuario 
+        /// </summary>
+        /// <param name="i">El nuevo Usuario a insertar</param>
+        /// <returns>Retorna true si se pudo insertar el registro de lo contrario retorna false</returns>
         public bool insert(Usuario i)
         {
             try

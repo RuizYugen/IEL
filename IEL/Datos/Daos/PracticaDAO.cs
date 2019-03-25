@@ -12,6 +12,10 @@ namespace Datos.Daos
 {
     public class PracticaDAO
     {
+        /// <summary>
+        /// Obtiene todos los registros almacenados en la tabla Practica
+        /// </summary>
+        /// <returns>Una lista de tipo Practica</returns>
         public List<Practica> getAll()
         {
             List<Practica> lista = new List<Practica>();
@@ -32,7 +36,11 @@ namespace Datos.Daos
             }
             return lista;
         }
-
+        /// <summary>
+        /// Obtiene una Practica por ID
+        /// </summary>
+        /// <param name="ID">ID del que se desea obtener su Practica</param>
+        /// <returns>Una Practica del Usuario</returns>
         public Practica getPracticaByID(int ID)
         {
             Practica res;
@@ -47,7 +55,11 @@ namespace Datos.Daos
             res.User = (string)row.ItemArray[3];
             return res;
         }
-
+        /// <summary>
+        /// Elimina el registro de la Practica en base al Id de la Practica introducida
+        /// </summary>
+        /// <param name="t">La Practica a eliminar</param>
+        /// <returns>Retorna true si se pudo eliminar el registro de lo contrario retorna false</returns>
         public bool delete(Practica t)
         {
             Conexion conexion = new Conexion();
@@ -68,7 +80,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Actualiza el registro de la Practica en base al Id de la Practica introducida
+        /// </summary>
+        /// <param name="e">Recibe una Practica con los nuevos datos a actualizar</param>
+        /// <returns>Retorna true en caso de actualizar de lo contrario retorna false</returns>
         public bool update(Practica e)
         {
             Conexion conexion = new Conexion();
@@ -91,7 +107,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Inserta un registro de Practica 
+        /// </summary>
+        /// <param name="i">La nueva Practica a insertar</param>
+        /// <returns>Retorna true si se pudo insertar el registro de lo contrario retorna false</returns>
         public bool insert(Practica i)
         {
             try

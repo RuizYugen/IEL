@@ -12,6 +12,10 @@ namespace Datos.Daos
 {
     public  class QuizDAO
     {
+        /// <summary>
+        /// Obtiene todos los registros almacenados en la tabla Quiz
+        /// </summary>
+        /// <returns>Una lista de tipo Quiz</returns>
         public List<Quiz> getAll()
         {
             List<Quiz> lista = new List<Quiz>();
@@ -30,6 +34,12 @@ namespace Datos.Daos
             }
             return lista;
         }
+        /// <summary>
+        /// Obtiene un Quiz por ID
+        /// </summary>
+        /// <param name="ID">ID del que se desea obtener su Quiz</param>
+        /// <returns>Un Quiz</returns>
+
         public Quiz getQuizByID(int ID)
         {
             Quiz res;
@@ -42,7 +52,11 @@ namespace Datos.Daos
             res.Nombre = (String)row.ItemArray[1];
             return res;
         }
-
+        /// <summary>
+        /// Elimina el registro del Quiz en base al IdQuiz del Quiz introducido
+        /// </summary>
+        /// <param name="idQuiz">El Quiz a eliminar</param>
+        /// <returns>Retorna true si se pudo eliminar el registro de lo contrario retorna false</returns>
         public bool delete(int idQuiz)
         {
             Conexion conexion = new Conexion();
@@ -63,7 +77,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Actualiza el registro del Quiz en base al Id del Quiz introducido
+        /// </summary>
+        /// <param name="e">Recibe un Quiz con los nuevos datos a actualizar</param>
+        /// <returns>Retorna true en caso de actualizar de lo contrario retorna false</returns>
         public bool update(Quiz q)
         {
             Conexion conexion = new Conexion();
@@ -84,7 +102,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Inserta un Quiz 
+        /// </summary>
+        /// <param name="i">El nuevo Quiz a insertar</param>
+        /// <returns>Retorna true si se pudo insertar el registro de lo contrario retorna false</returns>
         public bool insert(Quiz q)
         {
             try

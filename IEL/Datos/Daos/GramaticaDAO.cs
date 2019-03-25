@@ -13,7 +13,10 @@ namespace Datos.Daos
 {
    public class GramaticaDAO
     {
-
+        /// <summary>
+        /// Obtiene todos los registros almacenados en la tabla Gramatica
+        /// </summary>
+        /// <returns>Una lista de tipo Gramatica</returns>
         public List<Gramatica> getAll()
         {
             List<Gramatica> lista = new List<Gramatica>();
@@ -34,7 +37,11 @@ namespace Datos.Daos
             }
             return lista;
         }
-
+        /// <summary>
+        /// Obtiene una Gramatica por Id
+        /// </summary>
+        /// <param name="ID">Id de la que se desea obtener su Gramatica</param>
+        /// <returns>Una Gramatica en base al Id</returns>
         public Gramatica getGramaticaByID(int ID)
         {
             Gramatica res;
@@ -49,7 +56,11 @@ namespace Datos.Daos
             res.Complemento = (string)row.ItemArray[3];
             return res;
         }
-
+        /// <summary>
+        /// Elimina el registro de la Gramatica en base al Id de la Gramatica introducida
+        /// </summary>
+        /// <param name="t">La Gramatica a eliminar</param>
+        /// <returns>Retorna true si se pudo eliminar el registro de lo contrario retorna false</returns>
         public bool delete(Gramatica t)
         {
             Conexion conexion = new Conexion();
@@ -70,7 +81,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Actualiza el registro de la Gramatica en base al Id de la Gramatica introducida
+        /// </summary>
+        /// <param name="e">Recibe una Gramatica con los nuevos datos a actualizar</param>
+        /// <returns>Retorna true en caso de actualizar de lo contrario retorna false</returns>
         public bool update(Gramatica e)
         {
             Conexion conexion = new Conexion();
@@ -93,7 +108,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Inserta un registro de Gramatica 
+        /// </summary>
+        /// <param name="i">La nueva Gramatica a insertar</param>
+        /// <returns>Retorna true si se pudo insertar el registro de lo contrario retorna false</returns>
         public bool insert(Gramatica i)
         {
             try

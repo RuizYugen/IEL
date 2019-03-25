@@ -12,6 +12,11 @@ namespace Datos.Daos
 {
     public class SujetoDAO
     {
+        /// <summary>
+        /// Obtiene todos los registros almacenados en la tabla Sujeto
+        /// </summary>
+        /// <returns>Una lista de tipo Sujeto</returns>
+
         public List<Sujeto> getAll()
         {
             List<Sujeto> lista = new List<Sujeto>();
@@ -34,6 +39,11 @@ namespace Datos.Daos
             }
             return lista;
         }
+        /// <summary>
+        /// Obtiene un Sujeto por ID
+        /// </summary>
+        /// <param name="ID">ID del que se desea obtener su Sujeto</param>
+        /// <returns>Un Sujeto del ID</returns>
         public Sujeto getSujetoByID(int ID)
         {
             Sujeto res;
@@ -50,7 +60,11 @@ namespace Datos.Daos
             res.Sucesivo = (String)row.ItemArray[5];
             return res;
         }
-
+        /// <summary>
+        /// Elimina el registro del Sujeto en base al Id del Sujeto introducido
+        /// </summary>
+        /// <param name="IdSujeto">El Sujeto a eliminar</param>
+        /// <returns>Retorna true si se pudo eliminar el registro de lo contrario retorna false</returns>
         public bool delete(int IdSujeto)
         {
             Conexion conexion = new Conexion();
@@ -71,7 +85,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Actualiza el registro del Sujeto en base al Id del Sujeto introducido
+        /// </summary>
+        /// <param name="s">Recibe un Sujeto con los nuevos datos a actualizar</param>
+        /// <returns>Retorna true en caso de actualizar de lo contrario retorna false</returns>
         public bool update(Sujeto s)
         {
             Conexion conexion = new Conexion();
@@ -94,7 +112,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Inserta un registro de Sujeto 
+        /// </summary>
+        /// <param name="s">El nuevo Sujeto a insertar</param>
+        /// <returns>Retorna true si se pudo insertar el registro de lo contrario retorna false</returns>
         public bool insert(Sujeto s)
         {
             try

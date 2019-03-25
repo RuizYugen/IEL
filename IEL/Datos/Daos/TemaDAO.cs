@@ -11,6 +11,10 @@ namespace Datos.Daos
 {
     public class TemaDAO
     {
+        /// <summary>
+        /// Obtiene todos los registros almacenados en la tabla Tema
+        /// </summary>
+        /// <returns>Una lista de tipo Tema</returns>
         public List<Tema> getAll()
         {
             List<Tema> lista = new List<Tema>();
@@ -33,7 +37,11 @@ namespace Datos.Daos
             }
             return lista;
         }
-
+        /// <summary>
+        /// Obtiene un Tema por Id
+        /// </summary>
+        /// <param name="Id">Id del que se desea obtener su Tema</param>
+        /// <returns>Un Tema del Id</returns>
         public Tema getTemaByID(int Id)
         {
             Tema t;
@@ -51,7 +59,11 @@ namespace Datos.Daos
             t.Dificultad = (int)row.ItemArray[5];
             return t;
         }
-
+        /// <summary>
+        /// Elimina el registro del Tema en base al Id del Tema introducido
+        /// </summary>
+        /// <param name="IdTema">El Tema a eliminar</param>
+        /// <returns>Retorna true si se pudo eliminar el registro de lo contrario retorna false</returns>
         public bool delete(int  IdTema)
         {
             Conexion conexion = new Conexion();
@@ -72,7 +84,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Actualiza el registro del Tema en base al Id del Tema introducido
+        /// </summary>
+        /// <param name="t">Recibe un Tema con los nuevos datos a actualizar</param>
+        /// <returns>Retorna true en caso de actualizar de lo contrario retorna false</returns>
         public bool update(Tema t)
         {
             Conexion conexion = new Conexion();
@@ -95,7 +111,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Inserta un registro de Tema 
+        /// </summary>
+        /// <param name="t">El nueva Tema a insertar</param>
+        /// <returns>Retorna true si se pudo insertar el registro de lo contrario retorna false</returns>
         public bool insert(Tema t)
         {
             try
