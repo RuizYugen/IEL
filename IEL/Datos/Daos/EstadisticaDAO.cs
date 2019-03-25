@@ -20,7 +20,7 @@ namespace Datos.Daos
             DataSet datos = con.LLenaComboGrid("SELECT * FROM Estadistica"+";");
             DataTable dt = datos.Tables[0];
             Estadistica e;
-            foreach (DataRow r in dt.Rows)
+            foreach (DataRow r in dt.Rows) 
             {
 
                 e = new Estadistica();

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
-
+using Datos.Daos;
+using Datos.Modelo;
 namespace IEL.Servicios
 {
     /// <summary>
@@ -16,11 +17,7 @@ namespace IEL.Servicios
     // [System.Web.Script.Services.ScriptService]
     public class wsQuiz : System.Web.Services.WebService
     {
+        
 
-        [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hello World";
-        }
     }
 }
