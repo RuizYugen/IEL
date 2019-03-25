@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Datos.Modelo
 {
+    /// <summary>
+    /// Representa la relación entre las preguntas que el usuario contestó y si contestó de manera correcta o incorrecta.
+    /// </summary>
    public class PreguntaContestadaPorUsuaruio
     {
         public String User { get; set; }
