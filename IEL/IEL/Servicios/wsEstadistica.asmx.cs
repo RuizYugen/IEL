@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Services;
 using Datos.Daos;
 using Datos.Modelo;
+using Newtonsoft.Json;
 
 namespace IEL.Servicios
 {
@@ -45,6 +46,25 @@ namespace IEL.Servicios
                 FechaInicio = new DateTime(anio, mes, dia)
             };
             return dao.update(obj);
+        }
+
+        [WebMethod]
+        public bool delete(int id)
+        {
+            EstadisticaDAO dao = new EstadisticaDAO();
+            Estadistica obj = new Estadistica()
+            {
+                IdEstadistica = id
+            };
+            return dao.delete(obj);
+        }
+
+        [WebMethod]
+        public string getEstadisticaByUser(string user)
+        {
+            EstadisticaDAO dao = new EstadisticaDAO();
+            string json = JsonConvert.SerializeObject(dao.getEstadisticaByUser(user), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return json;
         }
     }
 }

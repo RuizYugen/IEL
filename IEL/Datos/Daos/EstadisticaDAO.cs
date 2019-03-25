@@ -37,7 +37,7 @@ namespace Datos.Daos
         {
             Estadistica res;
             Conexion conexion = new Conexion();
-            DataSet datos = conexion.LLenaComboGrid("SELECT * FROM Estadistica WHERE User like '" + User + "';");
+            DataSet datos = conexion.LLenaComboGrid("SELECT * FROM Estadistica WHERE User like '"+User+"';");
             DataTable dt = datos.Tables[0];
             res = new Estadistica();
             DataRow row = dt.Rows[0];
@@ -65,7 +65,7 @@ namespace Datos.Daos
                 conexion.EjecutaSQLComando(sqlcom);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
                 return false;
@@ -80,9 +80,10 @@ namespace Datos.Daos
 
             try
             {
-                String SQL = "DELETE FROM Estadistica WHERE" + " IdEstadistica=" + t.IdEstadistica+";";
+                String SQL = "DELETE FROM Estadistica WHERE IdEstadistica=@id;";
                 MySqlCommand sqlcom = new MySqlCommand();
                 sqlcom.CommandText = SQL;
+                sqlcom.Parameters.AddWithValue("@id",t.IdEstadistica);
                 conexion.EjecutaSQLComando(sqlcom);
                 return true;
             }

@@ -484,7 +484,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Vistas\" />
+    <Folder Include="Vistas\CSS\" />
+    <Folder Include="Vistas\IMG\" />
+    <Folder Include="Vistas\JS\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
