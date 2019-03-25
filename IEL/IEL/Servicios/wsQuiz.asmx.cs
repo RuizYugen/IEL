@@ -18,6 +18,7 @@ namespace IEL.Servicios
     [System.Web.Script.Services.ScriptService]
     public class wsQuiz : System.Web.Services.WebService
     {
+        
 
         [WebMethod]
         public string getAll()

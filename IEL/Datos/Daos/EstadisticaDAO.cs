@@ -24,7 +24,7 @@ namespace Datos.Daos
             DataSet datos = con.LLenaComboGrid("SELECT * FROM Estadistica"+";");
             DataTable dt = datos.Tables[0];
             Estadistica e;
-            foreach (DataRow r in dt.Rows)
+            foreach (DataRow r in dt.Rows) 
             {
 
                 e = new Estadistica();
@@ -67,15 +67,17 @@ namespace Datos.Daos
             
             try
             {
-                String SQL = "UPDATE Estadistica SET"+
-                    " IdEstadistica=" + e.IdEstadistica + ",User=" + e.User + ",FechaInicio=" + e.FechaInicio + ",Nivel=" + e.Nivel + 
-                    " WHERE IdEstadistica=" + e.IdEstadistica + ";";
+                String SQL = "UPDATE Estadistica SET User=@user,FechaInicio=@fecha,Nivel=@nivel WHERE IdEstadistica=@id;";
                 MySqlCommand sqlcom = new MySqlCommand();
                 sqlcom.CommandText = SQL;
+                sqlcom.Parameters.AddWithValue("@user", e.User);
+                sqlcom.Parameters.AddWithValue("@fecha", e.getFechaFormatoSQL());
+                sqlcom.Parameters.AddWithValue("@nivel", e.Nivel);
+                sqlcom.Parameters.AddWithValue("@id", e.IdEstadistica);
                 conexion.EjecutaSQLComando(sqlcom);
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 return false;

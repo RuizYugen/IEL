@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Datos.Modelo
 {
+    /// <summary>
+    /// Representa un verbo en su forma infinitiva y en todos los tiempos.
+    /// Como atributos se tiene el identificador del verbo, el verbo en idioma español, el verbo en pasado simple y el verbo en pasado participio.
+    /// </summary>
    public class Verbo
     {
         public int IdVerbo { get; set; }
