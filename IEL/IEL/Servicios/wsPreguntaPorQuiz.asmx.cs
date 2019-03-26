@@ -18,28 +18,44 @@ namespace IEL.Servicios
     [System.Web.Script.Services.ScriptService]
     public class wsPreguntaPorQuiz : System.Web.Services.WebService
     {
-
+        /// <summary>
+        /// Obtine todos los registros de la tabla preguntaporquiz
+        /// </summary>
+        /// <returns>Retorna una cadena con todos los registros en formato json</returns>
         [WebMethod]
         public string getAll()
         {
             PreguntaPorQuizDAO dao = new PreguntaPorQuizDAO();
             List<PreguntaPorQuiz> lista = dao.getAll();
-            String strJSON = JsonConvert.SerializeObject(lista, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            String strJSON = JsonConvert.SerializeObject(lista, new JsonSerializerSettings
+            { NullValueHandling = NullValueHandling.Ignore });
             return strJSON;
         }
 
+        /// <summary>
+        /// Obtiene un registro de la tabla preguntaquiz
+        /// </summary>
+        /// <param name="IdPreguntaQuiz">id de la preguntaquiz</param>
+        /// <returns>Retorna una cadena con el registro en formato json</returns>
         [WebMethod]
         public String getPreguntaPorQuizByID(int IdPreguntaQuiz)
         {
             PreguntaPorQuizDAO dao = new PreguntaPorQuizDAO();
             PreguntaPorQuiz res = dao.getPreguntaPorQuizByID(IdPreguntaQuiz);
             String strJSON;
-            strJSON = JsonConvert.SerializeObject(res, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            strJSON = JsonConvert.SerializeObject(res, new JsonSerializerSettings
+            { NullValueHandling = NullValueHandling.Ignore });
             return strJSON;
         }
 
+        /// <summary>
+        /// Inserta un registro en la tabla preguntaquiz
+        /// </summary>
+        /// <param name="idPregunta">id de la pregunta</param>
+        /// <param name="idQuiz">id del quiz</param>
+        /// <returns>Retorna si se inserto el registro correctamente</returns>
         [WebMethod]
-        public bool insert2(int idPregunta,int idQuiz)
+        public bool insert(int idPregunta,int idQuiz)
         {
             bool result = false;
             PreguntaPorQuizDAO dao = new PreguntaPorQuizDAO();
@@ -48,8 +64,13 @@ namespace IEL.Servicios
             return result;
         }
 
+        /// <summary>
+        /// Elimina un registro de la tabla preguntaquiz
+        /// </summary>
+        /// <param name="IdPreguntaQuiz">id de la preguntaquiz</param>
+        /// <returns>Retorna si se elimino el registro correctamente</returns>
         [WebMethod]
-        public bool delete2(int IdPreguntaQuiz)
+        public bool delete(int IdPreguntaQuiz)
         {
             bool result = false;
             PreguntaPorQuizDAO dao = new PreguntaPorQuizDAO();
@@ -58,8 +79,15 @@ namespace IEL.Servicios
             return result;
         }
 
+        /// <summary>
+        /// Actualiza un registro de la tabla preguntaquiz
+        /// </summary>
+        /// <param name="IdPreguntaQuiz"></param>
+        /// <param name="idPregunta">id de la pregunta</param>
+        /// <param name="idQuiz">id del quiz</param>
+        /// <returns>Retorna si se actualizo el registro correctamente</returns>
         [WebMethod]
-        public bool update2(int IdPreguntaQuiz,int IdPregunta,int IdQuiz)
+        public bool update(int IdPreguntaQuiz,int IdPregunta,int IdQuiz)
         {
             bool result = false;
             PreguntaPorQuizDAO dao = new PreguntaPorQuizDAO();

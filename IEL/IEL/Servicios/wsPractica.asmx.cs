@@ -16,11 +16,63 @@ namespace IEL.Servicios
     // [System.Web.Script.Services.ScriptService]
     public class wsPractica : System.Web.Services.WebService
     {
-
+        /// <summary>
+        /// Obtine todos los registros de la practica
+        /// </summary>
+        /// <returns>Retorna una cadena con todos los registros en formato json</returns>
         [WebMethod]
-        public string HelloWorld()
+        public string getAll()
         {
             return "Hello World";
+        }
+        /// <summary>
+        /// Obtine un registro de la tabla practica
+        /// </summary>
+        /// <param name="id">id de practica</param>
+        /// <returns>Retorna un a cadena con el registro en formato json</returns>
+        [WebMethod]
+        public string getByID(int id)
+        {
+            return "";
+        }
+
+        /// <summary>
+        /// Inserta un registro en la tabla practica
+        /// </summary>
+        /// <param name="id">id de la practica</param>
+        /// <param name="correctas">respuestascorrectas de la practica</param>
+        /// <param name="idtema">id del tema</param>
+        /// <param name="user">user del usuario</param>
+        /// <returns></returns>
+        [WebMethod]
+        public bool insert(int id,int correctas,int idtema,string user)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// Actualiza un registro en la tabla practica
+        /// </summary>
+        /// <param name="id">id de la practica</param>
+        /// <param name="correctas">respuestascorrectas de la practica</param>
+        /// <param name="idtema">id del tema</param>
+        /// <param name="user">user del usuario</param>
+        /// <returns></returns>
+        [WebMethod]
+        public bool update(int id, int correctas, int idtema, string user)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// Elimina un regsitro de la tabla practica
+        /// </summary>
+        /// <param name="idTema">id del tema</param>
+        /// <returns>Rerorna si se elimino el registro correctamente</returns>
+        [WebMethod]
+        public bool delete(int id)
+        {
+            return true;
         }
     }
 }

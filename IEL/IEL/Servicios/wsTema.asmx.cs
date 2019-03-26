@@ -18,7 +18,10 @@ namespace IEL.Servicios
     [System.Web.Script.Services.ScriptService]
     public class wsTema : System.Web.Services.WebService
     {
-
+        /// <summary>
+        /// Obtine todos los registros de la tabla tema
+        /// </summary>
+        /// <returns>Retorna una cadena con todos los registros en formato json</returns>
         [WebMethod]
         public string getAll()
         {
@@ -28,42 +31,75 @@ namespace IEL.Servicios
             return strJSON;
         }
 
+        /// <summary>
+        /// Obtiene un registro de la tabla tema
+        /// </summary>
+        /// <param name="ID">id del tema</param>
+        /// <returns>Retorna una cadena con el registro en formato json</returns>
         [WebMethod]
         public String getTemaByID(int ID)
         {
             TemaDAO dao = new TemaDAO();
             Tema res = dao.getTemaByID(ID);
             String strJSON;
-            strJSON = JsonConvert.SerializeObject(res, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            strJSON = JsonConvert.SerializeObject(res, new JsonSerializerSettings
+            { NullValueHandling = NullValueHandling.Ignore });
             return strJSON;
         }
 
+        /// <summary>
+        /// Inserta un registro de la tabla tema
+        /// </summary>
+        /// <param name="NombreTraduccion">nombreTraduccion del tema</param>
+        /// <param name="NombreIngles">nombreIngles del tema</param>
+        /// <param name="ContenidoTraduccion">Contenidotraducion del tema</param>
+        /// <param name="ContenidoIngles">ContenidoIngles del tema</param>
+        /// <param name="Dificultad">Dificultad del tema</param>
+        /// <returns>Retorna si se inserto registro correctamente </returns>
         [WebMethod]
-        public bool insert2(String NombreTraduccion, String NombreIngles, String ContenidoTraduccion, String ContenidoIngles, int Dificultad)
+        public bool insert(String NombreTraduccion, String NombreIngles, 
+            String ContenidoTraduccion, String ContenidoIngles, int Dificultad)
         {
             bool result = false;
             TemaDAO dao = new TemaDAO();
-            Tema obj = new Tema() {NombreTraduccion=NombreTraduccion,NombreIngles=NombreIngles,ContenidoIngles=ContenidoIngles,ContenidoTraduccion=ContenidoTraduccion,Dificultad=Dificultad };
+            Tema obj = new Tema() {NombreTraduccion=NombreTraduccion,NombreIngles=NombreIngles,
+                ContenidoIngles =ContenidoIngles,ContenidoTraduccion=ContenidoTraduccion,Dificultad=Dificultad };
             result = dao.insert(obj);
             return result;
         }
-
+        
+        /// <summary>
+        /// Elimina un registro de la tabla tema
+        /// </summary>
+        /// <param name="idTema">Id del tema</param>
+        /// <returns>Retorna si se elimino el registro correctamente</returns>
         [WebMethod]
-        public bool delete2(int idTema)
+        public bool delete(int idTema)
         {
             bool result = false;
             TemaDAO dao = new TemaDAO();
-            //Tema obj = new Tema() { IdTema = idTema, NombreTraduccion = NombreTraduccion, NombreIngles = NombreIngles, ContenidoIngles = ContenidoIngles, ContenidoTraduccion = ContenidoTraduccion, Dificultad = Dificultad };
             result = dao.delete(idTema);
             return result;
         }
 
+        /// <summary>
+        /// Actualiza un registro de la tabla tema
+        /// </summary>
+        /// <param name="idTema">Id del tema</param>
+        /// <param name="NombreTraduccion">nombreTraduccion del tema</param>
+        /// <param name="NombreIngles">nombreIngles del tema</param>
+        /// <param name="ContenidoTraduccion">Contenidotraducion del tema</param>
+        /// <param name="ContenidoIngles">ContenidoIngles del tema</param>
+        /// <param name="Dificultad">Dificultad del tema</param>
+        /// <returns>Retorna si se actualizo registro correctamente </returns>
         [WebMethod]
-        public bool update2(int idTema, String NombreTraduccion, String NombreIngles, String ContenidoTraduccion, String ContenidoIngles, int Dificultad)
+        public bool update(int idTema, String NombreTraduccion, String NombreIngles, 
+            String ContenidoTraduccion, String ContenidoIngles, int Dificultad)
         {
             bool result = false;
             TemaDAO dao = new TemaDAO();
-            Tema obj = new Tema() { IdTema = idTema, NombreTraduccion = NombreTraduccion, NombreIngles = NombreIngles, ContenidoIngles = ContenidoIngles, ContenidoTraduccion = ContenidoTraduccion, Dificultad = Dificultad };
+            Tema obj = new Tema() { IdTema = idTema, NombreTraduccion = NombreTraduccion, NombreIngles = NombreIngles,
+                ContenidoIngles = ContenidoIngles, ContenidoTraduccion = ContenidoTraduccion, Dificultad = Dificultad };
             result = dao.update(obj);
             return result;
         }

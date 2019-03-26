@@ -17,11 +17,60 @@ namespace IEL.Servicios
     // [System.Web.Script.Services.ScriptService]
     public class wsPreguntaContestadaPorUsuario : System.Web.Services.WebService
     {
-
+        /// <summary>
+        /// Obtine todos los registros de la preguntascontestadosporusuario
+        /// </summary>
+        /// <returns>Retorna una cadena con todos los registros en formato json</returns>
         [WebMethod]
-        public string HelloWorld()
+        public string getAll()
         {
             return "Hello World";
+        }
+
+        /// <summary>
+        /// Obtine un registro de la tabla preguntascontestadosporusuario
+        /// </summary>
+        /// <param name="id">id de preguntascontestadosporusuario</param>
+        /// <returns>Retorna un a cadena con el registro en formato json</returns>
+        [WebMethod]
+        public string getByID(int id)
+        {
+            return "";
+        }
+
+        /// <summary>
+        /// Inserta un registro de la tabla preguntascontestadosporusuario
+        /// </summary>
+        /// <param name="idTema">id del tema</param>
+        /// <param name="idGramtica">id de la gramatica</param>
+        /// <returns>Retorna si se inserto el registro correctamente</returns>
+        [WebMethod]
+        public bool insert(int idTema, int idGramtica)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// Actualiza un registro de la tabla preguntascontestadosporusuario
+        /// </summary>
+        /// <param name="idTema">id del tema</param>
+        /// <param name="idGramtica">id de la gramatica</param>
+        /// <returns>Retorna si se actualizo el registro correctamente</returns>
+        [WebMethod]
+        public bool update(int idTema, int idGramtica)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// Elimina un regsitro de la tabla preguntascontestadasportema
+        /// </summary>
+        /// <param name="idTema">is del tema</param>
+        /// <returns>Rerorna si se elimino el registro</returns>
+        [WebMethod]
+        public bool delete(int idTema)
+        {
+            return true;
         }
     }
 }

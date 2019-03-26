@@ -19,7 +19,10 @@ namespace IEL.Servicios
     public class wsQuiz : System.Web.Services.WebService
     {
         
-
+        /// <summary>
+        /// Obtine todos los registros de la tabla quiz
+        /// </summary>
+        /// <returns>Retorna una cadena con los registros en formato json</returns>
         [WebMethod]
         public string getAll()
         {
@@ -29,6 +32,11 @@ namespace IEL.Servicios
             return strJSON;
         }
 
+        /// <summary>
+        /// Obtine un registro de la tabla quiz
+        /// </summary>
+        /// <param name="ID">Id del quiz</param>
+        /// <returns>Retorna una cadena con el registro en formato json</returns>
         [WebMethod]
         public String getQuizByID(int ID)
         {
@@ -39,8 +47,13 @@ namespace IEL.Servicios
             return strJSON;
         }
 
+        /// <summary>
+        /// Inserta un registro en la tabla quiz
+        /// </summary>
+        /// <param name="Nombre">nombre del quiz</param>
+        /// <returns>Retorna si se inserto el registro correctamente</returns>
         [WebMethod]
-        public bool insert2(String Nombre)
+        public bool insert(String Nombre)
         {
             bool result = false;
             QuizDAO dao = new QuizDAO();
@@ -49,18 +62,28 @@ namespace IEL.Servicios
             return result;
         }
 
+        /// <summary>
+        /// Elimina un registro de la tabla quiz
+        /// </summary>
+        /// <param name="idQuiz">Id del quiz</param>
+        /// <returns>Retorna si se elimino el registro correctamente</returns>
         [WebMethod]
-        public bool delete2(int idQuiz)
+        public bool delete(int idQuiz)
         {
             bool result = false;
-            QuizDAO dao = new QuizDAO();
-            //Sujeto obj = new Sujeto() { IdSujeto = idSujeto, Objeto = Objeto, Posesivo = Posesivo, Sucesivo = Sucesivo, sujeto = sujeto, SujetoTraducido = sujetoTraducido };
+            QuizDAO dao = new QuizDAO();           
             result = dao.delete(idQuiz);
             return result;
         }
 
+        /// <summary>
+        /// Actualiza un registro de la tabla quiz
+        /// </summary>
+        /// <param name="idQuiz"></param>
+        /// <param name="Nombre">nombre del quiz</param>
+        /// <returns>Retorna si se actualizo el registro correctamente</returns>
         [WebMethod]
-        public bool update2(int idQuiz,String Nombre)
+        public bool update(int idQuiz,String Nombre)
         {
             bool result = false;
             QuizDAO dao = new QuizDAO();
