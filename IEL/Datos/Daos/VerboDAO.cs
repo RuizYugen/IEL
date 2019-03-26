@@ -12,6 +12,10 @@ namespace Datos.Daos
 {
     public class VerboDAO
     {
+        /// <summary>
+        /// Obtiene todos los registros almacenados en la tabla Verbo
+        /// </summary>
+        /// <returns>Una lista de tipo Verbo</returns>
         public List<Verbo> getAll()
         {
             List<Verbo> lista = new List<Verbo>();
@@ -33,7 +37,11 @@ namespace Datos.Daos
             }
             return lista;
         }
-
+        /// <summary>
+        /// Elimina el registro del Verbo en base al Id del Verbo introducida
+        /// </summary>
+        /// <param name="IdVerbo">El Verbo a eliminar</param>
+        /// <returns>Retorna true si se pudo eliminar el registro de lo contrario retorna false</returns>
         public bool delete(int IdVerbo)
         {
             Conexion conexion = new Conexion();
@@ -54,7 +62,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Obtiene un Verbo por ID
+        /// </summary>
+        /// <param name="ID">ID del que se desea obtener su Verbo</param>
+        /// <returns>Un Verbo del ID</returns>
         public Verbo getVerboByID(int ID)
         {
             Verbo res;
@@ -70,7 +82,11 @@ namespace Datos.Daos
             res.VerboPasadoParticipio = (string)row.ItemArray[4];            
             return res;
         }
-
+        /// <summary>
+        /// Actualiza el registro del Verbo en base al Id del Verbo introducido
+        /// </summary>
+        /// <param name="e">Recibe un Verbo con los nuevos datos a actualizar</param>
+        /// <returns>Retorna true en caso de actualizar de lo contrario retorna false</returns>
         public bool update(Verbo e)
         {
             Conexion conexion = new Conexion();
@@ -93,7 +109,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Inserta un registro de Verbo 
+        /// </summary>
+        /// <param name="i">El nuevo Verbo a insertar</param>
+        /// <returns>Retorna true si se pudo insertar el registro de lo contrario retorna false</returns>
         public bool insert(Verbo i)
         {
             try
