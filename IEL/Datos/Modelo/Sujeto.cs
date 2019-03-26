@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Datos.Modelo
 {
     /// <summary>
-    /// Representa cada uno de los sujetos gramáticales.
+    /// Representa cada uno de los sujetos gramaticales.
     /// Cada registro cuenta con un identificador del sujeto, el sujeto en idioma español, el sujeto en idioma inglés,
     /// el objeto correspondiente al sujeto, el posesivo correspondiente al sujeto y el sucesivo correspondiente al sujeto.
     /// </summary>
