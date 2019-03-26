@@ -12,6 +12,10 @@ namespace Datos.Daos
 {
     public class PreguntaContestadaPorUsuaruioDAO
     {
+        /// <summary>
+        /// Obtiene todos los registros almacenados en la tabla Pregunta contestada por usuario
+        /// </summary>
+        /// <returns>Una lista de tipo pregunta contestada por usuario</returns>
         public List<PreguntaContestadaPorUsuaruio> getAll()
         {
             List<PreguntaContestadaPorUsuaruio> lista = new List<PreguntaContestadaPorUsuaruio>();
@@ -31,7 +35,11 @@ namespace Datos.Daos
             }
             return lista;
         }
-
+        /// <summary>
+        /// Obtiene una Estadistica por ID
+        /// </summary>
+        /// <param name="ID">ID de la Pregunta contestada por el usuario</param>
+        /// <returns>Una Pregunta contestada del Usuario</returns>
         public PreguntaContestadaPorUsuaruio getPreguntaContestadaPorUsuaruioByID(int ID)
         {
             PreguntaContestadaPorUsuaruio res;
@@ -45,7 +53,11 @@ namespace Datos.Daos
             res.Contesto = (string)row.ItemArray[2];            
             return res;
         }
-
+        /// <summary>
+        /// Elimina el registro de la Pregunta en base al Id de la Pregunta contestada por el usuario
+        /// </summary>
+        /// <param name="t">La pregunta contestada por el usuario</param>
+        /// <returns>Retorna true si se pudo eliminar el registro de lo contrario retorna false</returns>
         public bool delete(PreguntaContestadaPorUsuaruio t)
         {
             Conexion conexion = new Conexion();
@@ -66,7 +78,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Actualiza el registro de la Pregunta en base al Id de la Pregunta contestada por el usuario
+        /// </summary>
+        /// <param name="e">Recibe una Pregunta contestada por el usuario con los nuevos datos a actualizar</param>
+        /// <returns>Retorna true en caso de actualizar de lo contrario retorna false</returns>
         public bool update(PreguntaContestadaPorUsuaruio e)
         {
             Conexion conexion = new Conexion();
@@ -89,7 +105,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Inserta un registro de Pregunta contestada por usuario 
+        /// </summary>
+        /// <param name="i">La nueva Pregunta contestada por el usuario a insertar</param>
+        /// <returns>Retorna true si se pudo insertar el registro de lo contrario retorna false</returns>
         public bool insert(PreguntaContestadaPorUsuaruio i)
         {
             try

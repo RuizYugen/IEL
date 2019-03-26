@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Datos.Modelo
 {
+    /// <summary>
+    /// Representa cada usuario registrado.
+    /// Cada usuario tiene como atrubutos su nombre de usuario, contraseña, nombre completo, correo, foto y privilgios.
+    /// </summary>
    public class Usuario
     {
         public String User { get; set; }

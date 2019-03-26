@@ -11,6 +11,10 @@ namespace Datos.Daos
 {
     public class PreguntaPorQuizDAO
     {
+        /// <summary>
+        /// Obtiene todos los registros almacenados en la tabla Pregunta por Quiz
+        /// </summary>
+        /// <returns>Una lista de tipo Pregunta por Quiz</returns>
         public List<PreguntaPorQuiz> getAll()
         {
             List<PreguntaPorQuiz> lista = new List<PreguntaPorQuiz>();
@@ -30,7 +34,11 @@ namespace Datos.Daos
             }
             return lista;
         }
-
+        /// <summary>
+        /// Obtiene una Pregunta por Quiz por ID
+        /// </summary>
+        /// <param name="ID">ID del que se desea obtener su Pregunta por Quiz</param>
+        /// <returns>Una Pregunta por Quiz del ID</returns>
         public PreguntaPorQuiz getPreguntaPorQuizByID(int ID)
         {
             PreguntaPorQuiz res;
@@ -44,7 +52,11 @@ namespace Datos.Daos
             res.IdQuiz = (int)row.ItemArray[2];          
             return res;
         }
-
+        /// <summary>
+        /// Elimina el registro de la Pregunta Quiz en base al IdPreguntaQuiz de la Pregunta Quiz introducida
+        /// </summary>
+        /// <param name="IdPreguntaQuiz">El Id de la pregunta Quiz</param>
+        /// <returns>Retorna true si se pudo eliminar el registro de lo contrario retorna false</returns>
         public bool delete(int IdPreguntaQuiz)
         {
             Conexion conexion = new Conexion();
@@ -65,7 +77,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Actualiza el registro de la Pregunta Quiz en base a la PreguntaQuiz introducida
+        /// </summary>
+        /// <param name="e">Recibe una PreguntaQuiz con los nuevos datos a actualizar</param>
+        /// <returns>Retorna true en caso de actualizar de lo contrario retorna false</returns>
         public bool update(PreguntaPorQuiz e)
         {
             Conexion conexion = new Conexion();
@@ -87,7 +103,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Inserta un registro de preguntaPorQuiz 
+        /// </summary>
+        /// <param name="i">La nueva PreguntaPorQuiz a insertar</param>
+        /// <returns>Retorna true si se pudo insertar el registro de lo contrario retorna false</returns>
         public bool insert(PreguntaPorQuiz i)
         {
             try

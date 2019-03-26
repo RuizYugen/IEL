@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Datos.Modelo
 {
+    /// <summary>
+    /// Representa la estructura de una pregunta.
+    /// Contiene un identificador de la pregunta, la respuesta correcta y tres respuestas incorrectas. 
+    /// </summary>
    public class Pregunta
     {
         public int idPregunta { get; set; }

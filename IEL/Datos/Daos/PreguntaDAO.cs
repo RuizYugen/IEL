@@ -11,6 +11,10 @@ namespace Datos.Daos
 {
     public class PreguntaDAO
     {
+        /// <summary>
+        /// Obtiene todos los registros almacenados en la tabla Pregunta
+        /// </summary>
+        /// <returns>Una lista de tipo Pregunta</returns>
         public List<Pregunta> getAll()
         {
             List<Pregunta> lista = new List<Pregunta>();
@@ -33,7 +37,11 @@ namespace Datos.Daos
             }
             return lista;
         }
-
+        /// <summary>
+        /// Obtiene una Pregunta por ID
+        /// </summary>
+        /// <param name="ID">ID del que se desea obtener su Pregunta</param>
+        /// <returns>Una Pregunta</returns>
         public Pregunta getPreguntaByID(int ID)
         {
             Pregunta res;
@@ -50,7 +58,11 @@ namespace Datos.Daos
             res.RespuestaIncorrecta3 = (string)row.ItemArray[5];
             return res;
         }
-
+        /// <summary>
+        /// Elimina el registro de la Pregunta en base al Id de la Pregunta introducida
+        /// </summary>
+        /// <param name="idPregunta">El Id de la pregunta a eliminar</param>
+        /// <returns>Retorna true si se pudo eliminar el registro de lo contrario retorna false</returns>
         public bool delete(int idPregunta)
         {
             Conexion conexion = new Conexion();
@@ -71,7 +83,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Actualiza el registro de la Pregunta en base al Id de la Pregunta introducida
+        /// </summary>
+        /// <param name="e">Recibe una Pregunta con los nuevos datos a actualizar</param>
+        /// <returns>Retorna true en caso de actualizar de lo contrario retorna false</returns>
         public bool update(Pregunta e)
         {
             Conexion conexion = new Conexion();
@@ -93,7 +109,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Inserta un registro de Pregunta 
+        /// </summary>
+        /// <param name="i">La nueva Pregunta a insertar</param>
+        /// <returns>Retorna true si se pudo insertar el registro de lo contrario retorna false</returns>
         public bool insert(Pregunta i)
         {
             try

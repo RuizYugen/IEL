@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using Datos.Daos;
+using Datos.Modelo;
 namespace IEL.Servicios
 {
     /// <summary>

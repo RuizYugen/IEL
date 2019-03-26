@@ -12,6 +12,10 @@ namespace Datos.Daos
 {
     public class EstadisticaDAO
     {
+        /// <summary>
+        /// Obtiene todos los registros almacenados en la tabla Estadistica
+        /// </summary>
+        /// <returns>Una lista de tipo Estadistica</returns>
         public List<Estadistica> getAll()
         {
             List<Estadistica> lista = new List<Estadistica>();
@@ -20,7 +24,7 @@ namespace Datos.Daos
             DataSet datos = con.LLenaComboGrid("SELECT * FROM Estadistica"+";");
             DataTable dt = datos.Tables[0];
             Estadistica e;
-            foreach (DataRow r in dt.Rows)
+            foreach (DataRow r in dt.Rows) 
             {
 
                 e = new Estadistica();
@@ -32,7 +36,11 @@ namespace Datos.Daos
             }
             return lista;
         }
-
+        /// <summary>
+        /// Obtiene una Estadistica por Usuario
+        /// </summary>
+        /// <param name="User">Usuario del que se desea obtener su estadistica</param>
+        /// <returns>Una Estadistica del Usuario</returns>
         public Estadistica getEstadisticaByUser(string User)
         {
             Estadistica res;
@@ -47,7 +55,11 @@ namespace Datos.Daos
             res.Nivel = (int)row.ItemArray[3];
             return res;
         }
-
+        /// <summary>
+        /// Actualiza el registro de la Estadistica en base al Id de la estadistica introducida
+        /// </summary>
+        /// <param name="e">Recibe una Estadistica con los nuevos datos a actualizar</param>
+        /// <returns>Retorna true en caso de actualizar de lo contrario retorna false</returns>
         public bool update(Estadistica e)
         {
             Conexion conexion = new Conexion();
@@ -72,7 +84,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Elimina el registro de la estadistica en base al Id de la estadistica introducida
+        /// </summary>
+        /// <param name="t">La estadistica a eliminar</param>
+        /// <returns>Retorna true si se pudo eliminar el registro de lo contrario retorna false</returns>
         public bool delete(Estadistica t)
         {
             Conexion conexion = new Conexion();
@@ -94,7 +110,11 @@ namespace Datos.Daos
             }
 
         }
-
+        /// <summary>
+        /// Inserta un registro de estadistica 
+        /// </summary>
+        /// <param name="i">La nueva estadistica a insertar</param>
+        /// <returns>Retorna true si se pudo insertar el registro de lo contrario retorna false</returns>
         public bool insert(Estadistica i)
         {
             try
