@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace IEL
+namespace IEL.Vistas
 {
-    public partial class _Default : Page
+    public partial class Index : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("Vistas/Index.aspx");
+
         }
     }
 }
