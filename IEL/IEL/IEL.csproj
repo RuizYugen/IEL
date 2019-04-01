@@ -289,10 +289,17 @@
     <Content Include="Servicios\wsVerbo.asmx" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Vistas\CSS\bootstrap-theme.css" />
+    <Content Include="Vistas\CSS\bootstrap-theme.min.css" />
+    <Content Include="Vistas\CSS\bootstrap.css" />
+    <Content Include="Vistas\CSS\bootstrap.min.css" />
     <Content Include="Vistas\CSS\cssHead.css" />
     <Content Include="Vistas\IMG\Logo.png" />
     <Content Include="Vistas\Index.aspx" />
+    <Content Include="Vistas\JS\bootstrap.js" />
+    <Content Include="Vistas\JS\bootstrap.min.js" />
     <Content Include="Vistas\JS\login.js" />
+    <Content Include="Vistas\JS\npm.js" />
     <Content Include="Vistas\Login.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -307,6 +314,10 @@
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
     <Content Include="Scripts\umd\popper-utils.js.map" />
     <Content Include="Scripts\README.md" />
+    <Content Include="Vistas\CSS\bootstrap-theme.css.map" />
+    <Content Include="Vistas\CSS\bootstrap-theme.min.css.map" />
+    <Content Include="Vistas\CSS\bootstrap.css.map" />
+    <Content Include="Vistas\CSS\bootstrap.min.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
