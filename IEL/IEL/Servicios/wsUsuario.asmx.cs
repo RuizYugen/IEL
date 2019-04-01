@@ -79,7 +79,7 @@ namespace IEL.Servicios
         /// <param name="User">user del usuario</param>
         /// <returns>Retorna si el registro se elimino correctamente</returns>
         [WebMethod]
-        public bool delete2(String User)
+        public bool delete(String User)
         {
             bool result = false;
             UsuarioDAO dao = new UsuarioDAO();          
@@ -100,7 +100,7 @@ namespace IEL.Servicios
         /// <param name="Privilegio">privilegio del usurio</param>
         /// <returns>Retorna si el registro fue insertado correctamente</returns>
         [WebMethod]
-        public bool update2(String User, String Password, String Nombre, String ApellidoPaterno, 
+        public bool update(String User, String Password, String Nombre, String ApellidoPaterno, 
             String ApellidoMaterno, String Correo, String Foto, String Privilegio)
         {
             bool result = false;
@@ -110,6 +110,22 @@ namespace IEL.Servicios
                 Foto = Foto, Privilegio = Privilegio };
             result = dao.update(obj);
             return result;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="User"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        [WebMethod]
+        public String getUsuarioByUserPassword(string User,string password)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            Usuario res = dao.getUsuarioByUser(User,password);
+            String strJSON;
+            strJSON = JsonConvert.SerializeObject(res, new JsonSerializerSettings
+            { NullValueHandling = NullValueHandling.Ignore });
+            return strJSON;
         }
     }
 }

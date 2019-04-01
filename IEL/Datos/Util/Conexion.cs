@@ -18,7 +18,7 @@ namespace Datos.Util
             String puerto = "3306";
             String usuario = "root";
             String password = "root";
-            String database = "itsurlearnenglish";
+            String database = "itsurenglishlearn";
 
             //Cadena de conexion
 
@@ -54,6 +54,28 @@ namespace Datos.Util
                 cnn.ConnectionString = GetConnectionString();
                 cnn.Open();
                 cmd.CommandText = mysql;
+                da.SelectCommand = cmd;
+                da.SelectCommand.Connection = cnn;
+                da.Fill(ds);
+            }
+            finally
+            {
+
+                cnn.Close();
+            }
+            return ds;
+        }
+
+        public DataSet LLenaComboGrid(MySqlCommand cmd)
+        {
+            DataSet ds = new DataSet();
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            MySqlConnection cnn = new MySqlConnection();           
+            try
+            {
+                cnn.ConnectionString = GetConnectionString();
+                cnn.Open();
+                //cmd.CommandText = mysql;
                 da.SelectCommand = cmd;
                 da.SelectCommand.Connection = cnn;
                 da.Fill(ds);
