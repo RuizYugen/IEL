@@ -294,6 +294,10 @@
     <Content Include="Vistas\CSS\bootstrap.css" />
     <Content Include="Vistas\CSS\bootstrap.min.css" />
     <Content Include="Vistas\CSS\cssHead.css" />
+    <Content Include="Vistas\CSS\CSSQuiz.css" />
+    <Content Include="Vistas\CSS\estadisticas.css" />
+    <Content Include="Vistas\EstadisticasForm.aspx" />
+    <Content Include="Vistas\IMG\learn.png" />
     <Content Include="Vistas\IMG\Logo.png" />
     <Content Include="Vistas\Index.aspx" />
     <Content Include="Vistas\JS\bootstrap.js" />
@@ -301,6 +305,7 @@
     <Content Include="Vistas\JS\login.js" />
     <Content Include="Vistas\JS\npm.js" />
     <Content Include="Vistas\Login.aspx" />
+    <Content Include="Vistas\QuizForm.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
@@ -535,6 +540,13 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\EstadisticasForm.aspx.cs">
+      <DependentUpon>EstadisticasForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\EstadisticasForm.aspx.designer.cs">
+      <DependentUpon>EstadisticasForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -555,6 +567,13 @@
     </Compile>
     <Compile Include="Vistas\PaginaMaestra.Master.designer.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\QuizForm.aspx.cs">
+      <DependentUpon>QuizForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\QuizForm.aspx.designer.cs">
+      <DependentUpon>QuizForm.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

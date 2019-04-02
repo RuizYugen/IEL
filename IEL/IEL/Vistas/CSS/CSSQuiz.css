@@ -1,0 +1,91 @@
+﻿body {
+    background-color:#91E0F2;
+    font-family:Arial;
+    font-size:20px;
+    color:black;
+    font-weight:600;
+}
+#titulo{
+    font-family:'calibri light';
+    font-size:37px;
+    background:linear-gradient(to bottom,#69E8B2 0%,#8FF4C9 100%);
+    height:100px;
+    color:black;
+    padding-top:30px;
+    margin-top:-20px;
+    border-color:#1B3280;
+    text-align:center;
+   
+}
+#centrarcoloreada{
+    text-align:center;
+}
+#coloreada{    
+    display:inline-block;
+}
+
+#textopregunta{
+    text-align:center;
+}
+
+#centraropciones{
+    text-align:center;
+}
+
+#opciones{
+    display:inline-block;
+}
+
+#contenido{    width: 1052px;
+}
+
+.sinContestarColor{
+    margin-top:10px;
+    background-color:#9999FF;
+    border-color:#1B3280;
+    width: 95px;
+    height: 40px;
+}
+.contestadasColor{
+    margin-top:10px;
+    background-color:#6666CC;
+    border-color:#1B3280;
+    width: 76px;
+    height: 40px;
+}
+#Button1{
+    padding-top:-20px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+.botonRespuesta{
+    height:40px;
+    border-color:#CCCCCC;
+    color:#CC33CC;
+    font-family:Verdana;
+    font-weight:bold;
+    cursor:pointer;
+     background:linear-gradient(to bottom,#CCFFFF 0%,#FFFFFF 100%);
+     border-radius:10px;
+     width:97%;
+     height:31%;     
+
+}
+.botonRespuesta:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  box-shadow: 5px 10px #6666CC;
+}
+
+#btnNext{
+    background:#ffffff;
+    border-color:#CC33CC;
+    color:#993399;
+     border-radius:10px;
+     cursor:pointer;
+    font-family:Verdana;
+    font-weight:bold;
+    height:30px;
+
+}
