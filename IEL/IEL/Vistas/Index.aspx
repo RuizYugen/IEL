@@ -21,6 +21,7 @@
         .navbar {
             margin-bottom: 0;
             border-radius: 0;
+            height:100px;
         }
 
         /* Add a gray background color and some padding to the footer */
@@ -39,17 +40,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Portfolio</a>
+                <a class="navbar-brand" href="#"><img src="IMG/logo.png" class="logo"/></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
+                
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                    <li><a href="login.aspx">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -57,8 +53,8 @@
 
     <div class="jumbotron">
         <div class="container text-center">
-            <h1>My Portfolio</h1>
-            <p>Some text that represents "Me"...</p>
+            <h1>IEL</h1>
+            <p>ITSUR ENGLISH LEARN</p>
         </div>
     </div>
 
