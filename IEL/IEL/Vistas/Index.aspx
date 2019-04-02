@@ -9,19 +9,18 @@
     <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <style>
-        .head {
-            height: 10%;
-        }
-
+    <style>      
         .logo {
             width: 50px;
         }
         /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
+            margin-top:0;
             margin-bottom: 0;
             border-radius: 0;
-            height:100px;
+        }
+        .jumbotron{
+            margin-bottom:0;
         }
 
         /* Add a gray background color and some padding to the footer */
@@ -32,6 +31,13 @@
     </style>
 </head>
 <body>
+    <div class="jumbotron">
+        <div class="container text-center">
+            <img src="IMG/logo.png" class="logo"/>
+            <h1>IEL</h1>
+            <p>ITSUR ENGLISH LEARN</p>
+        </div>
+    </div>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -40,45 +46,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="IMG/logo.png" class="logo"/></a>
+                <a class="navbar-brand" href="#"></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="login.aspx">Login</a></li>
+                    <li><a href="login.aspx">Iniciar Sesión </a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="jumbotron">
-        <div class="container text-center">
-            <h1>IEL</h1>
-            <p>ITSUR ENGLISH LEARN</p>
-        </div>
-    </div>
-
     <div class="container-fluid bg-3 text-center">
-        <h3>Some of my Work</h3>
+        <h3>Bienvenidos</h3>
         <br>
-        <div class="row">
-            <div class="col-sm-3">
-                <p>Some text..</p>
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width: 100%" alt="Image">
-            </div>
-            <div class="col-sm-3">
-                <p>Some text..</p>
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width: 100%" alt="Image">
-            </div>
-            <div class="col-sm-3">
-                <p>Some text..</p>
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width: 100%" alt="Image">
-            </div>
-            <div class="col-sm-3">
-                <p>Some text..</p>
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width: 100%" alt="Image">
-            </div>
-        </div>
+        <video autoplay controls src="IMG/IEL.mp4" width="60%"></video>
     </div>
     <br>
 
