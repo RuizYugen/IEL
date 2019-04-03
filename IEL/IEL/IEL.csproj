@@ -305,6 +305,7 @@
     <Content Include="Vistas\JS\login.js" />
     <Content Include="Vistas\JS\npm.js" />
     <Content Include="Vistas\Login.aspx" />
+    <Content Include="Vistas\Principal.aspx" />
     <Content Include="Vistas\QuizForm.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -567,6 +568,13 @@
     </Compile>
     <Compile Include="Vistas\PaginaMaestra.Master.designer.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Principal.aspx.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Principal.aspx.designer.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\QuizForm.aspx.cs">
       <DependentUpon>QuizForm.aspx</DependentUpon>

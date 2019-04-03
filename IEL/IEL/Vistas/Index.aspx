@@ -8,7 +8,7 @@
     <title></title>
     <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="JS/bootstrap.min.js"></script>
     <style>      
         .logo {
             width: 50px;
@@ -57,33 +57,12 @@
         </div>
     </nav>
 
-    <div class="container-fluid bg-3 text-center">
         <h3>Bienvenidos</h3>
         <br>
         <video autoplay controls src="IMG/IEL.mp4" width="60%"></video>
-    </div>
-    <br>
 
-    <div class="container-fluid bg-3 text-center">
-        <div class="row">
-            <div class="col-sm-3">
-                <p>Some text..</p>
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width: 100%" alt="Image">
-            </div>
-            <div class="col-sm-3">
-                <p>Some text..</p>
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width: 100%" alt="Image">
-            </div>
-            <div class="col-sm-3">
-                <p>Some text..</p>
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width: 100%" alt="Image">
-            </div>
-            <div class="col-sm-3">
-                <p>Some text..</p>
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width: 100%" alt="Image">
-            </div>
-        </div>
-    </div>
+    ¿Quienes somos?<br />
+    Somos jovenes como tu interesados en frindarte un servicio mediante IEL un sitio interactivo para aprender ingles.
     <br>
     <br>
 
