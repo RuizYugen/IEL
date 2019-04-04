@@ -304,6 +304,7 @@
     <Content Include="Vistas\JS\bootstrap.min.js" />
     <Content Include="Vistas\JS\login.js" />
     <Content Include="Vistas\JS\npm.js" />
+    <Content Include="Vistas\JS\quiz.js" />
     <Content Include="Vistas\Login.aspx" />
     <Content Include="Vistas\Principal.aspx" />
     <Content Include="Vistas\QuizForm.aspx" />
