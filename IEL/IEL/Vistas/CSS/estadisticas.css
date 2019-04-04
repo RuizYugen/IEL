@@ -1,18 +1,5 @@
-﻿h1{
-  font-family :'Indie Flower', cursive;
-  font-weight:bold;
-  font-size:60px;
-  color:#993399;
-  height:100px;
-  background: linear-gradient(to bottom, #69E8B2 0%, #8FF4C9 100%);
-  box-shadow:5px 5px #98bcf3;
-}
-#txtTittle{
+﻿
 
- 
-  padding-left: 100px;
-  
-}
 .divContenido{
     
        font-family :'Indie Flower', cursive;
@@ -60,7 +47,7 @@ padding-right:50px;
      font-family :'Indie Flower', cursive;
     color:#000000;
     font-size:35px;
-    float:right;
+    /*float:right;*/
     padding-left:100px;
      
       

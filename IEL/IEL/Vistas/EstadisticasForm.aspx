@@ -15,13 +15,16 @@
     <div class="panel-group"
         style="
         font-family :'Indie Flower', cursive;
-  font-size:40px;
-  color:#993399;
-  height:100px;
-  background: linear-gradient(to bottom, #69E8B2 0%, #8FF4C9 100%);
-  box-shadow:5px 5px #98bcf3;
+  font-size:37px;
+   background:linear-gradient(to bottom,#69E8B2 0%,#8FF4C9 100%);  
+    color:black;
+    padding-top:30px;
+    margin-top:-20px;
+    border-color:#1B3280;
+    text-align:center;
+   
         ">
-  <center><h1>Estadisticas </h1></center>
+  <center><p>Estadisticas </p></center>
 
 </div>
     <br />
@@ -62,11 +65,11 @@
     <br />
       <br />
     <div class="panel-group container-fluid percetActs" >
-         <p id="tittleActs" >
+       <div style="float:right">
+             <p id="tittleActs" >
                 Porcentaje de actividades
             </p>
-                    
-
+                
               <p >
                   Completar oraciones: 70%
                    
@@ -81,7 +84,10 @@
                   ordenar palabras: 80%
                    
               </p>
+       </div>
                        
     </div>
+    <br />
+    <br />
 
 </asp:Content>
