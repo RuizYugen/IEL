@@ -29,7 +29,16 @@ function cargarPrimera(resultado) {
 }
 
 function cambiar() {
-    switch (numeroPregunta) {
+    var pregunta = listaObtenida[numeroPregunta];
+    document.getElementById("textopregunta").innerHTML = pregunta.pregunta;
+    document.getElementById("answerA").innerHTML = pregunta.RespuestaCorrecta;
+    document.getElementById("answerB").innerHTML = pregunta.RespuestaIncorrecta1;
+    document.getElementById("answerC").innerHTML = pregunta.RespuestaIncorrecta2;
+    document.getElementById("answerD").innerHTML = pregunta.RespuestaIncorrecta3;
+
+    document.getElementById("color"+(numeroPregunta+1).toString()).style.backgroundColor = "#6666CC";
+    numeroPregunta = numeroPregunta + 1;
+  /*  switch (numeroPregunta) {
         case 0:
             var pregunta = listaObtenida[0];
             document.getElementById("textopregunta").innerHTML = pregunta.pregunta;
@@ -138,10 +147,11 @@ function cambiar() {
             document.getElementById("answerC").innerHTML = pregunta.RespuestaIncorrecta2;
             document.getElementById("answerD").innerHTML = pregunta.RespuestaIncorrecta3;
             numeroPregunta = numeroPregunta + 1;*/
-            break;
+          /*  break;
         default:
             numeroPregunta = 0;
-            break;
-    }
+            break;*/
+
+   // }
     
 }
