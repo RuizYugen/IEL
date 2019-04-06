@@ -128,5 +128,28 @@ namespace Datos.Daos
             }
         }
 
+        public List<Pregunta> preguntas()
+        {
+            List<Pregunta> lista = new List<Pregunta>();
+            Conexion con = new Conexion();
+
+            DataSet datos = con.LLenaComboGrid("select p.idPregunta, p.Pregunta, p.RespuestaCorrecta, p.RespuestaIncorrecta1, p.RespuestaIncorrecta2, p.RespuestaIncorrecta3 from pregunta p, quiz q,preguntaporquiz pr where pr.IdQuiz=q.idQuiz and pr.idPregunta=p.idPregunta" + ";");
+            DataTable dt = datos.Tables[0];
+            Pregunta q;
+            foreach (DataRow r in dt.Rows)
+            {
+
+                q = new Pregunta();
+                q.idPregunta = (int)r.ItemArray[0];
+                q.pregunta = (string)r.ItemArray[1];
+                q.RespuestaCorrecta = (string)r.ItemArray[2];
+                q.RespuestaIncorrecta1 = (string)r.ItemArray[3];
+                q.RespuestaIncorrecta2 = (string)r.ItemArray[4];
+                q.RespuestaIncorrecta3 = (string)r.ItemArray[5];
+                lista.Add(q);
+            }
+            return lista;
+        }
+
     }
 }

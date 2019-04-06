@@ -4,32 +4,37 @@
    
  
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>   
-     <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="JS/bootstrap.min.js"></script>
+     
+    
+  
 
       <link rel="stylesheet" type="text/css" href="CSS/CSSQuiz.css"/>
- 
+       <script src="JS/quiz.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div  id="titulo">
-  <h1>Quiz</h1>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+        <Services>
+            <asp:ServiceReference Path="~/Servicios/wsQuiz.asmx"/>
+        </Services>
+    </asp:ScriptManager>
 
-</div>
+    <div  id="titulo">
+        <h1>Quiz</h1>
+    </div>
     <br />
         
     <div id="centrarcoloreada">
       <div class="btn-group" id="coloreada"> 
-          <button type="button" style="height:40px; width:70px" class="contestadasColor" ></button>
-            <button type="button" style="height:40px; width:70px" class="contestadasColor"></button>
-           <button type="button" style="height:40px; width:70px" class="contestadasColor"></button>
-            <button type="button" style="height:40px; width:70px" class="sinContestarColor"></button>
-           <button type="button" style="height:40px; width:70px" class="sinContestarColor"></button>
-            <button type="button" style="height:40px; width:70px" class="sinContestarColor"></button>
-           <button type="button" style="height:40px; width:70px" class="sinContestarColor"></button>
-            <button type="button" style="height:40px; width:70px" class="sinContestarColor"></button>
-          <button type="button" style="height:40px; width:70px" class="sinContestarColor"></button>
-            <button type="button" style="height:40px; width:70px" class="sinContestarColor"></button>           
+          <button type="button" style="height:40px; width:70px" class="contestadasColor" id="color1"></button>
+            <button type="button" style="height:40px; width:70px" class="contestadasColor" id="color2"></button>
+           <button type="button" style="height:40px; width:70px" class="contestadasColor" id="color3"></button>
+            <button type="button" style="height:40px; width:70px" class="sinContestarColor" id="color4"></button>
+           <button type="button" style="height:40px; width:70px" class="sinContestarColor" id="color5"></button>
+            <button type="button" style="height:40px; width:70px" class="sinContestarColor" id="color6"></button>
+           <button type="button" style="height:40px; width:70px" class="sinContestarColor" id="color7"></button>
+            <button type="button" style="height:40px; width:70px" class="sinContestarColor" id="color8"></button>
+          <button type="button" style="height:40px; width:70px" class="sinContestarColor" id="color9"></button>
+            <button type="button" style="height:40px; width:70px" class="sinContestarColor" id="color10"></button>           
         </div></div>
     <br />
     <br />                    
@@ -51,6 +56,6 @@
             <button  type="button" style="width:200px" id="answerD" class="botonRespuesta">D. Wake</button>
             <br />
              <br />
-            <button type="button" id="btnNext" style="width:84px">Next</button>
+            <button type="button" id="btnNext" style="width:84px" onclick="cambiar()">Next</button>
         </div></div>        
 </asp:Content>

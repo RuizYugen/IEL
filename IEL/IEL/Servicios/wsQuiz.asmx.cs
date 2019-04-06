@@ -18,7 +18,16 @@ namespace IEL.Servicios
     [System.Web.Script.Services.ScriptService]
     public class wsQuiz : System.Web.Services.WebService
     {
-        
+        [WebMethod]
+        public string getAllPreguntas()
+        {
+            QuizDAO dao = new QuizDAO();
+            List<Pregunta> lista = dao.preguntas();
+            String strJSON = JsonConvert.SerializeObject(lista, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return strJSON;
+        }
+
+
         /// <summary>
         /// Obtine todos los registros de la tabla quiz
         /// </summary>

@@ -9,7 +9,7 @@
     </asp:ContentPlaceHolder>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="CSS/bootstrap.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../Scripts/jquery-3.3.1.min.js"></script>
     <script src="JS/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet" />
 
@@ -24,6 +24,7 @@
             height:auto;
         }
     </style>
+    <script src="JS/quiz.js"></script>
     
 </head>
 <body>
@@ -49,11 +50,11 @@
             </ul>
         </div>
     </nav>
-    <form id="form1" runat="server">
-        <div>
+    <form id="form1" runat="server" method="post">
+        
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
+        
         <div>
             Pie de pagina
         </div>
