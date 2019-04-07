@@ -13,8 +13,8 @@ namespace IEL.Servicios
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
-    // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
-    // [System.Web.Script.Services.ScriptService]
+    //To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
+     [System.Web.Script.Services.ScriptService]
     public class wsPreguntaContestadaPorUsuario : System.Web.Services.WebService
     {
         /// <summary>
@@ -45,9 +45,13 @@ namespace IEL.Servicios
         /// <param name="idGramtica">id de la gramatica</param>
         /// <returns>Retorna si se inserto el registro correctamente</returns>
         [WebMethod]
-        public bool insert(int idTema, int idGramtica)
+        public bool insert(string User,int idPregunta, string Contesto)
         {
-            return true;
+            bool result = false;
+            PreguntaContestadaPorUsuaruioDAO dao = new PreguntaContestadaPorUsuaruioDAO();
+            PreguntaContestadaPorUsuaruio obj = new PreguntaContestadaPorUsuaruio() { User=User,IdPregunta=idPregunta,Contesto=Contesto };
+            result = dao.insert(obj);
+            return result;
         }
 
         /// <summary>

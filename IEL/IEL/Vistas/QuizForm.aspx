@@ -1,13 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vistas/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="QuizForm.aspx.cs" Inherits="IEL.Vistas.QuizForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-   
- 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>   
-     
-    
-  
-
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>          
       <link rel="stylesheet" type="text/css" href="CSS/CSSQuiz.css"/>
        <script src="JS/quiz.js"></script>
 </asp:Content>
@@ -44,16 +38,16 @@
          <div id="centraropciones">       
         <div class="btn-group-vertical" >
 
-            <button  type="button" style="width:200px" id="answerA" class="botonRespuesta" >A. Run</button>
+            <button  type="button" style="width:200px" id="answerA" class="botonRespuesta" onclick="respuestaUsuario(this)">A. Run</button>
             <br />
              <br />
-            <button  type="button" id="answerB" class="botonRespuesta">B. Try</button>
+            <button  type="button" id="answerB" class="botonRespuesta" onclick="respuestaUsuario(this)">B. Try</button>
             <br />
              <br />
-            <button type="button" style="width:200px" id="answerC" class="botonRespuesta">C. Slep</button>
+            <button type="button" style="width:200px" id="answerC" class="botonRespuesta" onclick="respuestaUsuario(this)">C. Slep</button>
             <br />
              <br />
-            <button  type="button" style="width:200px" id="answerD" class="botonRespuesta">D. Wake</button>
+            <button  type="button" style="width:200px" id="answerD" class="botonRespuesta" onclick="respuestaUsuario(this)">D. Wake</button>
             <br />
              <br />
             <button type="button" id="btnNext" style="width:84px" onclick="cambiar()">Next</button>
