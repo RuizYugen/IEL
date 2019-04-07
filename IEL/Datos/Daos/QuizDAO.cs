@@ -151,5 +151,26 @@ namespace Datos.Daos
             return lista;
         }
 
+        public bool insertRespuesta(PreguntaContestadaPorUsuaruio i)
+        {
+            try
+            {
+                Conexion conexion = new Conexion();
+                String SQL = "INSERT INTO PreguntaContestadaPorUsuaruio (User,IdPregunta,Contesto) VALUES (@User,@IdPregunta,@Contesto);";
+                MySqlCommand sqlcom = new MySqlCommand();
+                sqlcom.CommandText = SQL;
+                sqlcom.Parameters.AddWithValue("@User", i.User);
+                sqlcom.Parameters.AddWithValue("@IdPregunta", i.IdPregunta);
+                sqlcom.Parameters.AddWithValue("@Contesto", i.Contesto);
+                conexion.EjecutaSQLComando(sqlcom);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+
     }
 }

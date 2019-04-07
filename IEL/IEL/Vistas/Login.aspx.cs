@@ -13,5 +13,18 @@ namespace IEL.Vistas
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string usuario=user.Value;
+            string pass = password.Value;
+            if (pass.Equals("") == false && usuario.Equals("") == false)
+            {
+
+            }else
+            {
+                Response.Write("<script language=javascript>alert('Ingrese los todos los campos');</script>");
+            }
+        }
     }
 }

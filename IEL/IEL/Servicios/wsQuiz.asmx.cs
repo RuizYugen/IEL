@@ -71,6 +71,16 @@ namespace IEL.Servicios
             return result;
         }
 
+        [WebMethod]
+        public bool insertPregunta(string User, int idPregunta, string Contesto)
+        {
+            bool result = false;
+            PreguntaContestadaPorUsuaruioDAO dao = new PreguntaContestadaPorUsuaruioDAO();
+            PreguntaContestadaPorUsuaruio obj = new PreguntaContestadaPorUsuaruio() { User = User, IdPregunta = idPregunta, Contesto = Contesto };
+            result = dao.insert(obj);
+            return result;
+        }
+
         /// <summary>
         /// Elimina un registro de la tabla quiz
         /// </summary>
