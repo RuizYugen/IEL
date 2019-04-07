@@ -11,7 +11,7 @@
   <script src="JS/bootstrap.min.js"></script>
     <style>      
         .logo {
-            width: 50px;
+            width: 200px;
         }
         /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
@@ -33,9 +33,7 @@
 <body>
     <div class="jumbotron">
         <div class="container text-center">
-            <img src="IMG/logo.png" class="logo"/>
-            <h1>IEL</h1>
-            <p>ITSUR ENGLISH LEARN</p>
+            <img src="IMG/Nombre.png" class="logo"/>
         </div>
     </div>
     <nav class="navbar navbar-inverse">

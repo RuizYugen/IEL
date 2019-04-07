@@ -5,10 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
-    <link href="<%= ResolveClientUrl("~/Content/bootstrap.min.css") %>" rel="stylesheet" type="text/css" /> 
-    <script src="<%= ResolveClientUrl("~/Scripts/jquery-3.3.1.min.js") %>" type="text/javascript"></script>
-    <script src="<%= ResolveClientUrl("~/Scripts/bootstrap.min.js") %>" type="text/javascript"></script>
+    <title>Inicio de sesion</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <script src="../Scripts/jquery-3.3.1.min.js"></script>
+    <script src="JS/bootstrap.min.js"></script>
 
     <script src="JS/login.js"></script>
     <style>
@@ -43,16 +43,20 @@
         <br />
         <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="user" type="text" class="form-control" name="email" placeholder="User"/>
+            <input id="user" type="text" class="form-control" name="email" placeholder="User" runat="server"/>
         </div>
         <br />
         <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input id="password" type="password" class="form-control" name="password" placeholder="Password"/>
+            <input id="password" type="password" class="form-control" name="password" placeholder="Password" runat="server"/>
         </div>
         <br />
+        <!-- 
         <button class="btn btn-primary" onclick="btnEntrarOnClick()">Entrar</button>
         <button class="btn btn-secondary">Cancelar</button>
+            -->
+        <asp:Button ID="Button1" runat="server" Text="Button" CssClass="btn btn-primary" OnClick="Button1_Click" />
+        <button class="btn btn-secondary" runat="server">Cancelar</button>
     </form>
 </body>
 </html>
