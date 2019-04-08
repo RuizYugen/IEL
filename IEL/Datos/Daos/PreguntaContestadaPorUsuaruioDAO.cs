@@ -53,6 +53,89 @@ namespace Datos.Daos
             res.Contesto = (string)row.ItemArray[2];            
             return res;
         }
+
+
+        //Agregado
+        public List<PreguntaContestadaPorUsuaruio> getPreguntasCorrectasPresenteSimple(String user)
+        {
+            List<PreguntaContestadaPorUsuaruio> lista = new List<PreguntaContestadaPorUsuaruio>();
+            Conexion con = new Conexion();
+
+            DataSet datos = con.LLenaComboGrid("select pcu.user, pcu.idPregunta, pcu.Contesto from preguntacontestadaporusuaruio pcu, preguntaportema pt "+
+                "where pcu.idPregunta = pt.idPregunta and pt.IdTema = 1  and pcu.user like '"+user+ "' and pcu.contesto ='Correcto';");
+            DataTable dt = datos.Tables[0];
+            PreguntaContestadaPorUsuaruio e;
+            foreach (DataRow r in dt.Rows)
+            {
+
+                e = new PreguntaContestadaPorUsuaruio();
+                e.User = (string)r.ItemArray[0];
+                e.IdPregunta = (int)r.ItemArray[1];
+                e.Contesto = (string)r.ItemArray[2];
+                lista.Add(e);
+            }
+            return lista;
+        }
+        public List<PreguntaContestadaPorUsuaruio> getPreguntasCorrectasPasadoSimple(String user)
+        {
+            List<PreguntaContestadaPorUsuaruio> lista = new List<PreguntaContestadaPorUsuaruio>();
+            Conexion con = new Conexion();
+
+            DataSet datos = con.LLenaComboGrid("select pcu.user, pcu.idPregunta, pcu.Contesto from preguntacontestadaporusuaruio pcu, preguntaportema pt " +
+                "where pcu.idPregunta = pt.idPregunta and pt.IdTema = 2  and pcu.user like '" + user + "' and pcu.contesto ='Correcto';");
+            DataTable dt = datos.Tables[0];
+            PreguntaContestadaPorUsuaruio e;
+            foreach (DataRow r in dt.Rows)
+            {
+
+                e = new PreguntaContestadaPorUsuaruio();
+                e.User = (string)r.ItemArray[0];
+                e.IdPregunta = (int)r.ItemArray[1];
+                e.Contesto = (string)r.ItemArray[2];
+                lista.Add(e);
+            }
+            return lista;
+        }
+        public List<PreguntaContestadaPorUsuaruio> getPreguntasCorrectasVerbos(String user)
+        {
+            List<PreguntaContestadaPorUsuaruio> lista = new List<PreguntaContestadaPorUsuaruio>();
+            Conexion con = new Conexion();
+
+            DataSet datos = con.LLenaComboGrid("select pcu.user, pcu.idPregunta, pcu.Contesto from preguntacontestadaporusuaruio pcu, preguntaportema pt " +
+                "where pcu.idPregunta = pt.idPregunta and pt.IdTema = 3  and pcu.user like '" + user + "' and pcu.contesto ='Correcto';");
+            DataTable dt = datos.Tables[0];
+            PreguntaContestadaPorUsuaruio e;
+            foreach (DataRow r in dt.Rows)
+            {
+
+                e = new PreguntaContestadaPorUsuaruio();
+                e.User = (string)r.ItemArray[0];
+                e.IdPregunta = (int)r.ItemArray[1];
+                e.Contesto = (string)r.ItemArray[2];
+                lista.Add(e);
+            }
+            return lista;
+        }
+        public List<PreguntaContestadaPorUsuaruio> getPreguntasCorrectasVocabulario(String user)
+        {
+            List<PreguntaContestadaPorUsuaruio> lista = new List<PreguntaContestadaPorUsuaruio>();
+            Conexion con = new Conexion();
+
+            DataSet datos = con.LLenaComboGrid("select pcu.user, pcu.idPregunta, pcu.Contesto from preguntacontestadaporusuaruio pcu, preguntaportema pt " +
+                "where pcu.idPregunta = pt.idPregunta and pt.IdTema = 4  and pcu.user like '" + user + "' and pcu.contesto ='Correcto';");
+            DataTable dt = datos.Tables[0];
+            PreguntaContestadaPorUsuaruio e;
+            foreach (DataRow r in dt.Rows)
+            {
+
+                e = new PreguntaContestadaPorUsuaruio();
+                e.User = (string)r.ItemArray[0];
+                e.IdPregunta = (int)r.ItemArray[1];
+                e.Contesto = (string)r.ItemArray[2];
+                lista.Add(e);
+            }
+            return lista;
+        }
         /// <summary>
         /// Elimina el registro de la Pregunta en base al Id de la Pregunta contestada por el usuario
         /// </summary>

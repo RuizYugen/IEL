@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using Datos.Daos;
+using Newtonsoft.Json;
+
 using Datos.Modelo;
 namespace IEL.Servicios
 {
@@ -75,6 +77,47 @@ namespace IEL.Servicios
         public bool delete(int idTema)
         {
             return true;
+        }
+
+        [WebMethod]
+        public string getPreguntasCorrectasPresenteSimple(String user)
+        {
+            PreguntaContestadaPorUsuaruioDAO dao = new PreguntaContestadaPorUsuaruioDAO();
+            List<PreguntaContestadaPorUsuaruio> lista = dao.getPreguntasCorrectasPresenteSimple(user);
+
+            String strJSON = JsonConvert.SerializeObject(lista, new JsonSerializerSettings
+            { NullValueHandling = NullValueHandling.Ignore });
+            return strJSON;
+        }
+        [WebMethod]
+        public string getPreguntasCorrectasPasadoSimple(String user)
+        {
+            PreguntaContestadaPorUsuaruioDAO dao = new PreguntaContestadaPorUsuaruioDAO();
+            List<PreguntaContestadaPorUsuaruio> lista = dao.getPreguntasCorrectasPasadoSimple(user);
+
+            String strJSON = JsonConvert.SerializeObject(lista, new JsonSerializerSettings
+            { NullValueHandling = NullValueHandling.Ignore });
+            return strJSON;
+        }
+        [WebMethod]
+        public string getPreguntasCorrectasVerbos(String user)
+        {
+            PreguntaContestadaPorUsuaruioDAO dao = new PreguntaContestadaPorUsuaruioDAO();
+            List<PreguntaContestadaPorUsuaruio> lista = dao.getPreguntasCorrectasVerbos(user);
+
+            String strJSON = JsonConvert.SerializeObject(lista, new JsonSerializerSettings
+            { NullValueHandling = NullValueHandling.Ignore });
+            return strJSON;
+        }
+        [WebMethod]
+        public string getPreguntasCorrectasVocabulario(String user)
+        {
+            PreguntaContestadaPorUsuaruioDAO dao = new PreguntaContestadaPorUsuaruioDAO();
+            List<PreguntaContestadaPorUsuaruio> lista = dao.getPreguntasCorrectasVocabulario(user);
+
+            String strJSON = JsonConvert.SerializeObject(lista, new JsonSerializerSettings
+            { NullValueHandling = NullValueHandling.Ignore });
+            return strJSON;
         }
     }
 }
