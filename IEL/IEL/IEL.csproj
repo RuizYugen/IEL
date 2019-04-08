@@ -26,6 +26,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -296,6 +297,7 @@
     <Content Include="Vistas\CSS\cssHead.css" />
     <Content Include="Vistas\CSS\CSSQuiz.css" />
     <Content Include="Vistas\CSS\estadisticas.css" />
+    <Content Include="Vistas\CSS\EstilosMaterialDeAprendizaje.css" />
     <Content Include="Vistas\EstadisticasForm.aspx" />
     <Content Include="Vistas\IMG\learn.png" />
     <Content Include="Vistas\IMG\Logo.png" />
@@ -304,9 +306,11 @@
     <Content Include="Vistas\JS\bootstrap.min.js" />
     <Content Include="Vistas\JS\Estadisticas.js" />
     <Content Include="Vistas\JS\login.js" />
+    <Content Include="Vistas\JS\MaterialAprendizaje.js" />
     <Content Include="Vistas\JS\npm.js" />
     <Content Include="Vistas\JS\quiz.js" />
     <Content Include="Vistas\Login.aspx" />
+    <Content Include="Vistas\MaterialDeAprendizaje.aspx" />
     <Content Include="Vistas\Principal.aspx" />
     <Content Include="Vistas\QuizForm.aspx" />
     <Content Include="Web.config" />
@@ -563,6 +567,13 @@
     </Compile>
     <Compile Include="Vistas\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\MaterialDeAprendizaje.aspx.cs">
+      <DependentUpon>MaterialDeAprendizaje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\MaterialDeAprendizaje.aspx.designer.cs">
+      <DependentUpon>MaterialDeAprendizaje.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\PaginaMaestra.Master.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>

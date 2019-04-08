@@ -18,7 +18,7 @@ namespace Datos.Util
             String puerto = "3306";
             String usuario = "root";
             String password = "root";
-            String database = "ItsurEnglishLearn";
+            String database = "itsurenglishlearn";
 
             //Cadena de conexion
 
