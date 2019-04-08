@@ -28,11 +28,33 @@
             background-color: #f2f2f2;
             padding: 25px;
         }
+
+        .welcome{
+            width:100px;
+            height:auto;
+            font-size:40px;
+            color:black;
+            left:0;
+            position:relative;
+            
+        }
+        .contenedor{
+            width:100%;
+            height:auto;
+            border-left: 6px solid red;
+            border-right: 6px solid red;
+            background-color: lightgrey;
+            position:absolute;
+        }
+        .contenedor:hover {
+            background-color:darkgrey;
+        }
+
     </style>
 </head>
 <body>
     <div class="jumbotron">
-        <div class="container text-center">
+        <div class="container text-left">
             <img src="IMG/Nombre.png" class="logo"/>
         </div>
     </div>
@@ -54,18 +76,21 @@
             </div>
         </div>
     </nav>
-
-        <h3>Bienvenidos</h3>
+        <div class="contenedor">
+             <div class="welcome">Bienvenidos</div>
+        </div>
+       
         <br>
         <video autoplay controls src="IMG/IEL.mp4" width="60%"></video>
 
-    ¿Quienes somos?<br />
-    Somos jovenes como tu interesados en frindarte un servicio mediante IEL un sitio interactivo para aprender ingles.
+    
     <br>
     <br>
 
     <footer class="container-fluid text-center">
-        <p>Footer Text</p>
+        <h5>Acerca de nosotros</h5>
+        <p>Somos jovenes como tu interesados en frindarte un servicio mediante IEL un sitio interactivo para aprender ingles.</p>
+        <p>Puedes contactarnos mediante el siguinete correo: <b>IEL@itsur.edu.mx</b></p>
     </footer>
 
 </body>

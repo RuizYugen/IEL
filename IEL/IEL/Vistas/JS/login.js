@@ -1,13 +1,16 @@
-﻿/*function btnEntrarOnClick() {
-   
-    if ($("#password").val() !== "" && $("#user").val() !== "") {
-        alert($("#user").val() + "--" + $("#password").val());
-        IEL.Servicios.wsUsuario.getAll(completo);
-    } else {
-        alert("Complete los campos");
-    }
-}
+﻿$(document).ready(function () {
+    
 
-function completo(respose) {
-    alert(respose);
-}*/
+});
+
+
+$(document).on('click', '#btnEntrar', function () {
+    alert("Si entra");
+    var usuario = "Jose1";
+
+    IEL.Servicios.wsUsuario.getUsuarioByID(usuario, cargarDatos);
+});
+
+function cargarDatos(sente) {
+    alert("entro");
+}

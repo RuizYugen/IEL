@@ -1,18 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vistas/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="EstadisticasForm.aspx.cs" Inherits="IEL.Vistas.EstadisticasForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    
-     
-   <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>   
-    <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="JS/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"/>
-    -->
- 
+
     <link rel="stylesheet" type="text/css" href="CSS/estadisticas.css"/>
     <script src="../Scripts/jquery-3.3.1.js"></script>
-     <script src="JS/Estadisticas.js"></script>
+    <script src="JS/Estadisticas.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
