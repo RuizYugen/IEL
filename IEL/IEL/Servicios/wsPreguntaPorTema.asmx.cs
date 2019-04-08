@@ -31,6 +31,16 @@ namespace IEL.Servicios
             { NullValueHandling = NullValueHandling.Ignore });
             return strJSON;
         }
+        //Agregado
+        [WebMethod]
+        public string getPreguntasPorTema(int idTema)
+        {
+            PreguntaPorTemaDAO dao = new PreguntaPorTemaDAO();
+            List<PreguntaPorTema> lista = dao.getPreguntasPorTema(idTema);
+            String strJSON = JsonConvert.SerializeObject(lista, new JsonSerializerSettings
+            { NullValueHandling = NullValueHandling.Ignore });
+            return strJSON;
+        }
 
         /// <summary>
         /// Obtiene un registro de la tabla preguntaportema

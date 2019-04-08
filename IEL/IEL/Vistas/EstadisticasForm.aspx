@@ -18,6 +18,8 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server">
         <Services>
             <asp:ServiceReference Path="~/Servicios/wsUsuario.asmx"/>
+            <asp:ServiceReference Path="~/Servicios/wsPreguntaContestadaPorUsuario.asmx" />
+            <asp:ServiceReference Path="~/Servicios/wsPreguntaPorTema.asmx" />
         </Services>
     </asp:ScriptManager>
     <div class="panel-group"
@@ -50,13 +52,13 @@
     </div>
     <div style="padding-left:100px" class="panel-group divContenido">
         <img class="img-responsive" ID="imgProgress"  src="/Vistas/IMG/learn.png" />
-        <p>To be verb: 89%</p>
+        <p id="txtSimplePresent" >Simple present: 0%</p>
         <br />
-        <p>Simple past: 70%</p>
+        <p id="txtSimplePast">Simple past: 0%</p>
         <br />
-        <p>Verbs: 80%</p>
+        <p id="txtVerbs">Verbs: 0%</p>
         <br />
-        <p>Vocabulary: 90%</p>
+        <p id="txtVocabulario">Vocabulary: 0%</p>
        
     </div>
     <div class="panel-group container-fluid">
@@ -66,13 +68,13 @@
     padding-right:100px;
     padding-top:-100px;
     font-weight:bolder;
-    ">Avance: 82%</p>
+    " id="txtAvance">Avance: 0%</p>
         
-        <progress  id="barProgress" value="82" max="100" style="float:right; padding-right:400px; height:30px; width:300px;"></progress>
+        <progress  id="barProgress" value="0" max="100" style="float:right; padding-right:400px; height:30px; width:300px;"></progress>
     </div>
     <br />
       <br />
-    <div class="panel-group container-fluid percetActs" >
+   <!-- <div class="panel-group container-fluid percetActs" >
        <div style="float:right">
              <p id="tittleActs" >
                 Porcentaje de actividades
@@ -94,7 +96,7 @@
               </p>
        </div>
                        
-    </div>
+    </div> -->
     <br />
     <br />
 

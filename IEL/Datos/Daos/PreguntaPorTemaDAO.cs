@@ -35,6 +35,27 @@ namespace Datos.Daos
             }
             return lista;
         }
+
+        //Agregado
+        public List<PreguntaPorTema> getPreguntasPorTema(int idTema)
+        {
+            List<PreguntaPorTema> lista = new List<PreguntaPorTema>();
+            Conexion con = new Conexion();
+
+            DataSet datos = con.LLenaComboGrid("SELECT * FROM PreguntaPorTema where idTema=" +idTema+ ";");
+            DataTable dt = datos.Tables[0];
+            PreguntaPorTema ppt;
+            foreach (DataRow r in dt.Rows)
+            {
+
+                ppt = new PreguntaPorTema();
+
+                ppt.IdPregunta = (int)r.ItemArray[0];
+                ppt.IdTema = (int)r.ItemArray[1];
+                lista.Add(ppt);
+            }
+            return lista;
+        }
         /// <summary>
         /// Obtiene una PreguntaPorTema por ID
         /// </summary>
@@ -44,7 +65,7 @@ namespace Datos.Daos
         {
             PreguntaPorTema res;
             Conexion conexion = new Conexion();
-            DataSet datos = conexion.LLenaComboGrid("SELECT * FROM PreguntaPorTema WHERE IdPregunta = " + ID + ";");
+            DataSet datos = conexion.LLenaComboGrid("SELECT * FROM PreguntaPorTema WHERE IdTema = " + ID + ";");
             DataTable dt = datos.Tables[0];
             res = new PreguntaPorTema();
             DataRow row = dt.Rows[0];
