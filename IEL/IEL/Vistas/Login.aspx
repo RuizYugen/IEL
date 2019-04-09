@@ -40,13 +40,13 @@
     </asp:ScriptManager>
          <div align="Center"><img class="img-responsive" width="40%" src="img/Logo.png" /></div>
         <br />
-        <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <div class="input-group" align="Center">
+           
             <input id="txtUser" type="text" class="form-control" name="email" placeholder="User" runat="server"/>
         </div>
         <br />
-        <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <div class="input-group" align="Center">
+            
             <input id="txtPassword" type="password" class="form-control" name="password" placeholder="Password" runat="server"/>
         </div>
         <br />

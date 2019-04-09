@@ -290,6 +290,7 @@
     <Content Include="Servicios\wsVerbo.asmx" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Vistas\AreaDePractica.aspx" />
     <Content Include="Vistas\CSS\bootstrap-theme.css" />
     <Content Include="Vistas\CSS\bootstrap-theme.min.css" />
     <Content Include="Vistas\CSS\bootstrap.css" />
@@ -546,6 +547,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AreaDePractica.aspx.cs">
+      <DependentUpon>AreaDePractica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\AreaDePractica.aspx.designer.cs">
+      <DependentUpon>AreaDePractica.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\EstadisticasForm.aspx.cs">
       <DependentUpon>EstadisticasForm.aspx</DependentUpon>

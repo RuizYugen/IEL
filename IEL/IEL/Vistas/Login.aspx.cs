@@ -26,14 +26,17 @@ namespace IEL.Vistas
             string usuario = txtUser.Value;
             if (contrasenia.Equals("") && usuario.Equals(""))
             {
-                //No estan llenos mandar un aler
+                Response.Write("<script>alert('Ingrese todos los campos');</script>");
             }else
             {
                 UsuarioDAO dao = new UsuarioDAO();
                 if (dao.getUsuario(usuario, contrasenia))
                 {
                     Session["usuario"] = usuario;
-                    Response.Redirect("Principal.aspx");                                       
+                    Response.Redirect("Principal.aspx");
+                }else
+                {
+                    Response.Write("<script>alert('El usuario y la contraseña no coincide');</script>");
                 }             
             }
         }

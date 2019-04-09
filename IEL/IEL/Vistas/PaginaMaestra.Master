@@ -20,19 +20,25 @@
         -->
     <style>
         .logo{
-            width:40px;
+            width:200px;
             height:auto;
+        }
+        .jumbotron{
+            margin-bottom:0;
         }
     </style>
     <script src="JS/quiz.js"></script>
     
 </head>
 <body>
+    <div class="jumbotron">
+        <div class="container text-left">
+            <img src="IMG/Nombre.png" class="logo"/>
+        </div>
+    </div>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#"><img class="logo" src="IMG/logo.png"/></a>
-            </div>
+            
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
@@ -45,8 +51,8 @@
                 <li><a href="#">Page 2</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                <li><a href="#">Estadisticas</a></li>
+                <li><a href="#">Salir</a></li>
             </ul>
         </div>
     </nav>
@@ -55,9 +61,11 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         
-        <div>
-            Pie de pagina
-        </div>
+         <footer class="container-fluid text-center">
+        <h5>Acerca de nosotros</h5>
+        <p>Somos jovenes como tu interesados en frindarte un servicio mediante IEL un sitio interactivo para aprender ingles.</p>
+        <p>Puedes contactarnos mediante el siguinete correo: <b>IEL@itsur.edu.mx</b></p>
+    </footer>
     </form>
 </body>
 </html>
