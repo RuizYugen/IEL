@@ -61,8 +61,11 @@ function respuestaUsuario(boton) {
     }else{
         correcto="Incorrecto";
     }
-    //alert(correcto);
+
+    var idbtn = boton.id;
     //alert(actual.RespuestaCorrecta);
+    //boton.style.backgroundColor = "#6666CC";//Agregado
+    //document.getElementById(idbtn).style.backgroundColor = "#6666CC";
     IEL.Servicios.wsQuiz.insertPregunta(usuario,id,correcto,deshabilitar);
 }
 
