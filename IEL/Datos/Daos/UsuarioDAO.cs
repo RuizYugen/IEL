@@ -86,6 +86,36 @@ namespace Datos.Daos
             res.Privilegio = (string)row.ItemArray[7];
             return res;
         }
+
+        public bool getUsuario(string User, string password)
+        {
+            try
+            {
+                Usuario res;
+                Conexion conexion = new Conexion();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = "select * from usuario where user=@user and password=sha2(@pass,512);";
+                cmd.Parameters.AddWithValue("@user", User);
+                cmd.Parameters.AddWithValue("@pass", password);
+                DataSet datos = conexion.LLenaComboGrid(cmd);
+                DataTable dt = datos.Tables[0];
+                res = new Usuario();
+                DataRow row = dt.Rows[0];
+                res.User = (string)row.ItemArray[0];
+                res.Password = (string)row.ItemArray[1];
+                res.Nombre = (string)row.ItemArray[2];
+                res.ApellidoPaterno = (string)row.ItemArray[3];
+                res.ApellidoMaterno = (string)row.ItemArray[4];
+                res.Correo = (string)row.ItemArray[5];
+                res.Foto = (string)row.ItemArray[6];
+                res.Privilegio = (string)row.ItemArray[7];
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         /// <summary>
         /// Elimina el registro del Usuario en base al User del Usuario introducido
         /// </summary>

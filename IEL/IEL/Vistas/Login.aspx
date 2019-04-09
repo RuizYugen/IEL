@@ -42,22 +42,16 @@
         <br />
         <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="user" type="text" class="form-control" name="email" placeholder="User" runat="server"/>
+            <input id="txtUser" type="text" class="form-control" name="email" placeholder="User" runat="server"/>
         </div>
         <br />
         <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input id="password" type="password" class="form-control" name="password" placeholder="Password" runat="server"/>
+            <input id="txtPassword" type="password" class="form-control" name="password" placeholder="Password" runat="server"/>
         </div>
         <br />
-        
-        <button class="btn btn-primary" id="btnEntrar" name="btnEntrar">Entrar</button>
-        <button class="btn btn-secondary">Cancelar</button>
-        
-        
-        <asp:Button ID="Button1" runat="server" Text="Button" CssClass="btn btn-primary" OnClick="Button1_Click" />
-        <button class="btn btn-secondary" runat="server">Cancelar</button>
-           
-    </form>
+        <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" CssClass="btn btn-primary" OnClick="btnAceptar_Click"/>
+        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary"/>
+        </form>
 </body>
 </html>

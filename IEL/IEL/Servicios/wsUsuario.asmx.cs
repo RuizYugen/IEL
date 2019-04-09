@@ -127,5 +127,12 @@ namespace IEL.Servicios
             { NullValueHandling = NullValueHandling.Ignore });
             return strJSON;
         }
+
+        [WebMethod]
+        public bool getUsuario(string user,string password)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            return dao.getUsuario(user,password);
+        }
     }
 }
