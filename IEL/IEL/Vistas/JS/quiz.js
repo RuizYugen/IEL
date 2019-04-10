@@ -5,6 +5,8 @@
 var listaObtenida;
 var numeroPregunta = 0;
 var usuario = "Jose1";
+var correctas = 0;
+var seguir = false;
 function cargarPrimera(resultado) {
     //debugger;
     listaObtenida = JSON.parse(resultado);
@@ -31,33 +33,46 @@ function cargarPrimera(resultado) {
 }
 
 function cambiar() {
-    if (numeroPregunta>9) {
-        numeroPregunta=0;
-    }    
-    var letras = [ 'A', 'B', 'C', 'D' ];
-    letras = mezclar(letras);
-    var pregunta = listaObtenida[numeroPregunta];
-    document.getElementById("textopregunta").innerHTML = pregunta.pregunta;
-    document.getElementById("answer"+letras[0]).innerHTML = pregunta.RespuestaCorrecta;
-    document.getElementById("answer"+letras[1]).innerHTML = pregunta.RespuestaIncorrecta1;
-    document.getElementById("answer" +letras[2]).innerHTML = pregunta.RespuestaIncorrecta2;
-    document.getElementById("answer" +letras[3] ).innerHTML = pregunta.RespuestaIncorrecta3;
+    if (seguir) {
+        if (numeroPregunta > 9) {
+            numeroPregunta = 0;
+            alert("Obtuviste: " + correctas + " correctas");
+        }
+        var letras = ['A', 'B', 'C', 'D'];
+        letras = mezclar(letras);
+        var pregunta = listaObtenida[numeroPregunta];
+        document.getElementById("textopregunta").innerHTML = pregunta.pregunta;
+        document.getElementById("answer" + letras[0]).innerHTML = pregunta.RespuestaCorrecta;
+        document.getElementById("answer" + letras[1]).innerHTML = pregunta.RespuestaIncorrecta1;
+        document.getElementById("answer" + letras[2]).innerHTML = pregunta.RespuestaIncorrecta2;
+        document.getElementById("answer" + letras[3]).innerHTML = pregunta.RespuestaIncorrecta3;
 
-    document.getElementById("color" + (numeroPregunta + 1).toString()).style.backgroundColor = "#6666CC";
-    numeroPregunta = numeroPregunta + 1;
+        document.getElementById("color" + (numeroPregunta + 1).toString()).style.backgroundColor = "#6666CC";
+        numeroPregunta = numeroPregunta + 1;
 
-    document.getElementById("answerA").disabled = false;
-    document.getElementById("answerB").disabled = false;
-    document.getElementById("answerC").disabled = false;
-    document.getElementById("answerD").disabled = false;
+        document.getElementById("answerA").disabled = false;
+        document.getElementById("answerB").disabled = false;
+        document.getElementById("answerC").disabled = false;
+        document.getElementById("answerD").disabled = false;
+
+        document.getElementById("answerA").style.color = "#CC33CC";
+        document.getElementById("answerB").style.color = "#CC33CC";
+        document.getElementById("answerC").style.color = "#CC33CC";
+        document.getElementById("answerD").style.color = "#CC33CC";
+        seguir = false;
+    } else {
+        alert("Debes elegir una respuesta para continuar");
+    }
 }
 
 function respuestaUsuario(boton) {
+    seguir = true;
     var actual = listaObtenida[numeroPregunta-1];
     var id=actual.idPregunta;
     var correcto;    
     if (boton.innerHTML.toString().localeCompare(actual.RespuestaCorrecta)==0) {
-        correcto="Correcto";
+        correcto = "Correcto";
+        correctas = correctas + 1;
     }else{
         correcto="Incorrecto";
     }
@@ -65,7 +80,7 @@ function respuestaUsuario(boton) {
     var idbtn = boton.id;
     //alert(actual.RespuestaCorrecta);
     //boton.style.backgroundColor = "#6666CC";//Agregado
-    //document.getElementById(idbtn).style.backgroundColor = "#6666CC";
+    document.getElementById(idbtn).style.color = "#6666CC";
     IEL.Servicios.wsQuiz.insertPregunta(usuario,id,correcto,deshabilitar);
 }
 
