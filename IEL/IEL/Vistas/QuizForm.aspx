@@ -14,6 +14,14 @@
 
     <div  id="titulo">
         <h1>Quiz</h1>
+        <%
+            /*if (Session["usuario"]!=null)
+            {
+                sesion.InnerHtml = Session["usuario"].ToString();
+            }*/
+             %>
+        <h3 id="sesion"></h3>
+        
     </div>
     <br />
         

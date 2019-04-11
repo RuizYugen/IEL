@@ -1,4 +1,7 @@
-﻿
+﻿#sesion{
+    visibility:hidden;
+}
+
 #titulo{
     font-family:'calibri light';
     font-size:37px;

@@ -24,7 +24,7 @@ namespace IEL.Vistas
         {
             string contrasenia = txtPassword.Value;
             string usuario = txtUser.Value;
-            if (contrasenia.Equals("") && usuario.Equals(""))
+            if (contrasenia.Equals("") || usuario.Equals(""))
             {
                 Response.Write("<script>alert('Ingrese todos los campos');</script>");
             }else

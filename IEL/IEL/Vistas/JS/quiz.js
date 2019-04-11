@@ -4,11 +4,12 @@
 });
 var listaObtenida;
 var numeroPregunta = 0;
-var usuario = "Jose1";
+var usuario = '<%= Session["usuario"].toString() %>';
 var correctas = 0;
 var seguir = false;
 function cargarPrimera(resultado) {
     //debugger;
+    alert(usuario);
     listaObtenida = JSON.parse(resultado);
     listaObtenida = mezclar(listaObtenida);
     var primera = listaObtenida[numeroPregunta];
