@@ -16,6 +16,7 @@
             padding-left: 40%;
             padding-top: 50px;
             text-align: center;          
+          
         }
 
         .form-control {
@@ -23,7 +24,7 @@
         }
 
         .logo {
-            width: 200px;
+            width: 300px;
         }
 
         .btn {
@@ -38,15 +39,15 @@
             <asp:ServiceReference Path="~/Servicios/wsUsuario.asmx"/>
         </Services>
     </asp:ScriptManager>
-         <div align="Center"><img class="img-responsive" width="40%" src="img/Logo.png" /></div>
+         <div align="Center"><img class="img-responsive" width="60%" src="img/Nombre.png" /></div>
         <br />
-        <div class="input-group" align="Center">
-           
+        <div class="input-group">
+            
             <input id="txtUser" type="text" class="form-control" name="email" placeholder="User" runat="server"/>
         </div>
         <br />
         <div class="input-group" align="Center">
-            
+              
             <input id="txtPassword" type="password" class="form-control" name="password" placeholder="Password" runat="server"/>
         </div>
         <br />
