@@ -32,7 +32,7 @@ namespace IEL.Vistas
                 UsuarioDAO dao = new UsuarioDAO();
                 if (dao.getUsuario(usuario, contrasenia))
                 {
-                    Session["usuario"] = usuario;
+                    Session["usuario"] = usuario;                    
                     Response.Redirect("Principal.aspx");
                 }else
                 {

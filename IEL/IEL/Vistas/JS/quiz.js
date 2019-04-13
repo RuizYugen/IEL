@@ -1,15 +1,17 @@
-﻿$(document).ready(function () {
-    IEL.Servicios.wsQuiz.getAllPreguntas(cargarPrimera);
-
+﻿var usuario;
+$(document).ready(function () {
+    IEL.Servicios.wsQuiz.getAllPreguntas(cargarPrimera);    
+    usuario = $('#logear').text();
+    alert(usuario);
 });
+
+
+
 var listaObtenida;
 var numeroPregunta = 0;
-var usuario = '<%= Session["usuario"].toString() %>';
 var correctas = 0;
 var seguir = false;
-function cargarPrimera(resultado) {
-    //debugger;
-    alert(usuario);
+function cargarPrimera(resultado) {    
     listaObtenida = JSON.parse(resultado);
     listaObtenida = mezclar(listaObtenida);
     var primera = listaObtenida[numeroPregunta];
@@ -66,7 +68,8 @@ function cambiar() {
     }
 }
 
-function respuestaUsuario(boton) {
+function respuestaUsuario(boton) {    
+    
     seguir = true;
     var actual = listaObtenida[numeroPregunta-1];
     var id=actual.idPregunta;
@@ -78,9 +81,7 @@ function respuestaUsuario(boton) {
         correcto="Incorrecto";
     }
 
-    var idbtn = boton.id;
-    //alert(actual.RespuestaCorrecta);
-    //boton.style.backgroundColor = "#6666CC";//Agregado
+    var idbtn = boton.id;    
     document.getElementById(idbtn).style.color = "#6666CC";
     IEL.Servicios.wsQuiz.insertPregunta(usuario,id,correcto,deshabilitar);
 }

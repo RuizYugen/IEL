@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
     var usuario = "Jose1";
-  
+    
     IEL.Servicios.wsUsuario.getUsuarioByID(usuario, cargarDatos);
     IEL.Servicios.wsPreguntaPorTema.getPreguntasPorTema(1, preguntasPresente);
     IEL.Servicios.wsPreguntaContestadaPorUsuario.getPreguntasCorrectasPresenteSimple(usuario,cargarEstadisticas);
