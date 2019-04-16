@@ -198,5 +198,39 @@ namespace Datos.Daos
                 return false;
             }
         }
+
+        public bool cambiarPassword(string User,string newpassword)
+        {
+            try
+            {
+                Conexion conexion = new Conexion();
+                String SQL = "UPDATE usuario Set Password = sha2('" + newpassword + "',512) where User like '" + User + "';";
+                MySqlCommand sqlcom = new MySqlCommand();
+                sqlcom.CommandText = SQL;
+                conexion.EjecutaSQLComando(sqlcom);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool cambiarImagen(string User,string nuevaimagen)
+        {
+            try
+            {
+                Conexion conexion = new Conexion();
+                String SQL = "UPDATE usuario Set Foto = '"+nuevaimagen+"' where User like '"+User+"';";
+                MySqlCommand sqlcom = new MySqlCommand();
+                sqlcom.CommandText = SQL;
+                conexion.EjecutaSQLComando(sqlcom);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

@@ -134,5 +134,19 @@ namespace IEL.Servicios
             UsuarioDAO dao = new UsuarioDAO();
             return dao.getUsuario(user,password);
         }
+
+        [WebMethod]
+        public bool cambiarPassword(string User, string newpassword)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            return dao.cambiarPassword(User, newpassword);
+        }
+
+        [WebMethod]
+        public bool cambiarImagen(string User,string nuevaImagen)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            return dao.cambiarImagen(User, nuevaImagen);
+        }
     }
 }

@@ -28,7 +28,8 @@
         }
     </style>
     <script src="JS/quiz.js"></script>
-    
+     <script src="JS/PersonalizacionUsuario.js"></script>
+    <script src="JS/CambiarImagen.js"></script>
 </head>
 <body>
     <div class="jumbotron" runat="server" id="div">

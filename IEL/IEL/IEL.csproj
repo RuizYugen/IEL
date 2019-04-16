@@ -291,27 +291,35 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Vistas\AreaDePractica.aspx" />
+    <Content Include="Vistas\CambiarImagen.aspx" />
     <Content Include="Vistas\CSS\bootstrap-theme.css" />
     <Content Include="Vistas\CSS\bootstrap-theme.min.css" />
     <Content Include="Vistas\CSS\bootstrap.css" />
     <Content Include="Vistas\CSS\bootstrap.min.css" />
+    <Content Include="Vistas\CSS\CSSCambiarImagen.css" />
     <Content Include="Vistas\CSS\cssHead.css" />
+    <Content Include="Vistas\CSS\CSSPersonalizacionUsuario.css" />
     <Content Include="Vistas\CSS\CSSQuiz.css" />
     <Content Include="Vistas\CSS\estadisticas.css" />
     <Content Include="Vistas\CSS\EstilosMaterialDeAprendizaje.css" />
     <Content Include="Vistas\EstadisticasForm.aspx" />
     <Content Include="Vistas\IMG\learn.png" />
     <Content Include="Vistas\IMG\Logo.png" />
+    <Content Include="Vistas\IMG\userHombre.jpg" />
+    <Content Include="Vistas\IMG\userMujer.jpg" />
     <Content Include="Vistas\Index.aspx" />
     <Content Include="Vistas\JS\bootstrap.js" />
     <Content Include="Vistas\JS\bootstrap.min.js" />
+    <Content Include="Vistas\JS\CambiarImagen.js" />
     <Content Include="Vistas\JS\Estadisticas.js" />
     <Content Include="Vistas\JS\login.js" />
     <Content Include="Vistas\JS\MaterialAprendizaje.js" />
     <Content Include="Vistas\JS\npm.js" />
+    <Content Include="Vistas\JS\PersonalizacionUsuario.js" />
     <Content Include="Vistas\JS\quiz.js" />
     <Content Include="Vistas\Login.aspx" />
     <Content Include="Vistas\MaterialDeAprendizaje.aspx" />
+    <Content Include="Vistas\PersonalizacionUsuario.aspx" />
     <Content Include="Vistas\Principal.aspx" />
     <Content Include="Vistas\QuizForm.aspx" />
     <Content Include="Web.config" />
@@ -555,6 +563,13 @@
     <Compile Include="Vistas\AreaDePractica.aspx.designer.cs">
       <DependentUpon>AreaDePractica.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\CambiarImagen.aspx.cs">
+      <DependentUpon>CambiarImagen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\CambiarImagen.aspx.designer.cs">
+      <DependentUpon>CambiarImagen.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\EstadisticasForm.aspx.cs">
       <DependentUpon>EstadisticasForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -589,6 +604,13 @@
     </Compile>
     <Compile Include="Vistas\PaginaMaestra.Master.designer.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\PersonalizacionUsuario.aspx.cs">
+      <DependentUpon>PersonalizacionUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\PersonalizacionUsuario.aspx.designer.cs">
+      <DependentUpon>PersonalizacionUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Principal.aspx.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
