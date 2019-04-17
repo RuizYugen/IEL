@@ -14,7 +14,7 @@ namespace IEL.Vistas
         {
             if (Session["usuario"] ==null)
             {
-                Response.Redirect("Login.aspx");
+               Response.Redirect("Login.aspx");
             }else
             {                
                //logear.InnerHtml = Session["usuario"].ToString();               

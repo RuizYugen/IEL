@@ -30,29 +30,42 @@
         .btn {
             width: 100px;
         }
+
+        #centrarexterior{
+            text-align:center;
+        }
+        #centrarinterior{
+            display:inline-block;
+        }
     </style>
 </head>
 <body>    
+    <div id="centrarexterior">
+        <div id="centrarinterior">
     <form class="secion" method="post" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         <Services>
             <asp:ServiceReference Path="~/Servicios/wsUsuario.asmx"/>
         </Services>
     </asp:ScriptManager>
-         <div align="Center"><img class="img-responsive" width="60%" src="img/Nombre.png" /></div>
+         <div ><img class="img-responsive" width="60%" src="img/Nombre.png" /></div>
         <br />
         <div class="input-group">
             
             <input id="txtUser" type="text" class="form-control" name="email" placeholder="User" runat="server"/>
         </div>
         <br />
-        <div class="input-group" align="Center">
+        <div class="input-group">
               
             <input id="txtPassword" type="password" class="form-control" name="password" placeholder="Password" runat="server"/>
         </div>
         <br />
+        <div style="text-align:center;display:inline-block;align-content:center;">            
         <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" CssClass="btn btn-primary" OnClick="btnAceptar_Click"/>
         <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary"/>
+        </div>
         </form>
+            </div>
+        </div>
 </body>
 </html>

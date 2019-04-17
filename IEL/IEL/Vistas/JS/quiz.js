@@ -1,8 +1,7 @@
 ﻿var usuario;
 $(document).ready(function () {
     IEL.Servicios.wsQuiz.getAllPreguntas(cargarPrimera);    
-    usuario = $('#logear').text();
-    alert(usuario);
+    usuario = $('#logear').text();    
 });
 
 
