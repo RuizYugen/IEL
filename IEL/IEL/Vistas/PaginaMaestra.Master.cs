@@ -13,5 +13,12 @@ namespace ELv1.Pages
         {
             
         }
+        protected void Button1_OnClick(object Source, EventArgs e)
+        {
+            Session.Abandon();
+
+            Response.Redirect("Login.aspx");
+            
+        }
     }
 }
