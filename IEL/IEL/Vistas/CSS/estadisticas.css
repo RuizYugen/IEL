@@ -6,10 +6,12 @@
     font-size:30px;
    
     color:#000000;
-    text-decoration-color:#69e882;
-    text-decoration-line:underline;
+    
     font-weight:bold;
     background-color:white;
+}
+.barra{
+     text-decoration-line:none;
 }
 #txtAlumno{
    
@@ -17,8 +19,11 @@
     font-weight:bold;
     color:#73a0e7;
     font-size:40px;
+      
+
    
 }
+
 #progresoTotal{
     color:#73a0e7;
     
@@ -53,6 +58,13 @@ padding-right:50px;
       
 
 }
+ #txtAvance:hover {
+      -moz-transform: scale(1.2);
+-webkit-transform: scale(1.2);
+-o-transform: scale(1.2);
+-ms-transform: scale(1.2);
+transform: scale(1.2)
+               }
 #tittleActs{
     font-family :'Indie Flower', cursive;
     color:#73a0e7;

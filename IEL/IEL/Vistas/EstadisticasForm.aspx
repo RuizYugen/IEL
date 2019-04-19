@@ -44,26 +44,45 @@
     </div>
     <div style="padding-left:100px" class="panel-group divContenido">
         <img class="img-responsive" ID="imgProgress"  src="/Vistas/IMG/learn.png" />
-        <p id="txtSimplePresent" >Simple present: 0%</p>
+        <p id="txtSimplePresent" style="text-decoration-color:#69e882; text-decoration-line:underline;" >Simple present: 0%  </p>
+        <progress id="barraPresente" value="0" max="100"></progress>
         <br />
-        <p id="txtSimplePast">Simple past: 0%</p>
+        <p id="txtSimplePast" style="text-decoration-color:#69e882; text-decoration-line:underline;">Simple past: 0%</p>
+        <progress id="barraPasado" value="0" max="100"  ></progress>
         <br />
-        <p id="txtVerbs">Verbs: 0%</p>
+        <p id="txtVerbs" style="text-decoration-color:#69e882; text-decoration-line:underline;">Verbs: 0%</p>
+        <progress  id="barraVerbo" value="0" max="100" ></progress>
         <br />
-        <p id="txtVocabulario">Vocabulary: 0%</p>
+        <p id="txtVocabulario" style="text-decoration-color:#69e882; text-decoration-line:underline;">Vocabulary: 0%</p>
+        <progress id="barraVocabulario" value="0" max="100"  ></progress>
        
     </div>
-    <div class="panel-group container-fluid">
+
+    
+    <div class="panel-group container-fluid" id="barraDiv">
+         <br />
+        
         <p class="text-right" style="font-family :'Indie Flower', cursive;
     font-size:50px;
     color:#73a0e7;
     padding-right:100px;
     padding-top:-100px;
     font-weight:bolder;
+    
+    display:block!important;
+-webkit-transition:-webkit-transform 0.5s ease-out;
+-moz-transition:-moz-transform 0.5s ease-out;
+-o-transition:-o-transform 0.5s ease-out;
+-ms-transition:-ms-transform 0.5s ease-out;
+transition:transform 0.5s ease-out;
+
     " id="txtAvance">Avance: 0%</p>
         
         <progress  id="barProgress" value="0" max="100" style="float:right; padding-right:400px; height:30px; width:300px;"></progress>
+
+       
     </div>
+   
     <br />
       <br />
    <!-- <div class="panel-group container-fluid percetActs" >

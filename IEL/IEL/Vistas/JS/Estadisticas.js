@@ -13,6 +13,8 @@ $(document).ready(function () {
     IEL.Servicios.wsPreguntaContestadaPorUsuario.getPreguntasCorrectasVocabulario(usuario, estadisticasVocabulario);
     
 });
+
+
 var datosObtenidos;
 
 var numPreguntasTotalPresente=0;
@@ -93,7 +95,15 @@ function estadisticasVocabulario(resultado) {
 function cargarAvance() {
     //debugger;
     var avance = (avanceps + avancePasado + avanceVerbos + avanceVc) / 4;
+    document.getElementById("barraPresente").value = avanceps;
+    document.getElementById("barraPasado").value = avancePasado;
+    document.getElementById("barraVerbo").value = avanceVerbos;
+    document.getElementById("barraVocabulario").value = avanceVc;
+    
     avance = avance.toFixed(2);
     document.getElementById("txtAvance").innerHTML = "Avance: " + avance + "%";
     document.getElementById("barProgress").value = avance;
+
+
+
 }
