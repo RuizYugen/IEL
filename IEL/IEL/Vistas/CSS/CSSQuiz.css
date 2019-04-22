@@ -6,7 +6,8 @@
     background:linear-gradient(to bottom,#69E8B2 0%,#8FF4C9 100%);  
     color:black;
     padding-top:30px;
-    margin-top:-20px;
+    top:-20px;
+    position:relative;
     border-color:#1B3280;
     text-align:center;
    
