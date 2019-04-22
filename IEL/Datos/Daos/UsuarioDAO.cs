@@ -178,7 +178,7 @@ namespace Datos.Daos
             try
             {
                 Conexion conexion = new Conexion();
-                String SQL = "INSERT INTO Usuario (User,Password,Nombre,ApellidoPaterno,ApellidoMaterno,Correo,Foto,Privilegio) VALUES (@User,@Password,@Nombre,@ApellidoPaterno,@ApellidoMaterno,@Correo,@Foto,@Privilegio);";
+                String SQL = "INSERT INTO usuario (User,Password,Nombre,ApellidoPaterno,ApellidoMaterno,Correo,Foto,Privilegio) VALUES (@User,@Password,@Nombre,@ApellidoPaterno,@ApellidoMaterno,@Correo,@Foto,@Privilegio);";
                 MySqlCommand sqlcom = new MySqlCommand();
                 sqlcom.CommandText = SQL;
                 sqlcom.Parameters.AddWithValue("@User", i.User);
