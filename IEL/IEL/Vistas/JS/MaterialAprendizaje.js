@@ -68,8 +68,4 @@ function cambiarInfo3() {
         "En inglés, encontramos cuatro distintos géneros.Los ya conocidos masculino y femenino, neutro y común";
     document.getElementById('ContenidoT1').innerHTML = "- El GÉNERO MASCULINO, se aplica a personas del sexo masculino. Como identificador, se antepone el pronombre he.<br/>" +
         "Charles is reading a book.He is a doctor. / Carlos está leyendo un libro.Él es médico. ";
-
-
-
-
 }
