@@ -1,10 +1,8 @@
-﻿$(document).ready(function () {
-    alert("hola");
+﻿$(document).ready(function () {    
     IEL.Servicios.wsUsuario.getAll(onComplete_cargarlista);
 });
 
-function onComplete_cargarlista(response) {
-    alert("onComplete_cargarlista + " + response);
+function onComplete_cargarlista(response) {    
     var dataSet = JSON.parse(response);
 
     tabla = $('#tabla').dataTable({

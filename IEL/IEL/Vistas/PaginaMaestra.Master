@@ -9,7 +9,10 @@
     </asp:ContentPlaceHolder>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/dataTables.bootstrap4.css" />
     <script src="../Scripts/jquery-3.3.1.min.js"></script>
+    <script src="../Scripts/jquery.dataTables.min.js"></script>
+     <script src="../Scripts/dataTables.bootstrap4.min.js"></script>
     <script src="JS/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet" />
 

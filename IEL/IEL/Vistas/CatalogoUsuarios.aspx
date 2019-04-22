@@ -13,9 +13,7 @@
             </Services>
     </asp:ScriptManager>
 
-    <a href='RegistroUsuario.aspx' class="enlaceboton">Agregar</a>
-    <a href='PersonalizacionUsuario.aspx' name="Editar" class="enlaceboton" >Editar</a>
-    <input id="btnEliminar" type="button" value="Eliminar"/>
+   
  
     <br />
     <table id="tabla" class="table table-striped table-bordered small"
