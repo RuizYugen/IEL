@@ -292,10 +292,12 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Vistas\AreaDePractica.aspx" />
     <Content Include="Vistas\CambiarImagen.aspx" />
+    <Content Include="Vistas\CatalogoUsuarios.aspx" />
     <Content Include="Vistas\CSS\bootstrap-theme.css" />
     <Content Include="Vistas\CSS\bootstrap-theme.min.css" />
     <Content Include="Vistas\CSS\bootstrap.css" />
     <Content Include="Vistas\CSS\bootstrap.min.css" />
+    <Content Include="Vistas\CSS\CatalogoUsuariosCSS.css" />
     <Content Include="Vistas\CSS\CSSCambiarImagen.css" />
     <Content Include="Vistas\CSS\cssHead.css" />
     <Content Include="Vistas\CSS\CSSPersonalizacionUsuario.css" />
@@ -311,17 +313,20 @@
     <Content Include="Vistas\JS\bootstrap.js" />
     <Content Include="Vistas\JS\bootstrap.min.js" />
     <Content Include="Vistas\JS\CambiarImagen.js" />
+    <Content Include="Vistas\JS\CatalogoUsuarios.js" />
     <Content Include="Vistas\JS\Estadisticas.js" />
     <Content Include="Vistas\JS\login.js" />
     <Content Include="Vistas\JS\MaterialAprendizaje.js" />
     <Content Include="Vistas\JS\npm.js" />
     <Content Include="Vistas\JS\PersonalizacionUsuario.js" />
     <Content Include="Vistas\JS\quiz.js" />
+    <Content Include="Vistas\JS\RegistroUsuario.js" />
     <Content Include="Vistas\Login.aspx" />
     <Content Include="Vistas\MaterialDeAprendizaje.aspx" />
     <Content Include="Vistas\PersonalizacionUsuario.aspx" />
     <Content Include="Vistas\Principal.aspx" />
     <Content Include="Vistas\QuizForm.aspx" />
+    <Content Include="Vistas\RegistroUsuario.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
@@ -570,6 +575,13 @@
     <Compile Include="Vistas\CambiarImagen.aspx.designer.cs">
       <DependentUpon>CambiarImagen.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\CatalogoUsuarios.aspx.cs">
+      <DependentUpon>CatalogoUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\CatalogoUsuarios.aspx.designer.cs">
+      <DependentUpon>CatalogoUsuarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\EstadisticasForm.aspx.cs">
       <DependentUpon>EstadisticasForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -625,6 +637,13 @@
     </Compile>
     <Compile Include="Vistas\QuizForm.aspx.designer.cs">
       <DependentUpon>QuizForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\RegistroUsuario.aspx.cs">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\RegistroUsuario.aspx.designer.cs">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
