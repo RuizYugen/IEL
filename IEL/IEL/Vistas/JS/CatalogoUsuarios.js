@@ -37,7 +37,12 @@ function onComplete_cargarlista(response) {
 
 function eliminar(fila) {
     var Usuario = fila.value.substring(9, fila.value.length);
-    alert(Usuario);
+    IEL.Servicios.wsUsuario.delete(Usuario, Exito);
+}
+
+function Exito(response) {
+    alert("Usuario Eliminado");
+    window.location.reload(true);
 }
 
 function editar(fila) {
