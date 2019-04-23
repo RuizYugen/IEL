@@ -3,6 +3,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1"/>    
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>   
     <link rel="stylesheet" type="text/css" href="CSS/CatalogoUsuariosCSS.css"/>
+    <link href="CSS/dataTables.bootstrap4.css" rel="stylesheet" />
     <script src="JS/CatalogoUsuarios.js"></script>
 </asp:Content>
 
