@@ -5,7 +5,7 @@
 function onComplete_cargarlista(response) {    
     var dataSet = JSON.parse(response);
 
-    tabla = $('#tabla').dataTable({
+    /*tabla = $('#tabla').dataTable({
         data: dataSet,
         columns: [
             { title: "User", data: "User", render: $.fn.dataTable.render.text() },
@@ -17,6 +17,35 @@ function onComplete_cargarlista(response) {
             { title: "Foto", data: "Foto", render: $.fn.dataTable.render.text() },
             { title: "Privilegio", data: "Privilegio", render: $.fn.dataTable.render.text() }
         ]
+    });*/
+
+    tabla = $('#tabla').dataTable({
+        data: dataSet,
+        columns: [
+            { title: "User", data: "User", render: $.fn.dataTable.render.text() },           
+            { title: "Nombre", data: "Nombre", render: $.fn.dataTable.render.text() },
+            { title: "Apellido Paterno", data: "ApellidoPaterno", render: $.fn.dataTable.render.text() },
+            { title: "Apellido Materno", data: "ApellidoMaterno", render: $.fn.dataTable.render.text() },
+            { title: "Correo", data: "Correo", render: $.fn.dataTable.render.text() },
+            { title: "Foto", data: "Foto", render: $.fn.dataTable.render.text() },
+            { title: "Privilegio", data: "Privilegio", render: $.fn.dataTable.render.text() },
+            { title: "Eliminar", data: null, render: function (data, type, row) { return '<input type="button" value="Eliminar '+data.User+'" onclick="eliminar(this)" class="btn-default"/>'; } },
+            { title: "Editar", data: null, render: function (data, type, row) { return '<input type="button" value="Editar '+data.User+'" onclick="editar(this)" class="btn-default"/>'; } }
+        ]
     });
+}
+
+function eliminar(fila) {
+    var Usuario = fila.value.substring(9, fila.value.length);
+    alert(Usuario);
+}
+
+function editar(fila) {
+    var Usuario = fila.value.substring(7,fila.value.length);
+    alert(Usuario);
+}
+
+function agregar() {
+    alert("Llamar la interfaz de agregar");
 }
 

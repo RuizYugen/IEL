@@ -52,12 +52,12 @@
 </head>
 <body>    
 
-    <div class="jumbotron" runat="server" id="div">
+    <div class="jumbotron" runat="server" id="div" style="width:100%;">
         <div class="container text-left">
             <img src="IMG/Nombre.png" class="logo"/>
         </div>
     </div>
-    <nav class='navbar navbar-inverse'>
+    <nav class='navbar navbar-inverse' style="width:100%;">
     <%
             if (Session["usuario"] == null)
             {

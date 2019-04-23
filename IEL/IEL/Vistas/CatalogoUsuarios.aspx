@@ -20,5 +20,7 @@
     <table id="tabla" class="table table-striped table-bordered small"
         style="margin: 0 auto; width: 90%;">
     </table>
+    <br />
+    <input type="button" value="Agregar Usuario" onclick="agregar()" class="btn-primary"/>
 
 </asp:Content>
