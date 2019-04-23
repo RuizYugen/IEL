@@ -12,6 +12,82 @@
     text-align:center;
    
 }
+#color1{
+     transition: 0.3s;
+     cursor:default;
+}
+
+#color1:hover{
+   opacity:0.6;
+}
+
+#color2{
+    transition: 0.3s;
+     cursor:default;
+}
+
+#color2:hover{
+   opacity:0.6;
+}
+
+#color3{
+   transition: 0.3s;
+     cursor:default;
+}
+
+#color3:hover{
+   opacity:0.6;
+}
+#color4{
+    transition: 0.3s;
+     cursor:default;
+}
+#color4:hover{
+   opacity:0.6;
+}
+#color5{
+   transition: 0.3s;
+     cursor:default;
+}
+#color5:hover{
+   opacity:0.6;
+}
+#color6{
+    transition: 0.3s;
+     cursor:default;
+}
+#color6:hover{
+   opacity:0.6;
+}
+#color7{
+    transition: 0.3s;
+     cursor:default;
+}
+#color7:hover{
+   opacity:0.6;
+}
+#color8{
+    transition: 0.3s;
+     cursor:default;
+}
+#color8:hover{
+   opacity:0.6;
+}
+#color9{
+     transition: 0.3s;
+     cursor:default;
+}
+#color9:hover{
+   opacity:0.6;
+}
+#color10{
+    transition: 0.3s;
+     cursor:default;
+}
+#color10:hover{
+   opacity:0.6;
+}
+
 #centrarcoloreada{
     text-align:center;
 }

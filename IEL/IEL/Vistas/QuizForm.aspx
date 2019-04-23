@@ -13,7 +13,7 @@
     </asp:ScriptManager>
 
     <div  id="titulo">
-        <h1>Quiz</h1>
+        <h1 style="padding-bottom:20px;">Quiz</h1>
        
         <!--<button id="logear" runat="server"></button>-->
         
