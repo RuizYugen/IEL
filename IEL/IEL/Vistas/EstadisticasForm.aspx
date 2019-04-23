@@ -21,7 +21,8 @@
    background:linear-gradient(to bottom,#69E8B2 0%,#8FF4C9 100%);  
     color:black;
     padding-top:30px;
-    margin-top:-20px;
+    top:-20px;
+    position:relative;
     border-color:#1B3280;
     text-align:center;
    
@@ -45,16 +46,16 @@
     <div style="padding-left:100px" class="panel-group divContenido">
         <img class="img-responsive" ID="imgProgress"  src="/Vistas/IMG/learn.png" />
         <p id="txtSimplePresent" style="text-decoration-color:#69e882; text-decoration-line:underline;" >Simple present: 0%  </p>
-        <progress id="barraPresente" value="0" max="100"></progress>
+        <progress id="barraPresente" value="0" max="100" style="width:270px"></progress>
         <br />
         <p id="txtSimplePast" style="text-decoration-color:#69e882; text-decoration-line:underline;">Simple past: 0%</p>
-        <progress id="barraPasado" value="0" max="100"  ></progress>
+        <progress id="barraPasado" value="0" max="100" style="width:270px;" ></progress>
         <br />
         <p id="txtVerbs" style="text-decoration-color:#69e882; text-decoration-line:underline;">Verbs: 0%</p>
-        <progress  id="barraVerbo" value="0" max="100" ></progress>
+        <progress  id="barraVerbo" value="0" max="100" style="width:270px;"></progress>
         <br />
         <p id="txtVocabulario" style="text-decoration-color:#69e882; text-decoration-line:underline;">Vocabulary: 0%</p>
-        <progress id="barraVocabulario" value="0" max="100"  ></progress>
+        <progress id="barraVocabulario" value="0" max="100"  style="width:270px;"></progress>
        
     </div>
 
