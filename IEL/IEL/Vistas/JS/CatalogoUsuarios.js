@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {    
+﻿$(document).ready(function () {   
     IEL.Servicios.wsUsuario.getAll(onComplete_cargarlista);
 });
 
@@ -38,12 +38,11 @@ function onComplete_cargarlista(response) {
 function eliminar(fila) {
     var Usuario = fila.value.substring(9, fila.value.length);
     IEL.Servicios.wsUsuario.delete(Usuario, Exito);
-}
-
-function Exito(response) {
     alert("Usuario Eliminado");
     window.location.reload(true);
 }
+
+function Exito(response) {}
 
 function editar(fila) {
     var Usuario = fila.value.substring(7,fila.value.length);
@@ -51,6 +50,6 @@ function editar(fila) {
 }
 
 function agregar() {
-    alert("Llamar la interfaz de agregar");
+    location.href = "AgregarUsuario.aspx";
 }
 
