@@ -296,6 +296,7 @@
     <Content Include="Servicios\wsVerbo.asmx" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Vistas\AgregarUsuario.aspx" />
     <Content Include="Vistas\AreaDePractica.aspx" />
     <Content Include="Vistas\CambiarImagen.aspx" />
     <Content Include="Vistas\CatalogoUsuarios.aspx" />
@@ -304,6 +305,7 @@
     <Content Include="Vistas\CSS\bootstrap.css" />
     <Content Include="Vistas\CSS\bootstrap.min.css" />
     <Content Include="Vistas\CSS\CatalogoUsuariosCSS.css" />
+    <Content Include="Vistas\CSS\CSSAgregarUsuario.css" />
     <Content Include="Vistas\CSS\CSSCambiarImagen.css" />
     <Content Include="Vistas\CSS\cssHead.css" />
     <Content Include="Vistas\CSS\CSSPersonalizacionUsuario.css" />
@@ -567,6 +569,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AgregarUsuario.aspx.cs">
+      <DependentUpon>AgregarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\AgregarUsuario.aspx.designer.cs">
+      <DependentUpon>AgregarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\AreaDePractica.aspx.cs">
       <DependentUpon>AreaDePractica.aspx</DependentUpon>

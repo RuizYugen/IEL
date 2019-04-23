@@ -1,0 +1,36 @@
+﻿.entrada{
+    width:75%;
+    margin-left:10%;
+}
+#titulo{
+    font-family:'calibri light';
+    font-size:37px;
+    background:linear-gradient(to bottom,#69E8B2 0%,#8FF4C9 100%);  
+    color:black;
+    padding-top:30px;
+    top:-20px;
+    position:relative;
+    border-color:#1B3280;
+    text-align:center;
+   
+}
+#divAvatar{
+    margin-left:8%;
+}
+#imgUsuario{
+    height:163px;
+   
+}
+#btnGuardarImg{
+margin-left:2%;
+}
+#textPrivilegios{
+margin-left:10%;
+}
+#privilegios{
+margin-left:10%;
+}
+#btnGuardar{
+    margin-left:10%;
+    
+}
