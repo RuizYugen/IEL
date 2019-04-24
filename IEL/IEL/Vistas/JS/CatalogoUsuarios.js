@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {   
     IEL.Servicios.wsUsuario.getAll(onComplete_cargarlista);
+    document.getElementById('tabla').focus();
 });
 
 function onComplete_cargarlista(response) {    
@@ -37,9 +38,12 @@ function onComplete_cargarlista(response) {
 
 function eliminar(fila) {
     var Usuario = fila.value.substring(9, fila.value.length);
-    IEL.Servicios.wsUsuario.delete(Usuario, Exito);
-    alert("Usuario Eliminado");
-    window.location.reload(true);
+    var confirmar = confirm("¿Desea eliminar el usuario?");
+    if(confirmar){
+        IEL.Servicios.wsUsuario.delete(Usuario, Exito);
+        alert("Usuario Eliminado");
+        window.location.reload(true);
+    }    
 }
 
 function Exito(response) {}

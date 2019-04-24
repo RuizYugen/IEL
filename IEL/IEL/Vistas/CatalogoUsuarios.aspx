@@ -21,7 +21,10 @@
         style="margin: 0 auto; width: 90%;">
     </table>
     <br />
+    <div style="text-align:center">
+        <div style="display:inline-block">
     <input type="button" value="Agregar Usuario" onclick="agregar()" class="btn-primary"/>
-
+            </div>
+        </div>
     <script src="JS/CatalogoUsuarios.js"></script>    
 </asp:Content>

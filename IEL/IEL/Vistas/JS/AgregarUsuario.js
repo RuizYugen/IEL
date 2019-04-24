@@ -3,6 +3,7 @@ var elegir = false;
 var lista;
 $(document).ready(function () {
     IEL.Servicios.wsUsuario.getAll(cargarLista);
+    document.getElementById('User').focus();
 });
 
 function cargarLista(response) {
