@@ -154,7 +154,7 @@ namespace Datos.Daos
             try
             {
                 String SQL = "UPDATE Usuario SET" +
-                    " User='" + e.User + "',Password='" + e.Password + "',Nombre='" + e.Nombre + "',ApellidoPaterno='" + e.ApellidoPaterno + "',ApellidoMaterno='" + e.ApellidoMaterno + "',Correo='" + e.Correo + "',Foto='" + e.Foto + "',Privilegio='" + e.Privilegio+"'"+
+                    " User='" + e.User + "',Password=sha2('" + e.Password + "',512),Nombre='" + e.Nombre + "',ApellidoPaterno='" + e.ApellidoPaterno + "',ApellidoMaterno='" + e.ApellidoMaterno + "',Correo='" + e.Correo + "',Foto='" + e.Foto + "',Privilegio='" + e.Privilegio+"'"+
                     " WHERE User like '" + e.User + "';";
                 MySqlCommand sqlcom = new MySqlCommand();
                 sqlcom.CommandText = SQL;
@@ -163,7 +163,6 @@ namespace Datos.Daos
             }
             catch (Exception)
             {
-
                 return false;
             }
 

@@ -31,9 +31,9 @@ function cambiarAvatar(foto) {
     elegir = true;
 }
 
-function editar() {   
-    Password = document.getElementById('EditPassword').value;
-    alert(Password);
+function editar() {
+    User = document.getElementById('EditUser').value;   
+    Password = document.getElementById('EditPassword').value;    
     Nombre = document.getElementById('EditNombre').value;
     ApellidoPaterno = document.getElementById('EditApellidoPaterno').value;
     ApellidoMaterno = document.getElementById('EditApellidoMaterno').value;
