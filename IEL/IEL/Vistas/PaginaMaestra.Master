@@ -49,6 +49,7 @@
     <script src="JS/CatalogoUsuarios.js"></script>
     <script src="JS/RegistroUsuario.js"></script>
     <script src="JS/AgregarUsuario.js"></script>
+    <script src="JS/EditarUsuario.js"></script>
 </head>
 <body>    
 
