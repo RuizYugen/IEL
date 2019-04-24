@@ -46,7 +46,8 @@ function Exito(response) {}
 
 function editar(fila) {
     var Usuario = fila.value.substring(7,fila.value.length);
-    alert(Usuario);
+    localStorage.Usr = Usuario;
+    location.href = "EditarUsuario.aspx";
 }
 
 function agregar() {

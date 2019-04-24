@@ -307,12 +307,14 @@
     <Content Include="Vistas\CSS\CatalogoUsuariosCSS.css" />
     <Content Include="Vistas\CSS\CSSAgregarUsuario.css" />
     <Content Include="Vistas\CSS\CSSCambiarImagen.css" />
+    <Content Include="Vistas\CSS\CSSEditarUsuario.css" />
     <Content Include="Vistas\CSS\cssHead.css" />
     <Content Include="Vistas\CSS\CSSPersonalizacionUsuario.css" />
     <Content Include="Vistas\CSS\CSSQuiz.css" />
     <Content Include="Vistas\CSS\dataTables.bootstrap4.css" />
     <Content Include="Vistas\CSS\estadisticas.css" />
     <Content Include="Vistas\CSS\EstilosMaterialDeAprendizaje.css" />
+    <Content Include="Vistas\EditarUsuario.aspx" />
     <Content Include="Vistas\EstadisticasForm.aspx" />
     <Content Include="Vistas\IMG\learn.png" />
     <Content Include="Vistas\IMG\Logo.png" />
@@ -324,6 +326,7 @@
     <Content Include="Vistas\JS\bootstrap.min.js" />
     <Content Include="Vistas\JS\CambiarImagen.js" />
     <Content Include="Vistas\JS\CatalogoUsuarios.js" />
+    <Content Include="Vistas\JS\EditarUsuario.js" />
     <Content Include="Vistas\JS\Estadisticas.js" />
     <Content Include="Vistas\JS\login.js" />
     <Content Include="Vistas\JS\MaterialAprendizaje.js" />
@@ -596,6 +599,13 @@
     </Compile>
     <Compile Include="Vistas\CatalogoUsuarios.aspx.designer.cs">
       <DependentUpon>CatalogoUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\EditarUsuario.aspx.cs">
+      <DependentUpon>EditarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\EditarUsuario.aspx.designer.cs">
+      <DependentUpon>EditarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\EstadisticasForm.aspx.cs">
       <DependentUpon>EstadisticasForm.aspx</DependentUpon>
