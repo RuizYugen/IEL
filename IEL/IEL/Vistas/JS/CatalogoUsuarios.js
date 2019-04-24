@@ -1,6 +1,5 @@
 ﻿$(document).ready(function () {   
     IEL.Servicios.wsUsuario.getAll(onComplete_cargarlista);
-   
 });
 
 function onComplete_cargarlista(response) {    
@@ -45,7 +44,7 @@ function eliminar(fila) {
 
 function Exito(response) {}
 
-function editar(fila) {
+function editar(fila) {    
     
     var Usuario = fila.value.substring(7,fila.value.length);
     localStorage.Usr = Usuario;

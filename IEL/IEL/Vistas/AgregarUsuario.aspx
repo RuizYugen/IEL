@@ -50,5 +50,6 @@
     <br />
     <button type="button" class="btn btn-primary" id="btnGuardar" onclick="guardar()">Guardar</button>
         </div>
-        </div>    
+        </div>
+    <script src="JS/AgregarUsuario.js"></script>    
 </asp:Content>

@@ -23,4 +23,5 @@
     <br />
     <input type="button" value="Agregar Usuario" onclick="agregar()" class="btn-primary"/>
 
+    <script src="JS/CatalogoUsuarios.js"></script>    
 </asp:Content>

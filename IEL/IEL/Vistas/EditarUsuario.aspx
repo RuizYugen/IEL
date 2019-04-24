@@ -16,27 +16,27 @@
     </div>    
   <div class="form-group entrada">
       <label for="User">User</label>
-      <input type="text" class="form-control" id="User" placeholder="User name" />
+      <input type="text" class="form-control" id="EditUser" placeholder="User name" />
   </div>
   <div class="form-group entrada">
       <label for="Password">Password</label>
-      <input type="password" class="form-control" id="Password" placeholder="password" />
+      <input type="password" class="form-control" id="EditPassword" placeholder="password" />
   </div>
  <div class="form-group entrada">
       <label for="Nombre">Nombre</label>
-      <input type="text" class="form-control" id="Nombre" placeholder="Nombre" />
+      <input type="text" class="form-control" id="EditNombre" placeholder="Nombre" />
   </div>
   <div class="form-group entrada">
       <label for="ApellidoPaterno">Apellido Paterno</label>
-      <input type="text" class="form-control" id="ApellidoPaterno"  placeholder="Apellido Paterno"/>
+      <input type="text" class="form-control" id="EditApellidoPaterno"  placeholder="Apellido Paterno"/>
   </div>
   <div class="form-group entrada">
       <label for="ApellidoMaterno">Apellido Materno</label>
-      <input type="text" class="form-control" id="ApellidoMaterno" placeholder="Apellido Materno"/>
+      <input type="text" class="form-control" id="EditApellidoMaterno" placeholder="Apellido Materno"/>
   </div>
        <div class="form-group entrada">
       <label for="Correo">Correo</label>
-      <input type="text" class="form-control" id="Correo" placeholder="Correo"/>
+      <input type="text" class="form-control" id="EditCorreo" placeholder="Correo"/>
   </div> 
     <div style="text-align:center">
         <div style="display:inline-block">
@@ -48,7 +48,8 @@
          <br />        
     <br />    
     <br />
-    <button type="button" class="btn btn-primary" id="btnGuardar" onclick="editar()">Guardar</button>
+    <button type="button" class="btn btn-primary" id="EditbtnGuardar" onclick="editar()">Guardar</button>
         </div>
         </div>    
+    <script src="JS/EditarUsuario.js"></script>
 </asp:Content>

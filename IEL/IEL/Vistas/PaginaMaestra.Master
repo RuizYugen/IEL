@@ -40,16 +40,15 @@
     </style>
 
    
-    <script src="JS/quiz.js"></script>
-     <script src="JS/PersonalizacionUsuario.js"></script>
-    <script src="JS/CambiarImagen.js"></script>
+    <!--<script src="JS/quiz.js"></script>-->
+     <!--<script src="JS/PersonalizacionUsuario.js"></script>-->
+    <!--<script src="JS/CambiarImagen.js"></script>-->
 
-     <script src="JS/MaterialAprendizaje.js"></script>    
+     <!--<script src="JS/MaterialAprendizaje.js"></script>-->    
 
-    <script src="JS/CatalogoUsuarios.js"></script>
-    <script src="JS/RegistroUsuario.js"></script>
-    <script src="JS/AgregarUsuario.js"></script>
-    <script src="JS/EditarUsuario.js"></script>
+    <!--<script src="JS/CatalogoUsuarios.js"></script>-->    
+    <!--<script src="JS/AgregarUsuario.js"></script>-->
+    <!--<script src="JS/EditarUsuario.js"></script>-->
 </head>
 <body>    
 
