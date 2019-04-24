@@ -6,6 +6,7 @@ using System.Web.Services;
 
 namespace IEL.Servicios
 {
+    
     /// <summary>
     /// Summary description for wsGramatica
     /// </summary>
@@ -16,6 +17,7 @@ namespace IEL.Servicios
     // [System.Web.Script.Services.ScriptService]
     public class wsGramatica : System.Web.Services.WebService
     {
+        /*
         /// <summary>
         /// Obtine todos los registros de la gramatica
         /// </summary>
@@ -77,5 +79,7 @@ namespace IEL.Servicios
         {
             return true;
         }
+
+    */
     }
 }

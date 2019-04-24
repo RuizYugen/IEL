@@ -13,7 +13,7 @@ namespace Datos.Daos
 {
    public class GramaticaDAO
     {
-        /// <summary>
+        /*/// <summary>
         /// Obtiene todos los registros almacenados en la tabla Gramatica
         /// </summary>
         /// <returns>Una lista de tipo Gramatica</returns>
@@ -134,6 +134,27 @@ namespace Datos.Daos
                 return false;
             }
         }
+        */
+        public List<Gramatica> getByTema(int tema)
+        {
+            List<Gramatica> lista = new List<Gramatica>();
+            Conexion con = new Conexion();
 
+            DataSet datos = con.LLenaComboGrid("select * from gramatica natural join gramaticaportema where idTema ="+tema+";");
+            DataTable dt = datos.Tables[0];
+            Gramatica e;
+            foreach (DataRow r in dt.Rows)
+            {
+
+                e = new Gramatica();
+                e.IdGramatica = (int)r.ItemArray[0];
+                e.Formula = (string)r.ItemArray[1];
+                e.Tipo = (string)r.ItemArray[2];
+                e.Voz = (string)r.ItemArray[3];
+                e.TerceraPersona = (Boolean)r.ItemArray[4];
+                lista.Add(e);
+            }
+            return lista;
+        }
     }
 }
