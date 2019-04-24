@@ -55,5 +55,6 @@
             <br />
              <br />
             <button type="button" id="btnNext" style="width:84px" onclick="cambiar()">Next</button>
-        </div></div>        
+        </div></div>    
+    <script src="JS/quiz.js"></script>    
 </asp:Content>

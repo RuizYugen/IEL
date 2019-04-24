@@ -3,18 +3,18 @@ var elegir = false;
 var actual;
 $(document).ready(function () {
     actual = localStorage.Usr;    
-    document.getElementById('User').disabled = true;
+    document.getElementById('EditUser').disabled = true;
     IEL.Servicios.wsUsuario.getUsuarioByID(actual,cargar);
 });
 
 function cargar(response) {
     var usuario = JSON.parse(response);   
-    document.getElementById('User').value = usuario.User;
-    document.getElementById('Password').value = usuario.Password;
-    document.getElementById('Nombre').value = usuario.Nombre;
-    document.getElementById('ApellidoPaterno').value = usuario.ApellidoPaterno;
-    document.getElementById('ApellidoMaterno').value = usuario.ApellidoMaterno;
-    document.getElementById('Correo').value = usuario.Correo;
+    document.getElementById('EditUser').value = usuario.User;
+    document.getElementById('EditPassword').value = usuario.Password;
+    document.getElementById('EditNombre').value = usuario.Nombre;
+    document.getElementById('EditApellidoPaterno').value = usuario.ApellidoPaterno;
+    document.getElementById('EditApellidoMaterno').value = usuario.ApellidoMaterno;
+    document.getElementById('EditCorreo').value = usuario.Correo;
 }
 
 function cambiarAvatar(foto) {
@@ -32,12 +32,12 @@ function cambiarAvatar(foto) {
 }
 
 function editar() {   
-    Password = document.getElementById('Password').value;
+    Password = document.getElementById('EditPassword').value;
     alert(Password);
-    Nombre = document.getElementById('Nombre').value;
-    ApellidoPaterno = document.getElementById('ApellidoPaterno').value;
-    ApellidoMaterno = document.getElementById('ApellidoMaterno').value;
-    Correo = document.getElementById('Correo').value;
+    Nombre = document.getElementById('EditNombre').value;
+    ApellidoPaterno = document.getElementById('EditApellidoPaterno').value;
+    ApellidoMaterno = document.getElementById('EditApellidoMaterno').value;
+    Correo = document.getElementById('EditCorreo').value;
     if (Password.localeCompare("") == 0 || Nombre.localeCompare("") == 0 || ApellidoPaterno.localeCompare("") == 0 || ApellidoMaterno.localeCompare("") == 0 || Correo.localeCompare("") == 0 || !elegir) {
         alert("Todos los campos son obligatorios");
     } else {

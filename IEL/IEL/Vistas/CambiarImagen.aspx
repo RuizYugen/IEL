@@ -23,4 +23,5 @@
             </div>            
         </div>
     </div>
+    <script src="JS/CambiarImagen.js"></script>
 </asp:Content>
