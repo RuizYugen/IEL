@@ -35,6 +35,7 @@ namespace Datos.Daos
                 s.Objeto = (String)r.ItemArray[3];
                 s.Posesivo = (String)r.ItemArray[4];
                 s.Sucesivo = (String)r.ItemArray[5];
+                s.ser = (string)r.ItemArray[6];
                 lista.Add(s);
             }
             return lista;
