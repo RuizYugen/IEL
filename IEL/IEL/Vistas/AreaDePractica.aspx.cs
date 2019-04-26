@@ -39,10 +39,15 @@ namespace IEL.Vistas
                 SujetoDAO sujetoDao = new SujetoDAO();
                 List<Sujeto> sujetos= sujetoDao.getAll();
                 VerboDAO verboDao = new VerboDAO();
-                for (int i=0; i>10; i++)
+                List<Verbo> verbos = verboDao.getAll();
+                int no,nov;
+                for (int i=0; i<10; i++)
                 {
                     Tematica tmt = new Tematica();
-                    int no = new Random().Next(0, sujetos.Count);
+                   
+                    no= new Random().Next(0, sujetos.Count);
+                    no = 0;
+                    nov = new Random().Next(0, verbos.Count);
                     for (int j=0; j<arr.Length; j++)
                     {
                         switch (arr[j])
@@ -66,15 +71,30 @@ namespace IEL.Vistas
                                     tmt.mala2 = "is";
                                 }
                                 break;
-                            case "verbo":
-
+                            case "verbopresentesimple":
+                                if (gramatica.TerceraPersona)
+                                {
+                                    tmt.Oracion += verbos[nov].VerboPresenteSimple + "s ";
+                                }else
+                                {
+                                    tmt.Oracion += verbos[nov].VerboPresenteSimple + " ";
+                                }
+                                break;
+                            case "not":
+                                tmt.Oracion += "not ";
+                                break;
+                            case "complemento":
+                                tmt.Oracion += "in the school";
                                 break;
                             default:
                                 break;
-                        }
+                        }                        
                     }
+                    preguntas[i] = tmt;
                 }
+                txtPregunta.Text = preguntas[0].Oracion;
             }
+            
         }
     }
 }
