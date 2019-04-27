@@ -9,7 +9,8 @@
 
     <asp:ScriptManager ID="ScriptManager1" runat="server">
             <Services>
-                <asp:ServiceReference Path="~/Servicios/wsGramaticaPorTemaprueba.asmx" />
+                <asp:ServiceReference Path="~/Servicios/wsTema.asmx" />
+                <asp:ServiceReference Path="~/Servicios/wsVerbo.asmx" />
             </Services>
         </asp:ScriptManager>
 
@@ -29,31 +30,25 @@
             </div>
      </div>
  </div>
-
-
-
-
         
     <div id = "menu">
 		<div id = "titulo">
 			Temario
 		</div>
 		<div id = "item_menu">
-			<div class="item" id="tema1" onclick="cambiarInfo1()">Opcion 1</div>
-			<div class="item" id="tema2" onclick="cambiarInfo2()">Opcion 2</div>
-			<div class="item" id="tema3" onclick="cambiarInfo3()">Opcion 3</div>
-			<div class="item" id="tema4" onclick="cambiarInfo4()">Opcion 4</div>
-			<div class="item" id="tema5" onclick="cambiarInfo5()">Opcion 5</div>
+			<div class="item" id="tema1" onclick="Tema1()">...</div>
+			<div class="item" id="tema2" onclick="Tema2()">...</div>
+			<div class="item" id="tema3" onclick="Tema3()">...</div>
+			<div class="item" id="tema4" onclick="tbVerbos()">Verbos</div>
+			<div class="item" id="tema5" onclick="cambiarInfo5()">...</div>
 		</div>
 	</div>
-        
-
-        
+            
         <div id="cuerpo">
      <div class="container" >
          <div class="row">             
              <div class="col-sm-12" >
-                 <p>Lorem ipsum</p>
+                 <p></p>
              </div>
          </div>
          <div class="row">             
@@ -70,10 +65,12 @@
          
          <div class="container">
              <div class="col-sm-12" id="Contenido"   style="background-color:white;">
-                 <h5>Descripción</h5>
-                 <p id="Desp">Lorem ipsum</p>
-                 <h5>Contenido:</h5>
-                  <p id="ContenidoT1">Lorem ipsum</p>
+                 <p id="ContenidoT1"></p>
+                 <div id="ContenedorTabla2"></div>
+                 <div id="ContenedorTabla"></div>
+                 <p id="ContenidoT2"></p>
+                 <br/>
+                 <div id="ContenedorTexto"></div>   
              </div>
          </div>
      </div>		
