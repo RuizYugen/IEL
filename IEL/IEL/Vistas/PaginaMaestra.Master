@@ -46,6 +46,10 @@
         transform: rotate(360deg);
         -webkit-transform: rotate(360deg);
         transition:all .5s ease-in-out;
+        -moz-border-radius:8%;
+        -moz-box-shadow:0px 0px 15px 15px #42c2f4;
+        -moz-transform:rotate(360deg);
+        -moz-transition:all .5s ease-in-out;
         }
 
             

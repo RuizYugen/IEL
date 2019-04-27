@@ -39,6 +39,7 @@
         <div class="container-fluid" id="textopregunta" style="font-size:25px;font-weight:bold;"><p>Seleccione la palabra incorrecta</p>
 
         </div>
+        <br />
          <div id="centraropciones">       
         <div class="btn-group-vertical" >
 
