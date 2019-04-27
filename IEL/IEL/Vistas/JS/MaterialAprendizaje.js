@@ -1,71 +1,189 @@
-﻿window.onload = function () {
-    // Cogemos los valores pasados por get
+﻿$(document).ready(function () {
 
+    IEL.Servicios.wsTema.getAll(onComplete_cargarlista);
 
-   // VISTA.servicios.prueba.getAll(onComplete_cargarlista);
-
-}
-
-$(document).ready(function () {
-    $("#mostrarmodal").modal("show");
-    cambiarInfo1();
+    //$("#mostrarmodal").modal("show");
+    //cambiarInfo1();
 });
 
 
+var daSetT1;
+function ObtnerTema1(response1) {
+    dataSet1 = JSON.parse(response1);
+    var nombre = dataSet1.ContenidoTraduccion;
+    //alert(nombre +"Tema 1");
+    IEL.Servicios.wsTema.getTemaByID(2, ObtnerTema2);
 
+    // document.getElementById('tituloTema').innerHTML = "Tema 1";
+    // document.getElementById('Desp').innerHTML = dataset[1].NombreTraduccion;
+
+}
+
+var daSetT2;
+function ObtnerTema2(response1) {
+    dataSet2 = JSON.parse(response1);
+    var nombre = dataSet2.ContenidoTraduccion;
+    //alert(nombre+ "Tema 2");
+    //IEL.Servicios.wsTema.getTemaByID(3, ObtnerTema3);
+    IEL.Servicios.wsVerbo.getAll(ObtnerTema3);
+    // document.getElementById('tituloTema').innerHTML = "Tema 1";
+    // document.getElementById('Desp').innerHTML = dataset[1].NombreTraduccion;
+
+}
+
+var daSetT3;
+function ObtnerTema3(response1) {
+    dataSet3 = JSON.parse(response1);
+    var count = Object.keys(dataSet3).length;
+    // alert(dataSet3[0].VerboPasadoSimple);
+    IEL.Servicios.wsTema.getTemaByID(3, ObtnerTema4);
+    // document.getElementById('tituloTema').innerHTML = "Tema 1";
+    // document.getElementById('Desp').innerHTML = dataset[1].NombreTraduccion;
+
+}
+
+var daSetT4;
+function ObtnerTema4(response1) {
+    daSetT4 = JSON.parse(response1);
+    var count = Object.keys(daSetT4).length;
+   // alert(daSetT4.NombreTraduccion);
+}
+
+
+
+var id1, id2, id3;
 function onComplete_cargarlista(response) {
     var dataSet = JSON.parse(response);
-    document.getElementById('tema1').innerHTML = dataSet[0].Titulo;
-    document.getElementById('tema2').innerHTML = dataSet[1].Titulo;
-    document.getElementById('tema3').innerHTML = dataSet[2].Titulo;
-    document.getElementById('tema4').innerHTML = dataSet[3].Titulo;
-    document.getElementById('tema5').innerHTML = dataSet[4].Titulo;
+    var count = Object.keys(dataSet).length;
+    // alert(count);
+    for (var i = 0; i < count; i++) {
+        document.getElementById('tema' + (i + 1) + '').innerHTML = dataSet[i].NombreTraduccion;
+
+        var nume = (i + 1).toString();
+        var idNu = i + 1;
+        var metodo = " ObtnerTema" + nume + "";
+        // alert(metodo);
+
+    }
+    IEL.Servicios.wsTema.getTemaByID(1, ObtnerTema1);
+
+    //var newDiv = document.createElement("div");
+
+    // $('#tblCobros tbody').on('click', 'tr', function () {
+    //     filaSeleccionada = tabla.row(this).index();
+    // })
+
+
+
+
+
+
 }
 
 
-function cambiarInfo1() {
+function Tema1() {
 
-    document.getElementById('tituloTema').innerHTML= "Tema 1"
-    document.getElementById('Desp').innerHTML = "Los adjetivos son aquéllas palabras que se unen a un nombre para ampliar, complementar y cuantificar su significado.";
-    document.getElementById('ContenidoT1').innerHTML = "En inglés hay ocho clases de adjetivos: <br/>" +
-        "1. Calificativos: good, bueno; thin, delgado; dry, seco; bad, malo; short, corto <br/>" +
-        "2. Demostrativos: this, este; that, aquel; these, estos; those, aquellos <br/>" +
-        "3. Distributivos: each, cada; every, todo; either, uno y otro; neither, ni uno ni otro.<br/>" +
-        "4. De cantidad: some, algún; any, cualquier; little, poco; few, pocos; many, muchos; much, mucho; enough, bastante <br/>" +
-        "5. Interrogativos:  which?, cual?; what?, ¿qué?; whose?, ¿de quién?, etc.<br/>" +
-        "6. Posesivos: my, mi; your, tu, su, vuestro, his, su (de él); her, su (de ella); its, su (de ello), our, nuestro; your, vuestro, their, suyo (de ellos/as) <br/>" +
-        "7. Propios: French, francés; English, inglés; Spanish, español; etc. <br/>" +
-        "8. Numerales: one, uno; ten, diez; first, primer, second, segundo; etc.<br/>" + "<br/>" +
 
-        "<h4>GENERALIDADES<h4/><br/>" +
-        "<pre>-Los adjetivos en inglés son invariables en género y número.<br/>" +
-        "<b>I have a big book</b> / Tengo un libro grande <br/>" +
-        "<b>-Verbo To be + (am/is/are/was, etc.) + adjetivo </b><br/> " +
-        "These pictures are very beautiful / Esas imágenes son muy bonitas<br>" +
-        "-To be + adjetivo tiene en ocasiones la equivalencia a 'Tener'<br/></pre > ";
+    //$('#ContenidoT1').remove('#tbVerbos')
+    //$('#ContenidoT1').empty();
+    //$('#tbVerbos').dataTable().fnClearTable();
+    $('ContenedorTabla').hide();
+    var x = dataSet1.ContenidoTraduccion;
+   // alert(x);
+    document.getElementById('ContenedorTabla').innerHTML = x;
+    document.getElementById('tituloTema').innerHTML = dataSet1.NombreTraduccion;
+    //$('ContenidoT1').hide();
+
+
+
+
+
+}
+function Tema2() {
+    // $('ContenidoT1').empty();
+    var x = dataSet2.ContenidoTraduccion;
+    document.getElementById('ContenedorTabla').innerHTML = x;
+    document.getElementById('tituloTema').innerHTML = dataSet2.NombreTraduccion;
+}
+
+
+function Tema3() {
+    // $('ContenidoT1').empty();
+    var x = daSetT4.ContenidoTraduccion;
+    document.getElementById('ContenedorTabla').innerHTML = x;
+    document.getElementById('tituloTema').innerHTML = daSetT4.NombreTraduccion;
 
 }
 
-function cambiarInfo2() {
-    document.getElementById('tituloTema').innerHTML = "Tema 2"
-    document.getElementById('Desp').innerHTML = "Los adjetivos son aquéllas palabras que se unen a un nombre para ampliar, complementar y cuantificar su significado.";
-    document.getElementById('ContenidoT1').innerHTML = "En inglés hay ocho clases de adjetivos: <br/>" +
-        "1. Calificativos: good, bueno; thin, delgado; dry, seco; bad, malo; short, corto <br/>" +
-        "2. Demostrativos: this, este; that, aquel; these, estos; those, aquellos <br/>" +
-        "3. Distributivos: each, cada; every, todo; either, uno y otro; neither, ni uno ni otro.<br/>" +
-        "4. De cantidad: some, algún; any, cualquier; little, poco; few, pocos; many, muchos; much, mucho; enough, bastante <br/>" +
-        "5. Interrogativos:  which?, cual?; what?, ¿qué?; whose?, ¿de quién?, etc.<br/>" +
-        "6. Posesivos: my, mi; your, tu, su, vuestro, his, su (de él); her, su (de ella); its, su (de ello), our, nuestro; your, vuestro, their, suyo (de ellos/as) <br/>" +
-        "7. Propios: French, francés; English, inglés; Spanish, español; etc. <br/>" +
-        "8. Numerales: one, uno; ten, diez; first, primer, second, segundo; etc.<br/>" + "<br/>";
+
+function DestruirVerbos() {
+    tabla = $('#tbVerbos').DataTable();
+    tabla.destroy();
+
 
 }
 
-function cambiarInfo3() {
-    document.getElementById('tituloTema').innerHTML = "Tema 3"
 
-    document.getElementById('Desp').innerHTML = "En español encontramos principalmente dos géneros de sustantivos: masculino y femenino." +
-        "En inglés, encontramos cuatro distintos géneros.Los ya conocidos masculino y femenino, neutro y común";
-    document.getElementById('ContenidoT1').innerHTML = "- El GÉNERO MASCULINO, se aplica a personas del sexo masculino. Como identificador, se antepone el pronombre he.<br/>" +
-        "Charles is reading a book.He is a doctor. / Carlos está leyendo un libro.Él es médico. ";
+
+function tbVerbos() {
+    //alert("onComplete_cargarlista + " + response);
+
+    document.getElementById('tituloTema').innerHTML = 'Verbos';
+    document.getElementById('ContenedorTabla').innerHTML = '<table id="tbVerbos" class="table table-striped table-bordered small" style="margin: 0 auto; width:70%"> </table>';
+    tabla = $('#tbVerbos').DataTable({
+
+        "paging": false,
+        "ordering": false,
+        "info": false,
+        "searching": false,
+        data: dataSet3,
+        columns: [
+            {
+                title: "Verbo", data: "VerboTraduccion",
+                render: function (data, type, row) {
+                    //  return '<input type="text" value="' + data + '" />';
+                    return data;
+                }
+            },
+
+            {
+                title: "Presente Simple", data: "VerboPresenteSimple",
+                render: function (data, type, row) {
+
+                    return data;
+                }
+            },
+
+
+            {
+                title: "Pasado simple", data: "VerboPasadoSimple",
+                render: function (data, type, row) {
+                    return data;
+                }
+            },
+
+            {
+                title: "Pasado participio", data: "VerboPasadoParticipio",
+                render: function (data, type, row) {
+                    return data;
+                }
+            }
+
+        ]
+
+
+    });
+
+    //$('#tbVerbos').DataTable().Destroy();
+
+
 }
+
+window.onload = function () {
+    $("#mostrarmodal").modal("show");
+    cambiarInfo1();
+
+}
+
+
+

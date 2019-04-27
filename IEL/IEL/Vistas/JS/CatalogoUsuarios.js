@@ -49,6 +49,7 @@ function eliminar(fila) {
 function Exito(response) {}
 
 function editar(fila) {    
+    
     var Usuario = fila.value.substring(7,fila.value.length);
     localStorage.Usr = Usuario;
     location.href = "EditarUsuario.aspx";

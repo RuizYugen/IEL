@@ -150,12 +150,22 @@ namespace Datos.Daos
         {
             Conexion conexion = new Conexion();
 
-
+            String SQL;
             try
             {
-                String SQL = "UPDATE Usuario SET" +
-                    " User='" + e.User + "',Password=sha2('" + e.Password + "',512),Nombre='" + e.Nombre + "',ApellidoPaterno='" + e.ApellidoPaterno + "',ApellidoMaterno='" + e.ApellidoMaterno + "',Correo='" + e.Correo + "',Foto='" + e.Foto + "',Privilegio='" + e.Privilegio+"'"+
-                    " WHERE User like '" + e.User + "';";
+                if (e.Password.Equals("igual"))
+                {
+                    SQL = "UPDATE Usuario SET" +
+                   " User='" + e.User + "',Nombre='" + e.Nombre + "',ApellidoPaterno='" + e.ApellidoPaterno + "',ApellidoMaterno='" + e.ApellidoMaterno + "',Correo='" + e.Correo + "',Foto='" + e.Foto + "',Privilegio='" + e.Privilegio + "'" +
+                   " WHERE User like '" + e.User + "';";
+                }
+                else
+                {
+                    SQL = "UPDATE Usuario SET" +
+                   " User='" + e.User + "',Password=sha2('" + e.Password + "',512),Nombre='" + e.Nombre + "',ApellidoPaterno='" + e.ApellidoPaterno + "',ApellidoMaterno='" + e.ApellidoMaterno + "',Correo='" + e.Correo + "',Foto='" + e.Foto + "',Privilegio='" + e.Privilegio + "'" +
+                   " WHERE User like '" + e.User + "';";
+                }
+              
                 MySqlCommand sqlcom = new MySqlCommand();
                 sqlcom.CommandText = SQL;
                 conexion.EjecutaSQLComando(sqlcom);

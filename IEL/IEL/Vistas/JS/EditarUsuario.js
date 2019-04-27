@@ -1,6 +1,7 @@
 ﻿var User, Password, Nombre, ApellidoPaterno, ApellidoMaterno, Correo, Privilegio = "Alumno", Foto;
 var elegir = false;
 var actual;
+var contrasenia;
 $(document).ready(function () {
     actual = localStorage.Usr;    
     document.getElementById('EditUser').disabled = true;
@@ -12,6 +13,7 @@ function cargar(response) {
     var usuario = JSON.parse(response);   
     document.getElementById('EditUser').value = usuario.User;
     document.getElementById('EditPassword').value = usuario.Password;
+    contrasenia = usuario.Password;
     document.getElementById('EditNombre').value = usuario.Nombre;
     document.getElementById('EditApellidoPaterno').value = usuario.ApellidoPaterno;
     document.getElementById('EditApellidoMaterno').value = usuario.ApellidoMaterno;
@@ -34,7 +36,12 @@ function cambiarAvatar(foto) {
 
 function editar() {
     User = document.getElementById('EditUser').value;   
-    Password = document.getElementById('EditPassword').value;    
+    Password = document.getElementById('EditPassword').value;
+    var n = contrasenia.localeCompare(Password);
+    if (n == 0) {
+        Password = "igual";
+        
+    }
     Nombre = document.getElementById('EditNombre').value;
     ApellidoPaterno = document.getElementById('EditApellidoPaterno').value;
     ApellidoMaterno = document.getElementById('EditApellidoMaterno').value;
@@ -42,6 +49,7 @@ function editar() {
     if (Password.localeCompare("") == 0 || Nombre.localeCompare("") == 0 || ApellidoPaterno.localeCompare("") == 0 || ApellidoMaterno.localeCompare("") == 0 || Correo.localeCompare("") == 0 || !elegir) {
         alert("Todos los campos son obligatorios");
     } else {
+        
         IEL.Servicios.wsUsuario.update(User,Password,Nombre,ApellidoPaterno,ApellidoMaterno,Correo,Foto,Privilegio,volver);
     }
 }
