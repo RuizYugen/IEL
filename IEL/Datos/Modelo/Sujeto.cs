@@ -19,5 +19,6 @@ namespace Datos.Modelo
         public String Objeto { get; set; }
         public String Posesivo { get; set; }
         public String Sucesivo { get; set; }
+        public string ser { get; set; }
     }
 }
