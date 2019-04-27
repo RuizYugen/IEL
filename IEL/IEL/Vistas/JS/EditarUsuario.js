@@ -4,7 +4,8 @@ var actual;
 $(document).ready(function () {
     actual = localStorage.Usr;    
     document.getElementById('EditUser').disabled = true;
-    IEL.Servicios.wsUsuario.getUsuarioByID(actual,cargar);
+    IEL.Servicios.wsUsuario.getUsuarioByID(actual, cargar);
+    document.getElementById('EditPassword').focus();
 });
 
 function cargar(response) {
