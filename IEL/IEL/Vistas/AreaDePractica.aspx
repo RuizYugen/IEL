@@ -4,27 +4,27 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="text-center">
+        <asp:Label ID="txtTema" runat="server" Text="Tema"></asp:Label>
+        <br />
+        <br />
         <asp:Label ID="txtPregunta" runat="server" Text="Pregunta"></asp:Label>
         <br />
         <br />
         <br />
         <div class="radio">
-            <asp:RadioButton ID="RadioButton1" runat="server" Text="Respuesta1" />
+        <asp:RadioButton ID="rdbA" runat="server" Text="Respuesta2"/>
         <br />
         <br />
-        <asp:RadioButton ID="RadioButton2" runat="server" Text="Respuesta2"/>
+        <asp:RadioButton ID="rdbB" runat="server" Text="Respuesta3" OnCheckedChanged="rdbB_CheckedChanged"/>
         <br />
         <br />
-        <asp:RadioButton ID="RadioButton3" runat="server" Text="Respuesta3"/>
-        <br />
-        <br />
-        <asp:RadioButton ID="RadioButton4" runat="server" Text="Respuesta4"/>
+        <asp:RadioButton ID="rdbC" runat="server" Text="Respuesta4"/>
         <br />
         <br />
         </div>
         <br />
         <div class="btn-group">
-            <input id="ButtonAnterior" type="button" value="Anterior" class="btn btn-primary"/>
+            <asp:Button ID="btnAnterior" runat="server" Text="Anterior" CssClass="btn btn-primary" OnClick="btnAnterior_Click" />            
             <input id="Button1" type="button" value="1" class="btn btn-secondary"/>
             <input id="Button2" type="button" value="2" class="btn btn-secondary"/>
             <input id="Button3" type="button" value="3" class="btn btn-secondary"/>
@@ -35,7 +35,7 @@
             <input id="Button8" type="button" value="8" class="btn btn-secondary"/>
             <input id="Button9" type="button" value="9" class="btn btn-secondary"/>
             <input id="Button10" type="button" value="10" class="btn btn-secondary"/>
-            <input id="ButtonSiguiente" type="button" value="Siguente" class="btn btn-primary"/>
+            <asp:Button ID="btnSiguiente" runat="server" Text="Siguiente" CssClass="btn btn-primary" OnClick="btnSiguiente_Click"/>            
         </div>
 
     </div>
