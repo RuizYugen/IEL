@@ -60,7 +60,7 @@
             <input id="txtPassword" type="password" class="form-control" name="password" placeholder="Password" runat="server"/>
         </div>
         <br />
-        <div style="text-align:center;display:inline-block;align-content:center;">            
+        <div style="text-align:center;display:inline-block;align-content:center;border-right:40px;border-left:-40px;">            
         <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" CssClass="btn btn-primary" OnClick="btnAceptar_Click"/>
         <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary"/>
         </div>
