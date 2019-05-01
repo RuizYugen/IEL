@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
-
+using Datos.Daos;
+using Datos.Modelo;
+using Newtonsoft.Json;
 namespace IEL.Servicios
 {
     /// <summary>
@@ -13,7 +15,7 @@ namespace IEL.Servicios
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
-    // [System.Web.Script.Services.ScriptService]
+    [System.Web.Script.Services.ScriptService]
     public class wsPractica : System.Web.Services.WebService
     {
         /// <summary>
@@ -45,7 +47,7 @@ namespace IEL.Servicios
         /// <param name="user">user del usuario</param>
         /// <returns></returns>
         [WebMethod]
-        public bool insert(int id,int correctas,int idtema,string user)
+        public bool insert(int id, int correctas, int idtema, string user)
         {
             return true;
         }
@@ -74,5 +76,47 @@ namespace IEL.Servicios
         {
             return true;
         }
+        //AgregadoPaloma
+        [WebMethod]
+        public string getTotalPresenteByUser(String user)
+        {
+             PracticaDAO dao = new PracticaDAO();
+            int total = dao.getTotalPresenteByUser(user);
+
+            String strJSON = JsonConvert.SerializeObject(total, new JsonSerializerSettings
+            { NullValueHandling = NullValueHandling.Ignore });
+            return strJSON;
+        }
+        [WebMethod]
+        public string getTotalPasadoByUser(String user)
+        {
+            PracticaDAO dao = new PracticaDAO();
+            int total = dao.getTotalPasadoByUser(user);
+
+            String strJSON = JsonConvert.SerializeObject(total, new JsonSerializerSettings
+            { NullValueHandling = NullValueHandling.Ignore });
+            return strJSON;
+        }
+        [WebMethod]
+        public string getTotalVerbosByUser(String user)
+        {
+            PracticaDAO dao = new PracticaDAO();
+            int total = dao.getTotalVerbosByUser(user);
+
+            String strJSON = JsonConvert.SerializeObject(total, new JsonSerializerSettings
+            { NullValueHandling = NullValueHandling.Ignore });
+            return strJSON;
+        }
+        [WebMethod]
+        public string getTotalVocabularioByUser(String user)
+        {
+            PracticaDAO dao = new PracticaDAO();
+            int total = dao.getTotalVocabularioByUser(user);
+
+            String strJSON = JsonConvert.SerializeObject(total, new JsonSerializerSettings
+            { NullValueHandling = NullValueHandling.Ignore });
+            return strJSON;
+        }
+
     }
 }

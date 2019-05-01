@@ -12,6 +12,7 @@
             <asp:ServiceReference Path="~/Servicios/wsUsuario.asmx"/>
             <asp:ServiceReference Path="~/Servicios/wsPreguntaContestadaPorUsuario.asmx" />
             <asp:ServiceReference Path="~/Servicios/wsPreguntaPorTema.asmx" />
+             <asp:ServiceReference Path="~/Servicios/wsPractica.asmx" />
         </Services>
     </asp:ScriptManager>
     <div class="panel-group"
