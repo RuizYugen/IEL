@@ -322,6 +322,7 @@
     <Content Include="Vistas\IMG\userMujer.jpg" />
     <Content Include="Vistas\Index.aspx" />
     <Content Include="Vistas\JS\AgregarUsuario.js" />
+    <Content Include="Vistas\JS\AreaDePractica.js" />
     <Content Include="Vistas\JS\bootstrap.js" />
     <Content Include="Vistas\JS\bootstrap.min.js" />
     <Content Include="Vistas\JS\CambiarImagen.js" />
@@ -336,6 +337,7 @@
     <Content Include="Vistas\Login.aspx" />
     <Content Include="Vistas\MaterialDeAprendizaje.aspx" />
     <Content Include="Vistas\PersonalizacionUsuario.aspx" />
+    <Content Include="Vistas\Practica.aspx" />
     <Content Include="Vistas\Principal.aspx" />
     <Content Include="Vistas\QuizForm.aspx" />
     <Content Include="Web.config" />
@@ -648,6 +650,13 @@
     </Compile>
     <Compile Include="Vistas\PersonalizacionUsuario.aspx.designer.cs">
       <DependentUpon>PersonalizacionUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Practica.aspx.cs">
+      <DependentUpon>Practica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Practica.aspx.designer.cs">
+      <DependentUpon>Practica.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Principal.aspx.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
