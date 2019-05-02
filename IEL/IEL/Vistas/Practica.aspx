@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vistas/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="Practica.aspx.cs" Inherits="IEL.Vistas.Practica" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script src="JS/AreaDePractica.js"></script>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -16,13 +16,13 @@
         <br />
         <br />
         <div class="radio">
-            <input id="rdbA" type="radio" />Respuesta
+            <button  type="button" style="width:200px" class="btn btn-secundary"  id="respuestaA" onclick="rdbA(this)">A. Run</button>          
             <br />
             <br />
-            <input id="rdbB" type="radio" />
+            <button  type="button" style="width:200px" id="respuestaB" class="btn btn-secundary" onclick="rdbB(this)">A. Run</button>
             <br />
             <br />
-            <input id="rdbC" type="radio" />
+            <button  type="button" style="width:200px" id="respuestaC" class="btn btn-secundary" onclick="rdbC(this)">A. Run</button>
             <br />
             <br />
         </div>
