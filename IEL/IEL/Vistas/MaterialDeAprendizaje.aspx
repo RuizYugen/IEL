@@ -38,9 +38,10 @@
 		<div id = "item_menu">
 			<div class="item" id="tema1" onclick="Tema1()">...</div>
 			<div class="item" id="tema2" onclick="Tema2()">...</div>
-			<div class="item" id="tema3" onclick="Tema3()">...</div>
-			<div class="item" id="tema4" onclick="tbVerbos()">Verbos</div>
-			<div class="item" id="tema5" onclick="cambiarInfo5()">...</div>
+            <div class="item" id="tema4" onclick="Tema3()"></div>
+			<div class="item" id="tema3" onclick="tbVerbos()">...</div>
+			
+			<!--<div class="item" id="tema5" onclick="cambiarInfo5()">...</div>-->
 		</div>
 	</div>
             
