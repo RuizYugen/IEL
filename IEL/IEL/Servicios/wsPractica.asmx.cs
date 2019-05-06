@@ -49,7 +49,9 @@ namespace IEL.Servicios
         [WebMethod]
         public bool insert(int id, int correctas, int idtema, string user)
         {
-            return true;
+            PracticaDAO dao = new PracticaDAO();
+            Practica obj = new Practica() { IdPractica = id, Correctas = correctas, IdTema = idtema, User = user };
+            return dao.insert(obj);
         }
 
         /// <summary>

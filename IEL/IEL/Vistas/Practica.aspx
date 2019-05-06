@@ -8,6 +8,7 @@
             <asp:ServiceReference Path="~/Servicios/wsGramatica.asmx"/>
             <asp:ServiceReference Path="~/Servicios/wsVerbo.asmx"/>
             <asp:ServiceReference Path="~/Servicios/wsSujeto.asmx"/>
+            <asp:ServiceReference Path="~/Servicios/wsPractica.asmx" />
         </Services>
     </asp:ScriptManager>
     <div class="text-center">
@@ -27,9 +28,8 @@
             <br />
         </div>
         <br />
-        <div class="btn-group">
-            <input id="btnAnterior" type="button" value="Anterior" class="btn btn-primary"  />
-            <input id="btnSiguiente" type="button" value="Siguiente" class="btn btn-primary" />
+        <div class="btn-group">           
+            <input id="btnSiguiente" type="button" value="Siguiente" class="btn btn-primary" onclick="siguiente(this)"/>
         </div>
     </div>
     <script src="JS/AreaDePractica.js"></script>

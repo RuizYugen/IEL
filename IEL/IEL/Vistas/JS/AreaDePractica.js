@@ -4,9 +4,12 @@ var sujetos;
 var pregunta="";
 var correcta=0;
 var contador=0;
-
+var contestada=0;
+var puntaje=0;
+var tema = 1;
+var usuario="ruiz";
 $(document).ready(function () {
-    var tema = 1;
+    tema=1;
     IEL.Servicios.wsGramatica.getByTema(tema, exito);
     IEL.Servicios.wsVerbo.getAll(exitoVerbos);
     IEL.Servicios.wsSujeto.getAll(exitoSujetos);    
@@ -39,7 +42,7 @@ function armar(){
                     var insiso=Math.floor(Math.random() * 3);
                     pregunta+=" _____ ";
                     if(insiso==0){
-                        correcta=0;
+                        correcta=1;
                         document.getElementById("respuestaA").innerHTML =sujetos[nui].ser;
                         if(sujetos[nui].ser=="am"){
                             document.getElementById("respuestaB").innerHTML ="are";
@@ -52,7 +55,7 @@ function armar(){
                             document.getElementById("respuestaC").innerHTML ="are";
                         }
                     }else if(insiso==1){
-                        correcta=1;
+                        correcta=2;
                         document.getElementById("respuestaB").innerHTML =sujetos[nui].ser;
                         if(sujetos[nui].ser=="am"){
                             document.getElementById("respuestaA").innerHTML ="are";
@@ -65,7 +68,7 @@ function armar(){
                             document.getElementById("respuestaC").innerHTML ="are";
                         }
                     }else if(insiso==2){
-                        correcta=2;
+                        correcta=3;
                         document.getElementById("respuestaC").innerHTML =sujetos[nui].ser;
                         if(sujetos[nui].ser=="am"){
                             document.getElementById("respuestaB").innerHTML ="are";
@@ -84,6 +87,10 @@ function armar(){
                 pregunta+=verbos[Math.floor(Math.random() * verbos.length)].VerboPresenteSimple;
                 break;
             case "complemento":
+                pregunta+=" in the school ";
+                break;
+            case "not":
+                pregunta+=" not ";
                 break;
             default:
                 break;
@@ -105,13 +112,49 @@ function exitoSujetos(res){
 }
 
 function rdbA(boton){
-    alert("A");
+    document.getElementById("respuestaA").style.background="#0000f4";
+    document.getElementById("respuestaB").style.background="";
+    document.getElementById("respuestaC").style.background="";
+    contestada=1;
 }
 
 function rdbB(boton){
-    alert("B");
+    document.getElementById("respuestaA").style.background="";
+    document.getElementById("respuestaB").style.background="#0000f4";
+    document.getElementById("respuestaC").style.background="";
+    contestada=2;
 }
 
 function rdbC(boton){
-    alert("C");
+    document.getElementById("respuestaA").style.background="";
+    document.getElementById("respuestaB").style.background="";
+    document.getElementById("respuestaC").style.background="#0000f4";
+    contestada=3;
+}
+
+function siguiente(boton){
+    //Checa respuesta coorecta
+    if(contestada===correcta){
+        puntaje=puntaje+1;
+    }
+    if(contador<10){
+        pregunta="";
+        correcta=0;
+        contestada=0;
+
+        armar();
+        document.getElementById("respuestaA").style.background="";
+        document.getElementById("respuestaB").style.background="";
+        document.getElementById("respuestaC").style.background="";
+        contador+=1;
+    }else if(contador===10){
+        alert("Tu puntuacion es de "+puntaje+"/10");
+        IEL.Servicios.wsPractica.insert(0,puntaje,tema,usuario,suc);
+    }
+}
+
+function suc(par) {
+    if(par==true){
+        alert("fin");
+    }
 }

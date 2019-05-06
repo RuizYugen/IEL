@@ -117,10 +117,10 @@ namespace Datos.Daos
             try
             {
                 Conexion conexion = new Conexion();
-                String SQL = "INSERT INTO Practica (IdPractica,Correctas,IdTema,User) VALUES (@IdPractica,@Correctas,@IdTema,@User);";
+                String SQL = "INSERT INTO Practica (IdPractica,Correctas,IdTema,User) VALUES (null,@Correctas,@IdTema,@User);";
                 MySqlCommand sqlcom = new MySqlCommand();
                 sqlcom.CommandText = SQL;
-                sqlcom.Parameters.AddWithValue("@IdPractica", i.IdPractica);
+                //sqlcom.Parameters.AddWithValue("@IdPractica", "null");
                 sqlcom.Parameters.AddWithValue("@Correctas", i.Correctas);
                 sqlcom.Parameters.AddWithValue("@IdTema", i.IdTema);
                 sqlcom.Parameters.AddWithValue("@User", i.User);
