@@ -36,7 +36,7 @@ function ObtnerTema3(response1) {
     dataSet3 = JSON.parse(response1);
     var count = Object.keys(dataSet3).length;
     // alert(dataSet3[0].VerboPasadoSimple);
-    IEL.Servicios.wsTema.getTemaByID(3, ObtnerTema4);
+    IEL.Servicios.wsTema.getTemaByID(4, ObtnerTema4);
     // document.getElementById('tituloTema').innerHTML = "Tema 1";
     // document.getElementById('Desp').innerHTML = dataset[1].NombreTraduccion;
 
@@ -44,8 +44,10 @@ function ObtnerTema3(response1) {
 
 var daSetT4;
 function ObtnerTema4(response1) {
+   
     daSetT4 = JSON.parse(response1);
     var count = Object.keys(daSetT4).length;
+   // alert(count);
    // alert(daSetT4.NombreTraduccion);
 }
 
@@ -111,7 +113,9 @@ function Tema3() {
     // $('ContenidoT1').empty();
     var x = daSetT4.ContenidoTraduccion;
     document.getElementById('ContenedorTabla').innerHTML = x;
+   // alert(daSetT4.NombreTraduccion);
     document.getElementById('tituloTema').innerHTML = daSetT4.NombreTraduccion;
+
 
 }
 

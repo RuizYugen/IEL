@@ -117,10 +117,10 @@ namespace Datos.Daos
             try
             {
                 Conexion conexion = new Conexion();
-                String SQL = "INSERT INTO Practica (IdPractica,Correctas,IdTema,User) VALUES (@IdPractica,@Correctas,@IdTema,@User);";
+                String SQL = "INSERT INTO Practica (IdPractica,Correctas,IdTema,User) VALUES (null,@Correctas,@IdTema,@User);";
                 MySqlCommand sqlcom = new MySqlCommand();
                 sqlcom.CommandText = SQL;
-                sqlcom.Parameters.AddWithValue("@IdPractica", i.IdPractica);
+                //sqlcom.Parameters.AddWithValue("@IdPractica", "null");
                 sqlcom.Parameters.AddWithValue("@Correctas", i.Correctas);
                 sqlcom.Parameters.AddWithValue("@IdTema", i.IdTema);
                 sqlcom.Parameters.AddWithValue("@User", i.User);
@@ -133,6 +133,52 @@ namespace Datos.Daos
                 return false;
             }
         }
+        //Código de Paloma para estadísticas
+        public int getTotalPresenteByUser(String user)
+        {
+            Practica res;
+            Conexion conexion = new Conexion();
+            DataSet datos = conexion.LLenaComboGrid("select max(correctas) as correctas from practica where user like '"+user+"' and idTema=1;");
+            DataTable dt = datos.Tables[0];
+            res = new Practica();
+            DataRow row = dt.Rows[0];
+            int total = (int)row.ItemArray[0];
+            return total;
+        }
+        public int getTotalPasadoByUser(String user)
+        {
+            Practica res;
+            Conexion conexion = new Conexion();
+            DataSet datos = conexion.LLenaComboGrid("select max(correctas) as correctas from practica where user like '" + user + "' and idTema=2;");
+            DataTable dt = datos.Tables[0];
+            res = new Practica();
+            DataRow row = dt.Rows[0];
+            int total = (int)row.ItemArray[0];
+            return total;
+        }
+        public int getTotalVerbosByUser(String user)
+        {
+            Practica res;
+            Conexion conexion = new Conexion();
+            DataSet datos = conexion.LLenaComboGrid("select max(correctas) as correctas from practica where user like '" + user + "' and idTema=3;");
+            DataTable dt = datos.Tables[0];
+            res = new Practica();
+            DataRow row = dt.Rows[0];
+            int total = (int)row.ItemArray[0];
+            return total;
+        }
+        public int getTotalVocabularioByUser(String user)
+        {
+            Practica res;
+            Conexion conexion = new Conexion();
+            DataSet datos = conexion.LLenaComboGrid("select max(correctas) as correctas from practica where user like '" + user + "' and idTema=4;");
+            DataTable dt = datos.Tables[0];
+            res = new Practica();
+            DataRow row = dt.Rows[0];
+            int total = (int)row.ItemArray[0];
+            return total;
+        }
+
 
     }
 }

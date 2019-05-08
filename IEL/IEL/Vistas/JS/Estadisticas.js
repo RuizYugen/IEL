@@ -3,14 +3,17 @@ $(document).ready(function () {
     //var usuario = "Jose1";
     usuario = $('#logear').text();
     IEL.Servicios.wsUsuario.getUsuarioByID(usuario, cargarDatos);
-    IEL.Servicios.wsPreguntaPorTema.getPreguntasPorTema(1, preguntasPresente);
-    IEL.Servicios.wsPreguntaContestadaPorUsuario.getPreguntasCorrectasPresenteSimple(usuario,cargarEstadisticas);
-    IEL.Servicios.wsPreguntaPorTema.getPreguntasPorTema(2, preguntasPasado);
-    IEL.Servicios.wsPreguntaContestadaPorUsuario.getPreguntasCorrectasPasadoSimple(usuario, estadisticasPasado);
-    IEL.Servicios.wsPreguntaPorTema.getPreguntasPorTema(3, preguntasVerbos);
-    IEL.Servicios.wsPreguntaContestadaPorUsuario.getPreguntasCorrectasVerbos(usuario, estadisticasVerbos);
-    IEL.Servicios.wsPreguntaPorTema.getPreguntasPorTema(4, preguntasVocabulario);
-    IEL.Servicios.wsPreguntaContestadaPorUsuario.getPreguntasCorrectasVocabulario(usuario, estadisticasVocabulario);
+    IEL.Servicios.wsPractica.getTotalPresenteByUser(usuario, cargarEstadisticas);
+    IEL.Servicios.wsPractica.getTotalPasadoByUser(usuario, estadisticasPasado);
+    IEL.Servicios.wsPractica.getTotalVerbosByUser(usuario, estadisticasVerbos);
+    IEL.Servicios.wsPractica.getTotalVocabularioByUser(usuario, estadisticasVocabulario);
+   // IEL.Servicios.wsPreguntaContestadaPorUsuario.getPreguntasCorrectasPresenteSimple(usuario,cargarEstadisticas);
+    //IEL.Servicios.wsPreguntaPorTema.getPreguntasPorTema(2, preguntasPasado);
+    //IEL.Servicios.wsPreguntaContestadaPorUsuario.getPreguntasCorrectasPasadoSimple(usuario, estadisticasPasado);
+    //IEL.Servicios.wsPreguntaPorTema.getPreguntasPorTema(3, preguntasVerbos);
+    //IEL.Servicios.wsPreguntaContestadaPorUsuario.getPreguntasCorrectasVerbos(usuario, estadisticasVerbos);
+    //IEL.Servicios.wsPreguntaPorTema.getPreguntasPorTema(4, preguntasVocabulario);
+    //IEL.Servicios.wsPreguntaContestadaPorUsuario.getPreguntasCorrectasVocabulario(usuario, estadisticasVocabulario);
     
 });
 
@@ -53,42 +56,30 @@ function cargarDatos(resultado) {
 var avanceps;
 function cargarEstadisticas(resultado) {
     var contestadas = JSON.parse(resultado);
-    preguntasCorrectasPresente = contestadas.length
-    var avancePS = (preguntasCorrectasPresente * 100) / numPreguntasTotalPresente;
-   
+    var avancePS = contestadas * 10;
     avanceps = avancePS;
-    avancePS = avancePS.toFixed(2);
     document.getElementById("txtSimplePresent").innerHTML = "Simple present: " + avancePS + "%";
-    
 }
 var avancePasado;
 function estadisticasPasado(resultado) {
     var contestadas = JSON.parse(resultado);
-    preguntasCorrectasPasado = contestadas.length
-    var avancePS = (preguntasCorrectasPasado * 100) / numPreguntasTotalPasado;
-    
+    var avancePS = contestadas * 10;
     avancePasado = avancePS;
-    avancePS = avancePS.toFixed(2);
     document.getElementById("txtSimplePast").innerHTML = "Simple past: " + avancePS + "%";
 }
 var avanceVerbos;
 function estadisticasVerbos(resultado) {
     var contestadas = JSON.parse(resultado);
-    preguntasCorrectasVerbos = contestadas.length
-    var avancePS = (preguntasCorrectasVerbos * 100) / numPreguntasTotalVerbos;
-   
+    var avancePS = contestadas * 10;
     avanceVerbos = avancePS;
-    avancePS = avancePS.toFixed(2);
     document.getElementById("txtVerbs").innerHTML = "Verbs: " + avancePS + "%";
 }
 var avanceVc;
 function estadisticasVocabulario(resultado) {
     var contestadas = JSON.parse(resultado);
-    preguntasCorrectasVocabulario = contestadas.length
-    var avancePS = (preguntasCorrectasVocabulario * 100) / numPreguntasTotalVocabulario;
+    var avancePS = contestadas * 10;
     avanceVc = avancePS;
-    avancePS = avancePS.toFixed(2);
-    document.getElementById("txtVocabulario").innerHTML = "Vocabulary: " + avancePS + "%";
+    document.getElementById("txtVocabulario").innerHTML = "Vocabulary : " + avancePS + "%";
 
     cargarAvance();
 }

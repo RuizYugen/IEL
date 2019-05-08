@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using Datos.Daos;
+using Newtonsoft.Json;
 
 namespace IEL.Servicios
 {
@@ -14,10 +16,10 @@ namespace IEL.Servicios
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
-    // [System.Web.Script.Services.ScriptService]
+    [System.Web.Script.Services.ScriptService]
     public class wsGramatica : System.Web.Services.WebService
     {
-        /*
+        
         /// <summary>
         /// Obtine todos los registros de la gramatica
         /// </summary>
@@ -26,6 +28,15 @@ namespace IEL.Servicios
         public string getAll()
         {
             return "Hello World";
+        }
+
+        [WebMethod]
+        public string getByTema(int tema)
+        {
+            GramaticaDAO dao = new GramaticaDAO();
+            string json= JsonConvert.SerializeObject(dao.getByTema(tema),
+                new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return json;
         }
 
         /// <summary>
@@ -80,6 +91,6 @@ namespace IEL.Servicios
             return true;
         }
 
-    */
+    
     }
 }
