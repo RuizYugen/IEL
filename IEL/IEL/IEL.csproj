@@ -217,10 +217,14 @@
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\buttons.flash.min.js" />
+    <Content Include="Scripts\buttons.html5.min.js" />
+    <Content Include="Scripts\buttons.print.min.js" />
     <Content Include="Scripts\dataTables.bootstrap.js" />
     <Content Include="Scripts\dataTables.bootstrap.min.js" />
     <Content Include="Scripts\dataTables.bootstrap4.js" />
     <Content Include="Scripts\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\dataTables.buttons.min.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -243,19 +247,23 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\jquery.dataTables.js" />
     <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jszip.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\pdfmake.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\vfs_fonts.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
     <Content Include="Scripts\WebForms\GridView.js" />
@@ -304,6 +312,7 @@
     <Content Include="Vistas\CSS\bootstrap-theme.min.css" />
     <Content Include="Vistas\CSS\bootstrap.css" />
     <Content Include="Vistas\CSS\bootstrap.min.css" />
+    <Content Include="Vistas\CSS\buttons.dataTables.css" />
     <Content Include="Vistas\CSS\CatalogoUsuariosCSS.css" />
     <Content Include="Vistas\CSS\CSSAgregarUsuario.css" />
     <Content Include="Vistas\CSS\CSSCambiarImagen.css" />
@@ -314,6 +323,7 @@
     <Content Include="Vistas\CSS\dataTables.bootstrap4.css" />
     <Content Include="Vistas\CSS\estadisticas.css" />
     <Content Include="Vistas\CSS\EstilosMaterialDeAprendizaje.css" />
+    <Content Include="Vistas\CSS\jquery.dataTables.css" />
     <Content Include="Vistas\EditarUsuario.aspx" />
     <Content Include="Vistas\EstadisticasForm.aspx" />
     <Content Include="Vistas\IMG\learn.png" />

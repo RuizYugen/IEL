@@ -1,4 +1,8 @@
-﻿var usuario;
+﻿/*JavaScript para la ventana de Quiz*/
+var usuario;
+/*Realiza la llamada hacía la base de datos mediante el web service para obtener la lista de preguntas almacenadas en la base de datos
+El valor del usuario activo es obtenido desde el elemento html de la página maestra
+*/
 $(document).ready(function () {
     IEL.Servicios.wsQuiz.getAllPreguntas(cargarPrimera);    
     usuario = $('#logear').text();    
@@ -10,6 +14,10 @@ var listaObtenida;
 var numeroPregunta = 0;
 var correctas = 0;
 var seguir = false;
+/*Se ejecuta al llamarse el método del web service exitosamente, mezcla las preguntas en un orden aleatorio y carga la primer pregunta, además de las opciones de respuesta.
+Inicia los colores iniciales en los rectangulos correspondientes a cada pregunta.
+Se encarga de incrementar la variable que lleva el control de las posiciones en las preguntas.
+*/
 function cargarPrimera(resultado) {    
     listaObtenida = JSON.parse(resultado);
     listaObtenida = mezclar(listaObtenida);
@@ -30,10 +38,15 @@ function cargarPrimera(resultado) {
     document.getElementById("color8").style.backgroundColor = "#9999FF";
     document.getElementById("color9").style.backgroundColor = "#9999FF";
     document.getElementById("color10").style.backgroundColor = "#9999FF";
-    numeroPregunta = numeroPregunta + 1;
-    //alert(resultado);
+    numeroPregunta = numeroPregunta + 1;    
 }
-
+/*
+Función que se encarga de cambiar la siguiente pregunta, mezcla las opciones de respuesta cada vez que se ejecuta.
+Cambia el color del rectangulo correspondiente a la pregunta actual.
+Habilita los botones de opción de respuesta para que el usuario pueda seleccionar.
+Cambia el color del texto de las opciones de respuesta para que el usuario pueda elegir.
+En caso de ejecutarse ésta función cuando aún no se ha seleccionado una respuesta, manda un mensaje de alerta
+*/
 function cambiar() {
     if (seguir) {
         if (numeroPregunta > 9) {
@@ -66,7 +79,11 @@ function cambiar() {
         alert("Debes elegir una respuesta para continuar");
     }
 }
-
+/*
+Funcion que realiza la inserción de la respuesta del usuario, de ser correcta inserta Correcto en la base de datos, de ser incorrecta inserta Incorrecto.
+Cambia el color del texto de la opción elegida por el usuario.
+Una vez que se ejecuta, deshabilita las opciones de respuesta para que el usuario no pueda seleccionar más de una opción.
+*/
 function respuestaUsuario(boton) {    
     
     seguir = true;
@@ -84,14 +101,14 @@ function respuestaUsuario(boton) {
     document.getElementById(idbtn).style.color = "#6666CC";
     IEL.Servicios.wsQuiz.insertPregunta(usuario,id,correcto,deshabilitar);
 }
-
+/*Función que deshabilita las opciones de respuesta*/
 function deshabilitar() {
     document.getElementById("answerA").disabled = true;
     document.getElementById("answerB").disabled = true;
     document.getElementById("answerC").disabled = true;
     document.getElementById("answerD").disabled = true;
 }
-
+/*Función que mezcla los elementos de un arreglo en posiciones aleatorias.*/
 function mezclar(arreglo) {
     var currentIndex = arreglo.length, temporaryValue, randomIndex;
 

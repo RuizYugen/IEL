@@ -13,8 +13,25 @@
     <script src="../Scripts/jquery-3.3.1.min.js"></script>
     <script src="../Scripts/jquery.dataTables.min.js"></script>
      <script src="../Scripts/dataTables.bootstrap4.min.js"></script>
+    <script src="../Scripts/buttons.flash.min.js"></script>
+    <script src="../Scripts/buttons.html5.min.js"></script>
+    <script src="../Scripts/buttons.print.min.js"></script>
+    <script src="../Scripts/dataTables.buttons.min.js"></script>
+    <script src="../Scripts/jszip.min.js"></script>
+    <script src="../Scripts/pdfmake.min.js"></script>
+    <script src="../Scripts/vfs_fonts.js"></script>
     <script src="JS/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet" />
+    <link href="CSS/buttons.dataTables.css" rel="stylesheet" />
+    <link href="CSS/jquery.dataTables.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.12.4.js"></script>
+    <script src="../Scripts/jquery.dataTables.min.js"></script>
+    <script src="../Scripts/jszip.min.js"></script>
+    <script src="../Scripts/dataTables.buttons.min.js"></script>
+    <script src="../Scripts/pdfmake.min.js"></script>
+    <script src="../Scripts/vfs_fonts.js"></script>
+    <script src="../Scripts/buttons.html5.min.js"></script>
+
 
     <link rel="stylesheet" href="CSS/cssHead.css" />
     <!-- 
@@ -75,7 +92,7 @@
     </div>
     <nav class='navbar navbar-inverse' style="width:100%;">
     <%
-            if (Session["usuario"] == null)
+            if(Session["usuario"] == null)
             {
                 Response.Redirect("Login.aspx");
             }else
@@ -110,7 +127,7 @@
      
         <div class="panel-group" style="top:-60px;  box-sizing:content-box; position:relative; height:36px; width:56px; float:right;">
 <asp:Button ID="salirbtn" runat="server" OnClick="Button1_OnClick"  Text="Salir" CssClass="boton btn btn-default" BorderStyle="None"/>
-        </div>
+        </div> 
      
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
@@ -118,10 +135,8 @@
          <footer class="container-fluid text-center">
         <h5>Acerca de nosotros</h5>
         <p>Somos jóvenes como tú, interesados en brindarte un servicio mediante IEL. Un sitio interactivo para aprender inglés.</p>
-        <p>Puedes contactarnos mediante el siguiente correo: <b>IEL@itsur.edu.mx</b></p>
-       
+        <p>Puedes contactarnos mediante el siguiente correo: <b>IEL@itsur.edu.mx</b></p>       
         </footer>
-
     </form>
        
      
