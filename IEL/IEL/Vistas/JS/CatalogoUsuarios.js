@@ -11,15 +11,39 @@ Obtiene el elemento tabla de tipo HTML y le asigna la lista de usuarios obtenida
 */
 function onComplete_cargarlista(response) {    
     var dataSet = JSON.parse(response);
+    var ruta = document.getElementById('ruta').innerHTML;
+    var hoy=new Date();
+    var dia = String(hoy.getDate()).padStart(2, '0');
+    var mes = String(hoy.getMonth() + 1).padStart(2, '0');
+    var ano = hoy.getFullYear();
+    hoy = dia + '/' + mes + '/' + ano;
 
     tabla = $('#tabla').dataTable({
         dom:'Bfrtip',
         data: dataSet,        
         buttons: [{
             extend: 'pdf',
-            title: 'Usuarios en el Sistema',
-            filename: 'Tabla Usuarios'
-        }],
+            text:'Exportar PDF',
+            title: '        '+'Usuarios en el Sistema                          '+hoy,
+            filename: 'Tabla Usuarios',
+            footer:true,
+            download:'open',
+            customize: function (doc) {
+                doc.content.splice(1, 0, {
+                    margin: [0, 0, 0, 12],
+                    alignment: 'left',
+                    image: 'data:image/png;base64,' + ruta,
+                    width: 100,
+                    height:60
+                });
+                doc['footer'] = (function (page, pages) {
+                    return {
+                        columns: ['Sistema de Aprendizaje IEL', { alignment: 'right', text: ['Página ', { text: page.toString() }, ' de ', { text: pages.toString() }] }],
+                        margin:[10,0]
+                    }
+                });
+            }
+        }],       
         columns: [
             { title: "User", data: "User", render: $.fn.dataTable.render.text() },           
             { title: "Nombre", data: "Nombre", render: $.fn.dataTable.render.text() },

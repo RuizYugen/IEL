@@ -26,5 +26,9 @@
     <input type="button" value="Agregar Usuario" onclick="agregar()" class="btn-primary"/>
             </div>
         </div>
+    <br />
+    <%
+        Response.Write("<p id='ruta' style='display:none;visibility:hidden;'>"+Convert.ToBase64String(System.IO.File.ReadAllBytes(HttpContext.Current.Server.MapPath("~/Vistas/IMG/Nombre.png")))+"</p>");
+         %>
     <script src="JS/CatalogoUsuarios.js"></script>    
 </asp:Content>
