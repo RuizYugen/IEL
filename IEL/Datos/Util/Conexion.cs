@@ -14,11 +14,16 @@ namespace Datos.Util
         {
             //Revisar: https://www.connectionstrings.com/mysql/
 
-            String servidor = "localhost";
+            //String servidor = "localhost";
+            //String puerto = "3306";
+            //String usuario = "root";
+            //String password = "root";
+            //String database = "itsurenglishlearn";
+            String servidor = "mysql5011.site4now.net";
             String puerto = "3306";
-            String usuario = "root";
-            String password = "root";
-            String database = "itsurenglishlearn";
+            String usuario = "a48cbd_ieldb";
+            String password = "admin123";
+            String database = "db_a48cbd_ieldb";
 
             //Cadena de conexion
 
