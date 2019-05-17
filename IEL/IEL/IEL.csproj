@@ -54,10 +54,6 @@
       <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.3.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -354,8 +350,6 @@
     <Content Include="Vistas\Practica.aspx" />
     <Content Include="Vistas\Principal.aspx" />
     <Content Include="Vistas\QuizForm.aspx" />
-    <Content Include="Vistas\ReporteEstadisticas.aspx" />
-    <Content Include="Vistas\ReporteVerbos.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
@@ -687,20 +681,6 @@
     </Compile>
     <Compile Include="Vistas\QuizForm.aspx.designer.cs">
       <DependentUpon>QuizForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\ReporteEstadisticas.aspx.cs">
-      <DependentUpon>ReporteEstadisticas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\ReporteEstadisticas.aspx.designer.cs">
-      <DependentUpon>ReporteEstadisticas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\ReporteVerbos.aspx.cs">
-      <DependentUpon>ReporteVerbos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\ReporteVerbos.aspx.designer.cs">
-      <DependentUpon>ReporteVerbos.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
