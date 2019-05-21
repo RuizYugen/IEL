@@ -36,6 +36,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\IEL.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -247,6 +248,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Properties\PublishProfiles\iel.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -332,6 +334,7 @@
     <Content Include="Vistas\EstadisticasForm.aspx" />
     <Content Include="Vistas\IMG\learn.png" />
     <Content Include="Vistas\IMG\Logo.png" />
+    <Content Include="Vistas\IMG\Nombre.png" />
     <Content Include="Vistas\IMG\userHombre.jpg" />
     <Content Include="Vistas\IMG\userMujer.jpg" />
     <Content Include="Vistas\Index.aspx" />

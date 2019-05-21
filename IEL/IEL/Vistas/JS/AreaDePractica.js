@@ -97,6 +97,7 @@ function armar(){
         }
     }
     //alert(pregunta);
+    pregunta = (contador + 1)+".- " + pregunta;
     document.getElementById("pregunta").innerHTML =pregunta;
 }
 

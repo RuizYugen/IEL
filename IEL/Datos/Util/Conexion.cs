@@ -14,22 +14,25 @@ namespace Datos.Util
         {
             //Revisar: https://www.connectionstrings.com/mysql/
 
-            //String servidor = "localhost";
-            //String puerto = "3306";
-            //String usuario = "root";
-            //String password = "root";
-            //String database = "itsurenglishlearn";
-            String servidor = "mysql5011.site4now.net";
+            String servidor = "localhost";
             String puerto = "3306";
-            String usuario = "a48cbd_ieldb";
-            String password = "admin123";
-            String database = "db_a48cbd_ieldb";
+            String usuario = "root";
+            String password = "root";
+            String database = "itsurenglishlearn";
+            //String servidor = "mysql5011.site4now.net";
+            //String puerto = "3306";
+            //String usuario = "a48cbd_ieldb";
+            //String password = "admin123";
+            //String database = "db_a48cbd_ieldb";
 
             //Cadena de conexion
 
             return String.Format("server={0};port={1};user id={2}; password={3}; database={4}", servidor, puerto, usuario, password, database);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sqlCom"></param>
         public void EjecutaSQLComando(MySqlCommand sqlCom)
         {
             MySqlConnection sqlConn = new MySqlConnection();
